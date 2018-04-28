@@ -1,0 +1,34 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting VMM xactors to UVM components with analysis ports and exports
+ 
+		Objective: 	This example shows how to use the <vmm_analysis_adapter> to connect VMM xactors to UVM components with analysis ports and exports.
+
+
+		Description: 
+Two modes of connection are possible.
+ - UVM publisher -> VMM consumer - 
+   The UVM publisher broadcasts an UVM transaction to the adapter, which is    serving as an UVM subscriber. The adapter converts the transaction    to its VMM counterpart and sneaks it into the VMM consumer's input channel.
+
+ - VMM generator -> UVM subscriber -
+   The VMM generator puts VMM transactions into its output channel. The    adapter, having a handle to the same channel, continually gets transactions,    converts them to their UVM counterpart, and broadcasts them to all UVM    subscribers. In this case, the adapter is serving as the UVM publisher.
+
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

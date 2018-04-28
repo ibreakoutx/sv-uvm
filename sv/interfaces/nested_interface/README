@@ -1,0 +1,39 @@
+Keywords:
+ Search keywords      : testbench sv nested interface
+
+
+Technical content:
+ Title                : NESTED INTERFACES.
+ Objective            : To illustrate nesting of interfaces.
+ Description          : A simple example that instantiates a bus interface within a top level interface.
+ 
+ Additional setup     : None	
+
+
+To run the example:
+    Using Makefile
+ clean                - To clean up the log files and executable of previous run
+ comp                 - To compile the design
+ run                  - To run the design
+ all                  - It does all the above steps.
+
+    Using shell scripts
+ clean.csh            - To clean up the log files and executable of previous run
+ comp.csh             - To compile the design
+ run.csh              - To run the design	
+
+
+Additional Notes:
+The example consists of the following files.
+
+interface.sv : This file has two interface blocks namely Bus_if and Top_level_if. The Top_level_if instantiates the Bus_if illustrating nested interfaces.
+
+test.sv : Consists of the program block which takes an instance of the top level interface from the top and drives address, data and mode fields which are part of the Bus_if nested in the top level interface.
+
+top.v :	Creates an instance of the test and the interface and connects a clock to it.
+
+
+Location information:
+ PATH                 : $VCS_HOME/doc/examples/testbench/sv/interfaces/nested_interfaces
+ DIAGRAMS             : None
+ Cross Reference      : $VCS_HOME/doc/UserGuide/sv_lrm.pdf, $VCS_HOME/doc/UserGuide/vcs.pdf and $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf

@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	create_by	
+
+Technical content:
+ 
+		Title: 	vmm_data blue print replacemnet	
+ 
+		Objective:    to repalce the vmm_data blue print  
+
+		Description:   This test shows the usage of  vmm_data blue print replacemnet using create_by_copy and create_by_new 
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_class_factory/basic_vmm_data
+		DIAGRAMS: 		None

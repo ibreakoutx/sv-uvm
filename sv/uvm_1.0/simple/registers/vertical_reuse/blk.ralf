@@ -1,0 +1,25 @@
+
+register B_R {
+
+  field F @'h0 {
+    bits 8;
+  }
+
+}
+
+register B_CTL {
+  
+  field CTL @'h0 {
+    bits 2;
+    access wo;
+  }
+
+}
+
+block B {
+  
+  bytes 1;
+  register B_R=R @'h0;
+  register B_CTL=CTL @'h1;
+
+}

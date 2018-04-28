@@ -1,0 +1,33 @@
+
+
+Keywords:
+		Search keywords: 	RAL HAS_X VMM_1.2
+
+Technical content:
+ 
+		Title: 		 VMM_1.2 RAL HAS_X usage 
+ 
+		Objective:    Demonstrate the usage of newly added status vmm_rw::HAS_X.
+
+		Description:   This test demonstrates the  usage of new status type vmm_rw::HAS_X.
+		               This status needs to be set by the user whenever an 'X' is detected 
+																	on the databus during read operation.
+																	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/x_handling
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/ral_user_guide.pdf

@@ -1,0 +1,981 @@
+#@ # 
+#@ # Running vcs Version  for linux -- 
+#@ # Date:   Fri Nov  9 21:50:02 2012
+#@ # Run by: vsananda@hagon
+#@ 
+
+source hello.upf
+#@ set_design_top top
+#@ 
+#@ create_power_domain TOP
+#@ create_power_domain DOWN -elements down 
+#@ 
+#@ create_supply_port VDD
+#@ create_supply_port VSS
+#@ 
+#@ create_supply_net VDD -domain TOP
+#@ create_supply_net VDD -domain DOWN -reuse
+#@ create_supply_net VDDG -domain DOWN
+#@ create_supply_net VSS -domain TOP
+#@ 
+#@ connect_supply_net VDD -ports {VDD}
+#@ connect_supply_net VSS -ports {VSS}
+#@ 
+#@ create_power_switch psw -domain TOP  -input_supply_port { in VDD } -output_supply_port { out VDDG } -control_port { down/pwr_ctl  down/pwr_ctl } -on_state { on_state in {pwr_ctl} }
+#@ # -- End source hello.upf
+
+source /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_bind.tcl
+#@ 
+#@ 
+#@ proc snps_shift {ls} {
+#@     upvar 1 $ls LIST
+#@     set x [lindex $LIST 0]
+#@     set LIST [lreplace $LIST 0 0]
+#@     return $x
+#@ }
+#@ proc snps_getPowerDomainsFromDetail {detail} {
+#@     set emp {}
+#@     while {[llength $detail]} {
+#@         set line [snps_shift detail]
+#@         set key [lindex $line 0]
+#@         set val [lindex $line 1]
+#@         if { [string compare $key "domain"] == 0 } {
+#@             return $val
+#@         }
+#@     }
+#@     return $emp
+#@ }
+#@ 
+#@ proc snps_getSimpleName {detail} {
+#@     set emp {}
+#@     while {[llength $detail]} {
+#@         set line [snps_shift detail]
+#@         set key [lindex $line 0]
+#@         set val [lindex $line 1]
+#@         if { [string compare $key "name"] == 0 } {
+#@             return $val
+#@         }
+#@     }
+#@     return $emp
+#@ }
+#@ 
+#@ ############################## SNPS_LPA :BEGIN ###########################
+#@ 
+#@ ###################################################################
+#@ ## BIND CHECKER FOR POWER DOMAIN AND SUPPLY NET RELATED CHECKERS ##
+#@ ###################################################################
+#@ 
+#@ proc snps_pd_sn_iso_state_change_msg {} {
+#@     foreach PD [ query_power_domain *] {
+#@         set PD_NAME [list PD_NAME $PD]
+#@         array set pd_detail [query_power_domain $PD -detailed]
+#@         set POWER [ list POWER $pd_detail(primary_power_net) ]
+#@         set GROUND [ list GROUND $pd_detail(primary_ground_net) ]
+#@         set SIMSTATE [ list SIMSTATE $pd_detail(sim_state) ]
+#@         set PPN_FULLNAME $pd_detail(primary_power_net)
+#@         set PGN_FULLNAME $pd_detail(primary_ground_net)
+#@         set PPN_NAME [ list PPN_NAME [query_original_name $PPN_FULLNAME]]
+#@         set PGN_NAME [ list PGN_NAME [query_original_name $PGN_FULLNAME]]
+#@ 
+#@         set pd_params_list {}
+#@         lappend pd_params_list $PD_NAME
+#@ 
+#@         set pd_ports_list {}
+#@         lappend pd_ports_list $SIMSTATE
+#@ 
+#@         set sn_state_params_list {}
+#@         lappend sn_state_params_list $PD_NAME $PPN_NAME $PGN_NAME
+#@ 
+#@         set sn_state_ports_list {}
+#@         lappend sn_state_ports_list $POWER $GROUND
+#@ 
+#@         set sn_value_params_list {}
+#@         lappend sn_value_params_list $PD_NAME $PPN_NAME $PGN_NAME
+#@ 
+#@         set sn_value_ports_list {}
+#@         lappend sn_value_ports_list $POWER $GROUND
+#@ 
+#@         if [info exists ::env(SNPS_LPA_DEBUG)] {
+#@ 
+#@             puts ""
+#@             puts "########## LPA_DEBUG : START :: POWER DOMAIN BIND DETAILS ###########"
+#@             puts "   ====== PORT MAP DETAILS ======"
+#@             puts $pd_ports_list
+#@             puts "   ====== PARAMETER MAP DETAILS ======"
+#@             puts $pd_params_list
+#@             puts "########## LPA_DEBUG : END :: POWER DOMAIN BIND DETAILS ###########"
+#@             puts ""
+#@ 
+#@             puts "########## LPA_DEBUG : START :: SUPPLY NET BIND DETAILS ###########"
+#@             puts "   ====== PORT MAP DETAILS ======"
+#@             puts $sn_state_ports_list
+#@             puts "   ====== PARAMETER MAP DETAILS ======"
+#@             puts $sn_state_params_list
+#@             puts "########## LPA_DEBUG : END :: SUPPLY NET BIND DETAILS ###########"
+#@             puts ""
+#@ 
+#@         }
+#@ 
+#@         bind_checker pd_state_change_msg                 -module SNPS_pd_state_change_msg                 -elements [ list @$PD ]                 -parameters $pd_params_list                 -ports $pd_ports_list
+#@ 
+#@         if {([lindex  $POWER  1] != "") && ([lindex  $GROUND  1] != "" )} {
+#@ 
+#@             bind_checker sn_state_change_msg                     -module SNPS_sn_state_change_msg                     -elements [ list @$PD ]                     -parameters $sn_state_params_list                     -ports $sn_state_ports_list
+#@ 
+#@ 
+#@             bind_checker sn_value_change_msg                     -module SNPS_sn_value_change_msg                     -elements [ list @$PD ]                     -parameters $sn_value_params_list                     -ports $sn_value_ports_list
+#@         }
+#@ 
+#@         ########################################################
+#@         ## BIND CHECKER FOR ISOLATION POLICY RELATED CHECKERS ##
+#@         ########################################################
+#@ 
+#@         foreach iso [query_isolation * -domain $PD] {
+#@             set POL  @$PD.isolation.$iso
+#@             array set iso_detail [query_isolation $iso -domain $PD -detailed]
+#@             set ISO_FULLNAME  @$PD.isolation.$iso
+#@             set ISO_NAME [list ISO_NAME  [query_original_name $ISO_FULLNAME]]
+#@             set ISOEN [list ISOEN $iso_detail(isolation_signal)]
+#@             #set ISOEN [list ISOEN $POL.isolation_enable]
+#@             set ISOEN_NAME [list ISOEN_NAME $iso_detail(isolation_signal)]
+#@             #set ISOEN_NAME [list ISOEN_NAME $POL.isolation_enable]
+#@             set ISO_SENSE [list ISO_SENSE $iso_detail(isolation_sense)]
+#@             set ISOPN [list ISOPN $iso_detail(isolation_power_net) ]
+#@             set ISOGN [list ISOGN $iso_detail(isolation_ground_net) ]
+#@             set ISOPPN [list ISOPPN  $iso_detail(primary_power_net) ]
+#@             set ISOPGN [list ISOPGN $iso_detail(primary_ground_net) ]
+#@             set ISOPN_FULLNAME $iso_detail(isolation_power_net)
+#@             set ISOGN_FULLNAME $iso_detail(isolation_ground_net)
+#@             set ISOPPN_FULLNAME $iso_detail(primary_power_net)
+#@             set ISOPGN_FULLNAME $iso_detail(primary_ground_net)
+#@             set ISOPN_NAME [list ISOPN_NAME [query_original_name $ISOPN_FULLNAME ]]
+#@             set ISOGN_NAME [list ISOGN_NAME [query_original_name $ISOGN_FULLNAME ]]
+#@             set ISOPPN_NAME [list ISOPPN_NAME  [query_original_name $ISOPPN_FULLNAME ]]
+#@             set ISOPGN_NAME [list ISOPGN_NAME [query_original_name $ISOPGN_FULLNAME ]]
+#@ 
+#@             set iso_params_list {}
+#@             lappend iso_params_list $ISO_NAME $ISOEN_NAME $ISO_SENSE $PD_NAME $ISOPN_NAME $ISOGN_NAME $ISOPPN_NAME $ISOPGN_NAME
+#@             set iso_ports_list {}
+#@             lappend iso_ports_list $ISOEN $ISOPN $ISOGN $ISOPPN $ISOPGN $SIMSTATE
+#@ 
+#@             if [info exists ::env(SNPS_LPA_DEBUG)] {
+#@ 
+#@                 puts ""
+#@                 puts "########## LPA_DEBUG : START :: ISOLATION BIND DETAILS ###########"
+#@                 puts "   ====== PORT MAP DETAILS ======"
+#@                 puts $iso_ports_list
+#@                 puts "   ====== PARAMETER MAP DETAILS ======"
+#@                 puts $iso_params_list
+#@                 puts "########## LPA_DEBUG : END :: ISOLATION BIND DETAILS ###########"
+#@                 puts ""
+#@ 
+#@             }
+#@ 
+#@             bind_checker iso_change_msg                     -module SNPS_isolation_change_msg                     -elements [ list $POL ]                     -parameters $iso_params_list                     -ports $iso_ports_list
+#@ 
+#@             array unset iso_detail
+#@         }
+#@         array unset pd_detail
+#@     }
+#@ }
+#@ 
+#@ 
+#@ ###########################################
+#@ ## BIND CHECKER FOR PST RELATED CHECKERS ##
+#@ ###########################################
+#@ 
+#@ proc snps_pst_state_change_msg {} {
+#@     foreach pst [ query_pst * ] {
+#@         array set pst_detail [query_pst $pst -detailed]
+#@         set illstate "ILLEGAL"
+#@         set pst_state_detail [ query_pst_state * -pst $pst -detailed ]
+#@         #set pst_states [split $pst_state_detail " "]
+#@         set pst_states [query_pst_state * -pst $pst]
+#@         set numStates [ llength $pst_states ]
+#@         set stateDetails [concat "{" $illstate $pst_states "}" ]
+#@ 
+#@         join $stateDetails " "
+#@         set STATENAMES [list STATE_NAMES $stateDetails ]
+#@         set NUMSTATE [ list NUMSTATE $numStates ]
+#@         set SNAME [list PST_NAME @$pst ]
+#@         #set STATE [ list STATE @$pst.designState ]
+#@         set STATE [ list STATE $pst_detail(design_state)]
+#@ 
+#@         set pst_params_list {}
+#@         lappend pst_params_list $SNAME $NUMSTATE $STATENAMES
+#@ 
+#@         set pst_ports_list {}
+#@         lappend pst_ports_list $STATE
+#@ 
+#@ 
+#@         if [info exists ::env(SNPS_LPA_DEBUG)] {
+#@ 
+#@             puts ""
+#@             puts "########## LPA_DEBUG : START :: PST BIND DETAILS ###########"
+#@             puts "   ====== PORT MAP DETAILS ======"
+#@             puts $pst_ports_list
+#@             puts "   ====== PARAMETER MAP DETAILS ======"
+#@             puts $pst_params_list
+#@             puts "########## LPA_DEBUG : END :: PST BIND DETAILS ###########"
+#@             puts ""
+#@ 
+#@         }
+#@ 
+#@         bind_checker pst_state_change                 -module SNPS_pst_state_change_msg                 -elements [list  @$pst ]                 -parameters $pst_params_list                 -ports $pst_ports_list
+#@ 
+#@         array unset pst_detail
+#@     }
+#@ }
+#@ 
+#@ 
+#@ 
+#@ ########################################################
+#@ ## BIND CHECKER FOR RETENTION POLICY RELATED CHECKERS ##
+#@ ########################################################
+#@ 
+#@ proc snps_retention_msg {} {
+#@     foreach PD [ query_power_domain *] {
+#@         array set pd_detail [query_power_domain $PD -detailed ]
+#@         foreach RET [ query_retention * -domain $PD ] {
+#@             array set ret_control_detail [query_retention_control $RET -domain $PD -detailed]
+#@             array set ret_detail [ query_retention $RET -domain $PD -detailed ]
+#@ 
+#@             set PD_NAME                   [list PD_NAME $PD]
+#@             set RET_NAME                  [list RET_NAME $RET]
+#@             set PD_NAME                   [list PD_NAME $ret_detail(domain)]
+#@             set SAVE_LIST                 [list $ret_detail(save_signal)]
+#@             set SAVE_COND                 [list SAVE_COND $ret_detail(save_condition)]
+#@             set RESTORE_LIST              [list $ret_detail(restore_signal)]
+#@             set RESTORE_COND              [list RESTORE_COND $ret_detail(restore_condition)]
+#@             set RETENTION_COND    [list RETENTION_COND $ret_detail(restore_condition)]
+#@             set RET_PN                    [list RET_PN $ret_detail(retention_power_net)]
+#@             set RET_PN_NAME               [list RET_PN_NAME [query_original_name $ret_detail(retention_power_net)]]
+#@             set RET_GN                    [list RET_GN $ret_detail(retention_ground_net)]
+#@             set RET_GN_NAME               [list RET_GN_NAME [query_original_name $ret_detail(retention_ground_net)]]
+#@             set RET_PPN                   [list RET_PN $pd_detail(primary_power_net)]
+#@             set PPN                               [list PPN $pd_detail(primary_power_net)]
+#@             set RET_PGN                   [list RET_GN $pd_detail(primary_ground_net)]
+#@             set PGN                               [list PGN $pd_detail(primary_ground_net)]
+#@ 
+#@             set SAVE_COND_DEFINED                 [list SAVE_COND_DEFINED 0]
+#@             set RESTORE_COND_DEFINED              [list RESTORE_COND_DEFINED 0]
+#@             set RETENTION_COND_DEFINED    [list RETENTION_COND_DEFINED 0]
+#@ 
+#@             set assert_r_mutex [list $ret_control_detail(assert_r_mutex)]
+#@             set assert_s_mutex [list $ret_control_detail(assert_s_mutex)]
+#@             if [info exists ret_control_detail(assert_rs_mutex)] {
+#@                 if {($ret_control_detail(assert_rs_mutex) != "")} {
+#@                     set assert_rs_mutex [list $ret_control_detail(assert_rs_mutex)]
+#@                     set RS_MUTEX_DEFINED 2
+#@                 } else {
+#@                     set assert_rs_mutex [list {NA NA}]
+#@                     set RS_MUTEX_DEFINED 1
+#@                 }
+#@                 set ASSERT_RS_MUTEX_SIG      [list ASSERT_RS_MUTEX_SIG]
+#@                 set ASSERT_RS_MUTEX_SIG_NAME         [list ASSERT_RS_MUTEX_SIG_NAME]
+#@                 set ASSERT_RS_MUTEX_SENSE [list ASSERT_RS_MUTEX_SENSE]
+#@                 foreach item $assert_rs_mutex {
+#@                     lappend ASSERT_RS_MUTEX_SIG     [ lindex $item 0]
+#@                     lappend ASSERT_RS_MUTEX_SIG_NAME        [ lindex $item 0]
+#@                     lappend ASSERT_RS_MUTEX_SENSE   [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@                 }
+#@             } else {
+#@                 set RS_MUTEX_DEFINED 0
+#@             }
+#@ 
+#@             set     ASSERT_RS_MUTEX_DEFINED [list ASSERT_RS_MUTEX_DEFINED $RS_MUTEX_DEFINED]
+#@ 
+#@ 
+#@             set SAVE               [list SAVE]
+#@             set SAVE_SIG   [list SAVE_SIG ]
+#@             set SAVE_SENSE [list SAVE_SENSE]
+#@             foreach item $SAVE_LIST {
+#@                 lappend SAVE               [lindex $item 0]
+#@                 lappend SAVE_SIG   [lindex $item 0]
+#@                 lappend SAVE_SENSE [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@             }
+#@ 
+#@             set RESTORE           [list RESTORE]
+#@             set RESTORE_SIG       [list RESTORE_SIG]
+#@             set RESTORE_SENSE [list RESTORE_SENSE]
+#@             foreach item $RESTORE_LIST {
+#@                 lappend RESTORE       [lindex $item 0]
+#@                 lappend RESTORE_SIG   [lindex $item 0]
+#@                 lappend RESTORE_SENSE [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@             }
+#@ 
+#@             set ASSERT_S_MUTEX_SIG        [list ASSERT_S_MUTEX_SIG]
+#@             set ASSERT_S_MUTEX_SIG_NAME   [list ASSERT_S_MUTEX_SIG_NAME]
+#@             set ASSERT_S_MUTEX_SENSE      [list ASSERT_S_MUTEX_SENSE]
+#@             foreach item $assert_s_mutex {
+#@                 lappend ASSERT_S_MUTEX_SIG          [ lindex $item 0]
+#@                 lappend ASSERT_S_MUTEX_SIG_NAME             [ lindex $item 0]
+#@                 lappend ASSERT_S_MUTEX_SENSE        [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@             }
+#@ 
+#@             set ASSERT_R_MUTEX_SIG        [list ASSERT_R_MUTEX_SIG]
+#@             set ASSERT_R_MUTEX_SIG_NAME   [list ASSERT_R_MUTEX_SIG_NAME]
+#@             set ASSERT_R_MUTEX_SENSE      [list ASSERT_R_MUTEX_SENSE]
+#@             foreach item $assert_r_mutex {
+#@                 lappend ASSERT_R_MUTEX_SIG          [ lindex $item 0]
+#@                 lappend ASSERT_R_MUTEX_SIG_NAME             [ lindex $item 0]
+#@                 lappend ASSERT_R_MUTEX_SENSE        [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@             }
+#@ 
+#@ 
+#@             set ret_params_list {}
+#@             lappend ret_params_list $PD_NAME $RET_NAME $RET_PN_NAME $RET_GN_NAME $SAVE_SIG $RESTORE_SIG
+#@ 
+#@             if {[lindex  $SAVE_SENSE  1] != ""} {
+#@                 lappend ret_params_list $SAVE_SENSE
+#@             }
+#@             if {[lindex  $RESTORE_SENSE  1] != ""} {
+#@                 lappend ret_params_list $RESTORE_SENSE
+#@             }
+#@             if {[lindex  $ASSERT_R_MUTEX_SENSE  1] != ""} {
+#@                 lappend ret_params_list $ASSERT_R_MUTEX_SENSE
+#@                 set R_MUTEX_DEFINED 1
+#@                 set ASSERT_R_MUTEX_DEFINED [list ASSERT_R_MUTEX_DEFINED $R_MUTEX_DEFINED]
+#@                 lappend ret_params_list $ASSERT_R_MUTEX_DEFINED
+#@             }
+#@             if {[lindex  $ASSERT_S_MUTEX_SENSE  1] != ""} {
+#@                 lappend ret_params_list $ASSERT_S_MUTEX_SENSE
+#@                 set S_MUTEX_DEFINED 1
+#@                 set ASSERT_S_MUTEX_DEFINED [list ASSERT_S_MUTEX_DEFINED $S_MUTEX_DEFINED]
+#@                 lappend ret_params_list $ASSERT_S_MUTEX_DEFINED
+#@             }
+#@             if {$RS_MUTEX_DEFINED == 2} {
+#@                 if {[lindex  $ASSERT_RS_MUTEX_SENSE  1] != ""} {
+#@                     lappend ret_params_list $ASSERT_RS_MUTEX_SENSE
+#@                 }
+#@             }
+#@             if {$RS_MUTEX_DEFINED >= 0} {
+#@                 lappend ret_params_list $ASSERT_RS_MUTEX_DEFINED
+#@             }
+#@ 
+#@             set ret_ports_list {}
+#@             lappend ret_ports_list $SAVE $RESTORE $PPN $PGN
+#@ 
+#@             if {[lindex  $RET_PN  1] != ""} {
+#@                 lappend ret_ports_list $RET_PN
+#@             } else {
+#@                 lappend ret_ports_list $RET_PPN
+#@             }
+#@             if {[lindex  $RET_GN 1] != ""} {
+#@                 lappend ret_ports_list $RET_GN
+#@             } else {
+#@                 lappend ret_ports_list $RET_PGN
+#@             }
+#@             if {[lindex  $SAVE_COND  1] != ""} {
+#@                 lappend ret_ports_list $SAVE_COND
+#@             } else {
+#@                 lappend ret_params_list $SAVE_COND_DEFINED
+#@             }
+#@             if  {[lindex  $RESTORE_COND  1] != ""} {
+#@                 lappend ret_ports_list $RESTORE_COND
+#@             } else {
+#@                 lappend ret_params_list $RESTORE_COND_DEFINED
+#@             }
+#@             if  {[lindex  $RETENTION_COND  1] != ""} {
+#@                 lappend ret_ports_list $RETENTION_COND
+#@             } else {
+#@                 lappend ret_params_list $RETENTION_COND_DEFINED
+#@             }
+#@             if {[lindex  $ASSERT_R_MUTEX_SIG  1] != ""} {
+#@                 lappend ret_ports_list $ASSERT_R_MUTEX_SIG
+#@                 lappend ret_params_list $ASSERT_R_MUTEX_SIG_NAME
+#@             }
+#@             if {[lindex  $ASSERT_S_MUTEX_SIG  1] != ""} {
+#@                 lappend ret_ports_list $ASSERT_S_MUTEX_SIG
+#@                 lappend ret_params_list $ASSERT_S_MUTEX_SIG_NAME
+#@             }
+#@             if {$RS_MUTEX_DEFINED == 2} {
+#@                 if {[lindex  $ASSERT_RS_MUTEX_SIG  1] != ""} {
+#@                     lappend ret_ports_list $ASSERT_RS_MUTEX_SIG
+#@                     lappend ret_params_list $ASSERT_RS_MUTEX_SIG_NAME
+#@                 }
+#@             }
+#@ 
+#@             if [info exists ::env(SNPS_LPA_DEBUG)] {
+#@ 
+#@                 puts ""
+#@                 puts "########## LPA_DEBUG : START :: RETENTION BIND DETAILS ###########"
+#@                 puts "   ====== PORT MAP DETAILS ======"
+#@                 puts $ret_ports_list
+#@                 puts "   ====== PARAMETER MAP DETAILS ======"
+#@                 puts $ret_params_list
+#@                 puts "########## LPA_DEBUG : END :: RETENTION BIND DETAILS ###########"
+#@                 puts ""
+#@ 
+#@             }
+#@ 
+#@             bind_checker retention_policy                     -module SNPS_retention_policy_msg                     -elements [list  @$PD.retention.$RET ]                     -ports $ret_ports_list                     -parameters $ret_params_list
+#@ 
+#@             array unset ret_control_detail
+#@             array unset ret_detail
+#@         }
+#@         array unset     pd_detail
+#@     }
+#@ }
+#@ 
+#@ 
+#@ 
+#@ ####################################################
+#@ ## BIND CHECKER FOR POWER SWITCH RELATED CHECKERS ##
+#@ ####################################################
+#@ 
+#@ proc snps_powerswitch_msg {} {
+#@     foreach sw [ query_power_switch * ] {
+#@         array set sw_detail [query_power_switch $sw -detailed]
+#@         set simplename $sw_detail(switch_name)
+#@         set SW_NAME [list SW_NAME @$simplename ]
+#@         #set SW_STATE [ list STATE @$sw.switchState ]
+#@         set SW_STATE [ list STATE $sw_detail(switch_state) ]
+#@         set supplyOut $sw_detail(output_supply_port)
+#@         set OSP_NAME  [ list OSP_NAME [lindex $supplyOut 0] ]
+#@         set OSP [ list OSP [lindex $supplyOut 1] ]
+#@         set OSP_SN_NAME [ list OSP_SN_NAME [lindex $supplyOut 1] ]
+#@         set isp_ports [list]
+#@         set isp_sn_names [list]
+#@         foreach supplyIn  $sw_detail(input_supply_port) {
+#@             lappend isp_ports [ lindex $supplyIn 0 ]
+#@             lappend isp_sn_names [ lindex $supplyIn 1 ]
+#@         }
+#@         join $isp_ports " "
+#@         join $isp_sn_names " "
+#@         set ispPorts [ concat "{" $isp_ports "}" ]
+#@         set ispSn [ concat "{" $isp_sn_names "}" ]
+#@         set ISP_NAME [ list ISP_NAME $ispPorts ]
+#@         set ISP [ list ISP $ispSn ]
+#@         set ISP_SN_NAME [ list ISP_SN_NAME $ispSn ]
+#@ 
+#@         set ctrl_port [list]
+#@         set ctrl_sig [list]
+#@         foreach control_port  $sw_detail(control_port) {
+#@             lappend ctrl_port [ lindex $control_port 0 ]
+#@             lappend ctrl_sig [ lindex $control_port 1]
+#@         }
+#@         join $ctrl_port " "
+#@         join $ctrl_sig " "
+#@         set ctrlPort [ concat "{" $ctrl_port "}" ]
+#@         set ctrlSig [ concat "{" $ctrl_sig "}" ]
+#@         set CONTROL [ list CONTROL $ctrlPort ]
+#@         set CONTROL_PORT [ list CONTROL_PORT $ctrlPort ]
+#@         set CONTROL_SIG [ list CONTROL_SIG [query_original_full_name $ctrlSig]]
+#@ 
+#@         set NUMINP [ llength $sw_detail(input_supply_port) ]
+#@         set NUMCTRL [ llength $sw_detail(control_port) ]
+#@         set ISP_COUNT [ list ISP_COUNT $NUMINP ]
+#@         set CONTROL_COUNT [ list CONTROL_COUNT $NUMCTRL ]
+#@ 
+#@ 
+#@         set list_psw_states $sw_detail(states)
+#@         set nums [llength $list_psw_states]
+#@ 
+#@         set states_names [list]
+#@         set states_type [list]
+#@         foreach state $list_psw_states {
+#@             lappend states_names [lindex $state 0]
+#@             lappend states_type  [lindex $state 1]
+#@         }
+#@         set states_names1 [ concat "{" $states_names "}" ]
+#@         set states_type1 [ concat "{" $states_type "}" ]
+#@         set STATES [list STATES $states_names1]
+#@         set STATES_TYPE [list STATES_TYPE $states_type1]
+#@         set NUMSTATES [ list NUMSTATES $nums ]
+#@ 
+#@ 
+#@ 
+#@         set psw_params_list {}
+#@         lappend psw_params_list $SW_NAME $ISP_COUNT $CONTROL_COUNT $ISP_NAME $ISP_SN_NAME $NUMSTATES $OSP_NAME $OSP_SN_NAME $CONTROL_SIG $CONTROL_PORT $STATES $STATES_TYPE
+#@ 
+#@         set psw_ports_list {}
+#@         lappend psw_ports_list $SW_STATE $OSP $ISP $CONTROL
+#@ 
+#@         if [info exists ::env(SNPS_LPA_DEBUG)] {
+#@ 
+#@             puts ""
+#@             puts "########## LPA_DEBUG : START :: POWERSWITCH BIND DETAILS ###########"
+#@             puts "   ====== PORT MAP DETAILS ======"
+#@             puts $psw_ports_list
+#@             puts "   ====== PARAMETER MAP DETAILS ======"
+#@             puts $psw_params_list
+#@             puts "########## LPA_DEBUG : END :: POWERSWITCH BIND DETAILS ###########"
+#@             puts ""
+#@ 
+#@         }
+#@ 
+#@         bind_checker psw_state_change                 -module  SNPS_psw_state_change_msg                 -elements [list  @$sw ]                 -parameters $psw_params_list                 -ports $psw_ports_list
+#@ 
+#@         array unset sw_detail
+#@     }
+#@ }
+#@ 
+#@ 
+#@ snps_pd_sn_iso_state_change_msg
+#@ snps_pst_state_change_msg
+#@ snps_powerswitch_msg
+#@ snps_retention_msg
+#@ 
+#@ ############################## SNPS_LPA : END  ###########################
+#@ 
+#@ 
+#@ ############################## SNPS_UPF_LPA : BEGIN  ###########################
+#@ 
+#@ ###################################################################
+#@ ## BIND CHECKER FOR POWER DOMAIN AND SUPPLY NET RELATED CHECKERS ##
+#@ ###################################################################
+#@ 
+#@ proc snps_upf_pd_sn_iso_state_change_msg {} {
+#@     foreach PD [ query_power_domain *] {
+#@         set PD_NAME [list PD_NAME $PD]
+#@         array set pd_detail [query_power_domain $PD -detailed]
+#@         set POWER [ list POWER $pd_detail(primary_power_net) ]
+#@         set GROUND [ list GROUND $pd_detail(primary_ground_net) ]
+#@         set SIMSTATE [ list SIMSTATE $pd_detail(sim_state) ]
+#@         set PPN_FULLNAME $pd_detail(primary_power_net)
+#@         set PGN_FULLNAME $pd_detail(primary_ground_net)
+#@         set PPN_NAME [ list PPN_NAME [query_original_name $PPN_FULLNAME]]
+#@         set PGN_NAME [ list PGN_NAME [query_original_name $PGN_FULLNAME]]
+#@ 
+#@         set pd_params_list {}
+#@         lappend pd_params_list $PD_NAME
+#@ 
+#@         set pd_ports_list {}
+#@         lappend pd_ports_list $SIMSTATE
+#@ 
+#@         set sn_state_params_list {}
+#@         lappend sn_state_params_list $PD_NAME $PPN_NAME $PGN_NAME
+#@ 
+#@         set sn_state_ports_list {}
+#@         lappend sn_state_ports_list $POWER $GROUND
+#@ 
+#@         set sn_value_params_list {}
+#@         lappend sn_value_params_list $PD_NAME $PPN_NAME $PGN_NAME
+#@ 
+#@         set sn_value_ports_list {}
+#@         lappend sn_value_ports_list $POWER $GROUND
+#@ 
+#@         if [info exists ::env(SNPS_UPF_LPA_DEBUG)] {
+#@ 
+#@             puts ""
+#@             puts "########## LPA_DEBUG : START :: POWER DOMAIN BIND DETAILS ###########"
+#@             puts "   ====== PORT MAP DETAILS ======"
+#@             puts $pd_ports_list
+#@             puts "   ====== PARAMETER MAP DETAILS ======"
+#@             puts $pd_params_list
+#@             puts "########## LPA_DEBUG : END :: POWER DOMAIN BIND DETAILS ###########"
+#@             puts ""
+#@ 
+#@             puts "########## LPA_DEBUG : START :: SUPPLY NET BIND DETAILS ###########"
+#@             puts "   ====== PORT MAP DETAILS ======"
+#@             puts $sn_state_ports_list
+#@             puts "   ====== PARAMETER MAP DETAILS ======"
+#@             puts $sn_state_params_list
+#@             puts "########## LPA_DEBUG : END :: SUPPLY NET BIND DETAILS ###########"
+#@             puts ""
+#@ 
+#@         }
+#@ 
+#@         bind_checker snps_pd_state_change_msg                 -module SNPS_UPF_pd_state_change_msg                 -elements [ list @$PD ]                 -parameters $pd_params_list                 -ports $pd_ports_list
+#@ 
+#@         if {([lindex  $POWER  1] != "") && ([lindex  $GROUND  1] != "" )} {
+#@ 
+#@             bind_checker snps_sn_state_change_msg                     -module SNPS_UPF_sn_state_change_msg                     -elements [ list @$PD ]                     -parameters $sn_state_params_list                     -ports $sn_state_ports_list
+#@ 
+#@ 
+#@             bind_checker snps_sn_value_change_msg                     -module SNPS_UPF_sn_value_change_msg                     -elements [ list @$PD ]                     -parameters $sn_value_params_list                     -ports $sn_value_ports_list
+#@         }
+#@ 
+#@         ########################################################
+#@         ## BIND CHECKER FOR ISOLATION POLICY RELATED CHECKERS ##
+#@         ########################################################
+#@ 
+#@         foreach iso [query_isolation * -domain $PD] {
+#@             set POL  @$PD.isolation.$iso
+#@             array set iso_detail [query_isolation $iso -domain $PD -detailed]
+#@             set ISO_FULLNAME  @$PD.isolation.$iso
+#@             set ISO_NAME [list ISO_NAME  [query_original_name $ISO_FULLNAME]]
+#@             set ISOEN [list ISOEN $iso_detail(isolation_signal)]
+#@             #set ISOEN [list ISOEN $POL.isolation_enable]
+#@             set ISOEN_NAME [list ISOEN_NAME $iso_detail(isolation_signal)]
+#@             #set ISOEN_NAME [list ISOEN_NAME $POL.isolation_enable]
+#@             set ISO_SENSE [list ISO_SENSE $iso_detail(isolation_sense)]
+#@             set ISOPN [list ISOPN $iso_detail(isolation_power_net) ]
+#@             set ISOGN [list ISOGN $iso_detail(isolation_ground_net) ]
+#@             set ISOPPN [list ISOPPN  $iso_detail(primary_power_net) ]
+#@             set ISOPGN [list ISOPGN $iso_detail(primary_ground_net) ]
+#@             set ISOPN_FULLNAME $iso_detail(isolation_power_net)
+#@             set ISOGN_FULLNAME $iso_detail(isolation_ground_net)
+#@             set ISOPPN_FULLNAME $iso_detail(primary_power_net)
+#@             set ISOPGN_FULLNAME $iso_detail(primary_ground_net)
+#@             set ISOPN_NAME [list ISOPN_NAME [query_original_name $ISOPN_FULLNAME ]]
+#@             set ISOGN_NAME [list ISOGN_NAME [query_original_name $ISOGN_FULLNAME ]]
+#@             set ISOPPN_NAME [list ISOPPN_NAME  [query_original_name $ISOPPN_FULLNAME ]]
+#@             set ISOPGN_NAME [list ISOPGN_NAME [query_original_name $ISOPGN_FULLNAME ]]
+#@ 
+#@             set iso_params_list {}
+#@             lappend iso_params_list $ISO_NAME $ISOEN_NAME $ISO_SENSE $PD_NAME $ISOPN_NAME $ISOGN_NAME $ISOPPN_NAME $ISOPGN_NAME
+#@             set iso_ports_list {}
+#@             lappend iso_ports_list $ISOEN $ISOPN $ISOGN $ISOPPN $ISOPGN $SIMSTATE
+#@ 
+#@             if [info exists ::env(SNPS_UPF_LPA_DEBUG)] {
+#@ 
+#@                 puts ""
+#@                 puts "########## LPA_DEBUG : START :: ISOLATION BIND DETAILS ###########"
+#@                 puts "   ====== PORT MAP DETAILS ======"
+#@                 puts $iso_ports_list
+#@                 puts "   ====== PARAMETER MAP DETAILS ======"
+#@                 puts $iso_params_list
+#@                 puts "########## LPA_DEBUG : END :: ISOLATION BIND DETAILS ###########"
+#@                 puts ""
+#@ 
+#@             }
+#@ 
+#@             bind_checker snps_iso_change_msg                     -module SNPS_UPF_isolation_change_msg                     -elements [ list $POL ]                     -parameters $iso_params_list                     -ports $iso_ports_list
+#@ 
+#@             array unset iso_detail
+#@         }
+#@         array unset pd_detail
+#@     }
+#@ }
+#@ 
+#@ 
+#@ ###########################################
+#@ ## BIND CHECKER FOR PST RELATED CHECKERS ##
+#@ ###########################################
+#@ 
+#@ proc snps_upf_pst_state_change_msg {} {
+#@     foreach pst [ query_pst * ] {
+#@         array set pst_detail [query_pst $pst -detailed]
+#@         set illstate "ILLEGAL"
+#@         set pst_state_detail [ query_pst_state * -pst $pst -detailed ]
+#@         #set pst_states [split $pst_state_detail " "]
+#@         set pst_states [query_pst_state * -pst $pst]
+#@         set numStates [ llength $pst_states ]
+#@         set stateDetails [concat "{" $illstate $pst_states "}" ]
+#@ 
+#@         join $stateDetails " "
+#@         set STATENAMES [list STATE_NAMES $stateDetails ]
+#@         set NUMSTATE [ list NUMSTATE $numStates ]
+#@         set SNAME [list PST_NAME @$pst ]
+#@         #set STATE [ list STATE @$pst.designState ]
+#@         set STATE [ list STATE $pst_detail(design_state)]
+#@ 
+#@         set pst_params_list {}
+#@         lappend pst_params_list $SNAME $NUMSTATE $STATENAMES
+#@ 
+#@         set pst_ports_list {}
+#@         lappend pst_ports_list $STATE
+#@ 
+#@ 
+#@         if [info exists ::env(SNPS_UPF_LPA_DEBUG)] {
+#@ 
+#@             puts ""
+#@             puts "########## LPA_DEBUG : START :: PST BIND DETAILS ###########"
+#@             puts "   ====== PORT MAP DETAILS ======"
+#@             puts $pst_ports_list
+#@             puts "   ====== PARAMETER MAP DETAILS ======"
+#@             puts $pst_params_list
+#@             puts "########## LPA_DEBUG : END :: PST BIND DETAILS ###########"
+#@             puts ""
+#@ 
+#@         }
+#@ 
+#@         bind_checker snps_pst_state_change                 -module SNPS_UPF_pst_state_change_msg                 -elements [list  @$pst ]                 -parameters $pst_params_list                 -ports $pst_ports_list
+#@ 
+#@         array unset pst_detail
+#@     }
+#@ }
+#@ 
+#@ 
+#@ 
+#@ ########################################################
+#@ ## BIND CHECKER FOR RETENTION POLICY RELATED CHECKERS ##
+#@ ########################################################
+#@ 
+#@ proc snps_upf_retention_msg {} {
+#@     foreach PD [ query_power_domain *] {
+#@         array set pd_detail [query_power_domain $PD -detailed ]
+#@         foreach RET [ query_retention * -domain $PD ] {
+#@             array set ret_control_detail [query_retention_control $RET -domain $PD -detailed]
+#@             array set ret_detail [ query_retention $RET -domain $PD -detailed ]
+#@ 
+#@             set PD_NAME                   [list PD_NAME $PD]
+#@             set RET_NAME                  [list RET_NAME $RET]
+#@             set PD_NAME                   [list PD_NAME $ret_detail(domain)]
+#@             set SAVE_LIST                 [list $ret_detail(save_signal)]
+#@             set SAVE_COND                 [list SAVE_COND $ret_detail(save_condition)]
+#@             set RESTORE_LIST              [list $ret_detail(restore_signal)]
+#@             set RESTORE_COND              [list RESTORE_COND $ret_detail(restore_condition)]
+#@             set RETENTION_COND    [list RETENTION_COND $ret_detail(restore_condition)]
+#@             set RET_PN                    [list RET_PN $ret_detail(retention_power_net)]
+#@             set RET_PN_NAME               [list RET_PN_NAME [query_original_name $ret_detail(retention_power_net)]]
+#@             set RET_GN                    [list RET_GN $ret_detail(retention_ground_net)]
+#@             set RET_GN_NAME               [list RET_GN_NAME [query_original_name $ret_detail(retention_ground_net)]]
+#@             set RET_PPN                   [list RET_PN $pd_detail(primary_power_net)]
+#@             set PPN                               [list PPN $pd_detail(primary_power_net)]
+#@             set RET_PGN                   [list RET_GN $pd_detail(primary_ground_net)]
+#@             set PGN                               [list PGN $pd_detail(primary_ground_net)]
+#@ 
+#@             set SAVE_COND_DEFINED                 [list SAVE_COND_DEFINED 0]
+#@             set RESTORE_COND_DEFINED              [list RESTORE_COND_DEFINED 0]
+#@             set RETENTION_COND_DEFINED    [list RETENTION_COND_DEFINED 0]
+#@ 
+#@             set assert_r_mutex [list $ret_control_detail(assert_r_mutex)]
+#@             set assert_s_mutex [list $ret_control_detail(assert_s_mutex)]
+#@             if [info exists ret_control_detail(assert_rs_mutex)] {
+#@                 if {($ret_control_detail(assert_rs_mutex) != "")} {
+#@                     set assert_rs_mutex [list $ret_control_detail(assert_rs_mutex)]
+#@                     set RS_MUTEX_DEFINED 2
+#@                 } else {
+#@                     set assert_rs_mutex [list {NA NA}]
+#@                     set RS_MUTEX_DEFINED 1
+#@                 }
+#@                 set ASSERT_RS_MUTEX_SIG      [list ASSERT_RS_MUTEX_SIG]
+#@                 set ASSERT_RS_MUTEX_SIG_NAME         [list ASSERT_RS_MUTEX_SIG_NAME]
+#@                 set ASSERT_RS_MUTEX_SENSE [list ASSERT_RS_MUTEX_SENSE]
+#@                 foreach item $assert_rs_mutex {
+#@                     lappend ASSERT_RS_MUTEX_SIG     [ lindex $item 0]
+#@                     lappend ASSERT_RS_MUTEX_SIG_NAME        [ lindex $item 0]
+#@                     lappend ASSERT_RS_MUTEX_SENSE   [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@                 }
+#@             } else {
+#@                 set RS_MUTEX_DEFINED 0
+#@             }
+#@ 
+#@             set     ASSERT_RS_MUTEX_DEFINED [list ASSERT_RS_MUTEX_DEFINED $RS_MUTEX_DEFINED]
+#@ 
+#@ 
+#@             set SAVE               [list SAVE]
+#@             set SAVE_SIG   [list SAVE_SIG ]
+#@             set SAVE_SENSE [list SAVE_SENSE]
+#@             foreach item $SAVE_LIST {
+#@                 lappend SAVE               [lindex $item 0]
+#@                 lappend SAVE_SIG   [lindex $item 0]
+#@                 lappend SAVE_SENSE [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@             }
+#@ 
+#@             set RESTORE           [list RESTORE]
+#@             set RESTORE_SIG       [list RESTORE_SIG]
+#@             set RESTORE_SENSE [list RESTORE_SENSE]
+#@             foreach item $RESTORE_LIST {
+#@                 lappend RESTORE       [lindex $item 0]
+#@                 lappend RESTORE_SIG   [lindex $item 0]
+#@                 lappend RESTORE_SENSE [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@             }
+#@ 
+#@             set ASSERT_S_MUTEX_SIG        [list ASSERT_S_MUTEX_SIG]
+#@             set ASSERT_S_MUTEX_SIG_NAME   [list ASSERT_S_MUTEX_SIG_NAME]
+#@             set ASSERT_S_MUTEX_SENSE      [list ASSERT_S_MUTEX_SENSE]
+#@             foreach item $assert_s_mutex {
+#@                 lappend ASSERT_S_MUTEX_SIG          [ lindex $item 0]
+#@                 lappend ASSERT_S_MUTEX_SIG_NAME             [ lindex $item 0]
+#@                 lappend ASSERT_S_MUTEX_SENSE        [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@             }
+#@ 
+#@             set ASSERT_R_MUTEX_SIG        [list ASSERT_R_MUTEX_SIG]
+#@             set ASSERT_R_MUTEX_SIG_NAME   [list ASSERT_R_MUTEX_SIG_NAME]
+#@             set ASSERT_R_MUTEX_SENSE      [list ASSERT_R_MUTEX_SENSE]
+#@             foreach item $assert_r_mutex {
+#@                 lappend ASSERT_R_MUTEX_SIG          [ lindex $item 0]
+#@                 lappend ASSERT_R_MUTEX_SIG_NAME             [ lindex $item 0]
+#@                 lappend ASSERT_R_MUTEX_SENSE        [switch [lindex $item 1] { low {format 0} high {format 1} negedge {format 2} posedge {format 3}}]
+#@             }
+#@ 
+#@ 
+#@             set ret_params_list {}
+#@             lappend ret_params_list $PD_NAME $RET_NAME $RET_PN_NAME $RET_GN_NAME $SAVE_SIG $RESTORE_SIG
+#@ 
+#@             if {[lindex  $SAVE_SENSE  1] != ""} {
+#@                 lappend ret_params_list $SAVE_SENSE
+#@             }
+#@             if {[lindex  $RESTORE_SENSE  1] != ""} {
+#@                 lappend ret_params_list $RESTORE_SENSE
+#@             }
+#@             if {[lindex  $ASSERT_R_MUTEX_SENSE  1] != ""} {
+#@                 lappend ret_params_list $ASSERT_R_MUTEX_SENSE
+#@                 set R_MUTEX_DEFINED 1
+#@                 set ASSERT_R_MUTEX_DEFINED [list ASSERT_R_MUTEX_DEFINED $R_MUTEX_DEFINED]
+#@                 lappend ret_params_list $ASSERT_R_MUTEX_DEFINED
+#@             }
+#@             if {[lindex  $ASSERT_S_MUTEX_SENSE  1] != ""} {
+#@                 lappend ret_params_list $ASSERT_S_MUTEX_SENSE
+#@                 set S_MUTEX_DEFINED 1
+#@                 set ASSERT_S_MUTEX_DEFINED [list ASSERT_S_MUTEX_DEFINED $S_MUTEX_DEFINED]
+#@                 lappend ret_params_list $ASSERT_S_MUTEX_DEFINED
+#@             }
+#@             if {$RS_MUTEX_DEFINED == 2} {
+#@                 if {[lindex  $ASSERT_RS_MUTEX_SENSE  1] != ""} {
+#@                     lappend ret_params_list $ASSERT_RS_MUTEX_SENSE
+#@                 }
+#@             }
+#@             if {$RS_MUTEX_DEFINED >= 0} {
+#@                 lappend ret_params_list $ASSERT_RS_MUTEX_DEFINED
+#@             }
+#@ 
+#@             set ret_ports_list {}
+#@             lappend ret_ports_list $SAVE $RESTORE $PPN $PGN
+#@ 
+#@             if {[lindex  $RET_PN  1] != ""} {
+#@                 lappend ret_ports_list $RET_PN
+#@             } else {
+#@                 lappend ret_ports_list $RET_PPN
+#@             }
+#@             if {[lindex  $RET_GN 1] != ""} {
+#@                 lappend ret_ports_list $RET_GN
+#@             } else {
+#@                 lappend ret_ports_list $RET_PGN
+#@             }
+#@             if {[lindex  $SAVE_COND  1] != ""} {
+#@                 lappend ret_ports_list $SAVE_COND
+#@             } else {
+#@                 lappend ret_params_list $SAVE_COND_DEFINED
+#@             }
+#@             if  {[lindex  $RESTORE_COND  1] != ""} {
+#@                 lappend ret_ports_list $RESTORE_COND
+#@             } else {
+#@                 lappend ret_params_list $RESTORE_COND_DEFINED
+#@             }
+#@             if  {[lindex  $RETENTION_COND  1] != ""} {
+#@                 lappend ret_ports_list $RETENTION_COND
+#@             } else {
+#@                 lappend ret_params_list $RETENTION_COND_DEFINED
+#@             }
+#@             if {[lindex  $ASSERT_R_MUTEX_SIG  1] != ""} {
+#@                 lappend ret_ports_list $ASSERT_R_MUTEX_SIG
+#@                 lappend ret_params_list $ASSERT_R_MUTEX_SIG_NAME
+#@             }
+#@             if {[lindex  $ASSERT_S_MUTEX_SIG  1] != ""} {
+#@                 lappend ret_ports_list $ASSERT_S_MUTEX_SIG
+#@                 lappend ret_params_list $ASSERT_S_MUTEX_SIG_NAME
+#@             }
+#@             if {$RS_MUTEX_DEFINED == 2} {
+#@                 if {[lindex  $ASSERT_RS_MUTEX_SIG  1] != ""} {
+#@                     lappend ret_ports_list $ASSERT_RS_MUTEX_SIG
+#@                     lappend ret_params_list $ASSERT_RS_MUTEX_SIG_NAME
+#@                 }
+#@             }
+#@ 
+#@             if [info exists ::env(SNPS_UPF_LPA_DEBUG)] {
+#@ 
+#@                 puts ""
+#@                 puts "########## LPA_DEBUG : START :: RETENTION BIND DETAILS ###########"
+#@                 puts "   ====== PORT MAP DETAILS ======"
+#@                 puts $ret_ports_list
+#@                 puts "   ====== PARAMETER MAP DETAILS ======"
+#@                 puts $ret_params_list
+#@                 puts "########## LPA_DEBUG : END :: RETENTION BIND DETAILS ###########"
+#@                 puts ""
+#@ 
+#@             }
+#@ 
+#@             bind_checker snps_retention_policy                     -module SNPS_UPF_retention_policy_msg                     -elements [list  @$PD.retention.$RET ]                     -ports $ret_ports_list                     -parameters $ret_params_list
+#@ 
+#@             array unset ret_control_detail
+#@             array unset ret_detail
+#@         }
+#@         array unset     pd_detail
+#@     }
+#@ }
+#@ 
+#@ 
+#@ 
+#@ ####################################################
+#@ ## BIND CHECKER FOR POWER SWITCH RELATED CHECKERS ##
+#@ ####################################################
+#@ 
+#@ proc snps_upf_powerswitch_msg {} {
+#@     foreach sw [ query_power_switch * ] {
+#@         array set sw_detail [query_power_switch $sw -detailed]
+#@         set simplename $sw_detail(switch_name)
+#@         set SW_NAME [list SW_NAME @$simplename ]
+#@         #set SW_STATE [ list STATE @$sw.switchState ]
+#@         set SW_STATE [ list STATE $sw_detail(switch_state) ]
+#@         set supplyOut $sw_detail(output_supply_port)
+#@         set OSP_NAME  [ list OSP_NAME [lindex $supplyOut 0] ]
+#@         set OSP [ list OSP [lindex $supplyOut 1] ]
+#@         set OSP_SN_NAME [ list OSP_SN_NAME [lindex $supplyOut 1] ]
+#@         set isp_ports [list]
+#@         set isp_sn_names [list]
+#@         foreach supplyIn  $sw_detail(input_supply_port) {
+#@             lappend isp_ports [ lindex $supplyIn 0 ]
+#@             lappend isp_sn_names [ lindex $supplyIn 1 ]
+#@         }
+#@         join $isp_ports " "
+#@         join $isp_sn_names " "
+#@         set ispPorts [ concat "{" $isp_ports "}" ]
+#@         set ispSn [ concat "{" $isp_sn_names "}" ]
+#@         set ISP_NAME [ list ISP_NAME $ispPorts ]
+#@         set ISP [ list ISP $ispSn ]
+#@         set ISP_SN_NAME [ list ISP_SN_NAME $ispSn ]
+#@ 
+#@         set ctrl_port [list]
+#@         set ctrl_sig [list]
+#@         foreach control_port  $sw_detail(control_port) {
+#@             lappend ctrl_port [ lindex $control_port 0 ]
+#@             lappend ctrl_sig [ lindex $control_port 1]
+#@         }
+#@         join $ctrl_port " "
+#@         join $ctrl_sig " "
+#@         set ctrlPort [ concat "{" $ctrl_port "}" ]
+#@         set ctrlSig [ concat "{" $ctrl_sig "}" ]
+#@         set CONTROL [ list CONTROL $ctrlPort ]
+#@         set CONTROL_PORT [ list CONTROL_PORT $ctrlPort ]
+#@         set CONTROL_SIG [ list CONTROL_SIG [query_original_full_name $ctrlSig]]
+#@ 
+#@         set NUMINP [ llength $sw_detail(input_supply_port) ]
+#@         set NUMCTRL [ llength $sw_detail(control_port) ]
+#@         set ISP_COUNT [ list ISP_COUNT $NUMINP ]
+#@         set CONTROL_COUNT [ list CONTROL_COUNT $NUMCTRL ]
+#@ 
+#@ 
+#@         set list_psw_states $sw_detail(states)
+#@         set nums [llength $list_psw_states]
+#@ 
+#@         set states_names [list]
+#@         set states_type [list]
+#@         foreach state $list_psw_states {
+#@             lappend states_names [lindex $state 0]
+#@             lappend states_type  [lindex $state 1]
+#@         }
+#@         set states_names1 [ concat "{" $states_names "}" ]
+#@         set states_type1 [ concat "{" $states_type "}" ]
+#@         set STATES [list STATES $states_names1]
+#@         set STATES_TYPE [list STATES_TYPE $states_type1]
+#@         set NUMSTATES [ list NUMSTATES $nums ]
+#@ 
+#@ 
+#@ 
+#@         set psw_params_list {}
+#@         lappend psw_params_list $SW_NAME $ISP_COUNT $CONTROL_COUNT $ISP_NAME $ISP_SN_NAME $NUMSTATES $OSP_NAME $OSP_SN_NAME $CONTROL_SIG $CONTROL_PORT $STATES $STATES_TYPE
+#@ 
+#@         set psw_ports_list {}
+#@         lappend psw_ports_list $SW_STATE $OSP $ISP $CONTROL
+#@ 
+#@         if [info exists ::env(SNPS_UPF_LPA_DEBUG)] {
+#@ 
+#@             puts ""
+#@             puts "########## LPA_DEBUG : START :: POWERSWITCH BIND DETAILS ###########"
+#@             puts "   ====== PORT MAP DETAILS ======"
+#@             puts $psw_ports_list
+#@             puts "   ====== PARAMETER MAP DETAILS ======"
+#@             puts $psw_params_list
+#@             puts "########## LPA_DEBUG : END :: POWERSWITCH BIND DETAILS ###########"
+#@             puts ""
+#@ 
+#@         }
+#@ 
+#@         bind_checker snps_psw_state_change                 -module  SNPS_UPF_psw_state_change_msg                 -elements [list  @$sw ]                 -parameters $psw_params_list                 -ports $psw_ports_list
+#@ 
+#@         array unset sw_detail
+#@     }
+#@ }
+#@ 
+#@ 
+#@ snps_upf_pd_sn_iso_state_change_msg
+#@ snps_upf_pst_state_change_msg
+#@ snps_upf_powerswitch_msg
+#@ snps_upf_retention_msg
+#@ # -- End source /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_bind.tcl
+

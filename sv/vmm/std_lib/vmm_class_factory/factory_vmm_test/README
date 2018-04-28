@@ -1,0 +1,32 @@
+
+
+Keywords:
+		Search keywords:  set_config
+
+Technical content:
+ 
+		Title: 	Set factory instance in set_config  
+ 
+		Objective:   Demonstrates usage of set_config to set a factory instance.
+
+		Description:  This test sets a factory instance in set_config() for test1.
+		              test1 will not run in concatenation with other tests when used with +vmm_test=ALL_TESTS.
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+        runall          -- Run tests in concatenation.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_class_factory/factory_vmm_test
+		DIAGRAMS: 		None

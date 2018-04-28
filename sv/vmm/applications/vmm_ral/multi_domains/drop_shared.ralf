@@ -1,0 +1,139 @@
+
+
+register srw0 {
+   shared (srw_reg0);
+   field value {
+      bits 8;
+   }
+}
+
+register srw1 {
+   shared (srw_reg1);
+   field value {
+      bits 8;
+   }
+}
+
+memory smem0 {
+   shared (srw_mem0);
+   size 256;
+   bits 16;
+}
+
+memory smem1 {
+   shared (srw_mem1);
+   size 256;
+   bits 16;
+}
+
+block dropbox {
+   domain left {
+      bytes 2;
+
+      register l_rw0 (lrw_reg) @1 {
+         field value {
+            bits 8;
+         }
+      }
+      register l_wo0 (lwo_reg) {
+         field value {
+            bits 8;
+	    access wo;
+	    reset 'hA5;
+         }
+      }
+
+      register wide (lrw_wide) {
+         field wide_f1 {
+            bits 8;
+            access rw;
+            reset 'h54;
+         }
+         field wide_f2 {
+            bits 32;
+            access rw;
+            reset 'hDCBA_9876;
+         }
+         field wide_f3 {
+            bits 8;
+            access rw;
+            reset 'hFE;
+         }
+      }
+
+      register l_mbits {
+         field rcf (rc_bits)  { bits 2; reset 2'b10; access rc; }
+         field w1f (w1c_bits) { bits 2; reset 2'b10; access w1c; }
+         field rof (ro_bits)  { bits 2; reset 2'b10; access ro; }
+      }
+
+      register l_rw_file[4] @0x008 {
+         field value {
+            bits 8;
+         }
+      }
+
+      register l_ro0 {
+         field value {
+            bits 8;
+            access ro;
+            reset 'h5C;
+         }
+      }
+
+      register srw0 @'h010;
+      register srw1 write;
+
+      memory l_mem0 (lrw_mem) @'h100 {
+         size 256;
+         bits 16;
+      }
+
+      memory smem0 @'h200;
+      memory smem1 @'h300 write;
+   }
+
+   domain right {
+      bytes 2;
+
+      register r_rw0 (rrw_reg) @1 {
+         field value {
+            bits 8;
+         }
+      }
+      register r_wo0 (rwo_reg) {
+         field value {
+            bits 8;
+	    access wo;
+	    reset 'hA5;
+         }
+      }
+
+      register srw0 @'h040;
+      register srw1 read;
+
+      memory r_mem0 (rrw_mem) @'h300 {
+         size 256;
+         bits 16;
+      }
+
+      memory smem0 @'h100;
+      memory smem1 @'h200 read;
+   }
+}
+
+system dropsys {
+   domain up {
+      bytes 2;
+
+      block dropbox.left=box0 (u0) @'h00000;
+      block dropbox.left=box1 (u1) @'h10000;
+   }
+
+   domain down {
+      bytes 2;
+
+      block dropbox.right=box0 (u0) @'h00000;
+      block dropbox.right=box1 @'h10000;
+   }
+}

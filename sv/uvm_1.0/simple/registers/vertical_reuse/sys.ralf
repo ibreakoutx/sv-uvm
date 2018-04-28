@@ -1,0 +1,13 @@
+block B {
+  bytes 1;
+  register R @'h0 {
+    bytes 1;
+    field F {
+      bits 1;
+    }
+  }
+}
+system S {
+  bytes 1;
+  block B[2] @'h100+256;
+}

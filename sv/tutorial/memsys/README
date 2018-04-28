@@ -1,0 +1,31 @@
+Please follow the steps below to do this section of the lab
+
+step1:  cd test/
+
+step2:  create memsys_test.v to do the following tasks. 
+        1) init_ports() and reset_sequence(): initialization of ports and reset sequence
+        2) readOP() and writeOP(): to drive read and write operations similar to those in cntrlr.
+        3) use fork/join to spawn a series of read and write request to memory system with random addresses and data and test the system
+        4) implement CPU class and do read/write/randomization through objects
+        5) modify the fork/join so that the read/write process are synchronized using semaphores and mailboxes 
+step4:  compile and run the simulation
+To verify the memory system using VCS, please do the following:
+% cd solution
+ Run the testcase:
+Using shell scripts:
+	
+	memsys0_comp.csh  -- Compiles the design with memsys0.vr which has semaphores
+	memsys0_run.csh	  -- Runs the desgin for memsys0.vr 
+	memsys1_comp.csh  -- Compiles the  design with memsys1.vr which has mailboxes triggers/waits
+	memsys1_run.csh   -- Runs the desgin for memsys1.vr
+Using Makefile:
+	memsys0_comp    -- Compiles the design with memsys0.vr which has semaphores
+ 	memsys0_run 	-- Runs the desgin for memsys0.vr 
+ 	memsys1_comp	-- Compiles the  design with memsys1.vr which has mailboxes triggers/waits
+     	memsys1_run	--Runs the desgin for memsys1.vr
+	memsys0         -- Do both compilation and runs steps for memsys0.vr
+	memsys1         -- Do both compilation and runs steps for memsys1.vr
+	all 		-- Do all the above steps.
+	
+ Both memsys0.sv and memsys1.sv use automatic randomization, constraint solving and functional coverage
+Thanks.

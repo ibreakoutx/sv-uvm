@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM telecom router Driver Receiver
+ 
+Technical content:
+ 
+		Title:    	Developing VMM-compliant verification environment for an ATM router
+ 
+		Objective: 	 To explain how to develop VMM-compliant data models, generators and transactors to efficiently and easily create a robust constraint random verification environment for telecom domains. 
+		Description: 	The ATM router has multiple/configurable number of i/p and o/p ports. Packets can be transmitted from any input to o/p ports. There are specific charectreistics of the packets and the Recievers have to accordingly identify these packets by decoupling this information. The example shows how multiple driver /receiver VMM componenst can be ceated, and along with the Packet generators simulate different interesting traffic patterns while tracking coverage and ensuring data integrity throughh environment scoreboard components.
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/tech_domains/telecom/atm_router
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

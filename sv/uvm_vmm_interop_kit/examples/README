@@ -1,0 +1,9 @@
+To run vcs with interop libs:
+
+setup VCS0912-7 or later
+
+Execute:
+	cd any_example
+	gmake
+
+*.log file will contain compilation and simulation log

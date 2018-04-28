@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	vmm1.2 SV VMM TLM Analysis port 
+
+Technical content:
+ 
+		Title: 		 VMM_TLM test for analysis ports 
+ 
+		Objective:     Usage of OSCI's TLM like analysis ports in VMM.
+
+		Description:   This test shows the usage of OSCI's TLM like analysis ports in VMM environment. One can connect analysis port to analysisexport and call "write" method which is implemented in xactor where analysis export is instantiated.
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_tlm/tlm_analysis
+		DIAGRAMS: 		None

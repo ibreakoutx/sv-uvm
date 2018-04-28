@@ -1,0 +1,79 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Phase synhcronization
+ 
+		Objective: 	This example shows  how individual phases of UVM is synchronized with vmm_env methods
+
+
+		Description:
+VMM                 UVM
+     |
+   gen_cfg
+     |
+    build________________build
+           uvm_build       |
+                         connect
+      _____________________/
+     |
+     |_____________end_of_elaboration
+                           |
+                   start_of_simulation
+      _____________________/
+     |
+     |
+     |\__FORK run phase__
+     |                    \
+   reset_dut              run
+     |                     |
+   cfg_dut                 |
+     |                     |
+   start                   |
+     |                     |
+wait_for_end               |
+     |                     |
+     |_ stop  --> FORK     |
+     | request        \    |
+     |               stop  |
+     |                 |   |
+     |                 |-->X
+     |__ WAIT -------> *
+         for run
+      ___/  complete
+   stop
+     |
+  cleanup
+     |
+     |
+   report
+     |___________________extract
+         uvm_report        |
+                          check
+                           |
+                         report
+                           |
+                         <user>
+                           |
+      _____________________*
+     |
+<final report>
+     |
+     * 
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

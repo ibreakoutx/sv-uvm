@@ -1,0 +1,33 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_test 
+ 
+Technical content:
+ 
+		Title:    Multi-stream scenario coordination with VMM Multistream Scneario genearator
+ 
+		Objective: 	Demonstrate how to co-ordinate multiple multi-stream generators and their scenario execution and  to get a multi-stream scenario execute multi-stream scenarios of other multi-stream generators?
+
+		Description: 	
+VMM base classes vmm_ms_scenario and vmm_ms_scenario_gen provide facility for co-ordination among scenarios of different multi-stream generators.  get_ms_scenario() method of a vmm_ms_scenario can return the scenario handle of any generator registered to the top level generator which executes the top level scenario.  This way top level scenario can execute the scenarios of other generators in its execute() method. In such cases, generators except the top level generator should not be started.  (or they can be stopped using stop_xactor()).  User can also reuse a block level scenario at the system level using this feature.  
+  Below is an example which shows 2 multi-stream scenarios (gen1_scenario and gen2_scenario) of the generators (gen1 and gen2). Generators are registered to the top level generator(top_gen). Top level scenario (top_scenario) of the top level generator (top_gen) executes these 2 scenarios sequentially. The order of execution of these scenarios can be controlled as well.  
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_mss/mss_advanced
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

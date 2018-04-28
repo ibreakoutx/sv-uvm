@@ -1,0 +1,930 @@
+system DMAC {
+    bytes 4;
+    block Software_Handshake_Registers @'h368 {
+        bytes 8;
+        register ReqSrcReg @'h0 {
+            bytes 8;
+            field SRC_REQ @'h0 {
+                hard_reset 'h0;
+            }
+            field SRC_REQ_WE @'h8 {
+                hard_reset 'h0;
+            }
+        }
+        register ReqDstReg @'h8 {
+            bytes 8;
+            field DST_REQ @'h0 {
+                hard_reset 'h0;
+            }
+            field DST_REQ_WE @'h8 {
+                hard_reset 'h0;
+            }
+        }
+        register SglRqSrcReg @'h10 {
+            bytes 8;
+            field SRC_SGLREQ @'h0 {
+                hard_reset 'h0;
+            }
+            field SRC_SGLREQ_WE @'h8 {
+                hard_reset 'h0;
+            }
+        }
+        register SglRqDstReg @'h18 {
+            bytes 8;
+            field DST_SGLREQ @'h0 {
+                hard_reset 'h0;
+            }
+            field DST_SGLREQ_WE @'h8 {
+                hard_reset 'h0;
+            }
+        }
+        register LstSrcReg @'h20 {
+            bytes 8;
+            field LSTSRC @'h0 {
+                hard_reset 'h0;
+            }
+            field LSTSRC_WE @'h8 {
+                hard_reset 'h0;
+            }
+        }
+        register LstDstReg @'h28 {
+            bytes 8;
+            field LSTDST @'h0 {
+                hard_reset 'h0;
+            }
+            field LSTDST_WE @'h8 {
+                hard_reset 'h0;
+            }
+        }
+    }
+    block Miscellaneous_Registers @'h398 {
+        bytes 8;
+        register DmaCfgReg @'h0 {
+            bytes 8;
+            field DMA_EN @'h0 ;
+        }
+        register ChEnReg @'h8 {
+            bytes 8;
+            field CH_EN @'h0 ;
+            field CH_EN_WE @'h8 ;
+        }
+        register DmaIdReg @'h10 {
+            bytes 8;
+            field DMA_ID @'h0 {
+                bits 32;
+                access ro;
+                hard_reset 'h0;
+            }
+        }
+        register DmaTestReg @'h18 {
+            bytes 8;
+            field TEST_SLV_IF @'h0 ;
+        }
+        register DMA_COMP_PARAMS_6 @'h30 {
+            bytes 8;
+            field CH7_DTW @'h20 {
+                bits 3;
+                access ro;
+            }
+            field CH7_STW @'h23 {
+                bits 3;
+                access ro;
+            }
+            field CH7_STAT_DST @'h26 {
+                access ro;
+            }
+            field CH7_STAT_SRC @'h27 {
+                access ro;
+            }
+            field CH7_DST_SCA_EN @'h28 {
+                access ro;
+            }
+            field CH7_SRC_GAT_EN @'h29 {
+                access ro;
+            }
+            field CH7_LOCK_EN @'h2a {
+                access ro;
+            }
+            field CH7_MULTI_BLK_EN @'h2b {
+                access ro;
+            }
+            field CH7_CTL_WB_EN @'h2c {
+                access ro;
+            }
+            field CH7_HC_LLP @'h2d {
+                access ro;
+            }
+            field CH7_FC @'h2e {
+                bits 2;
+                access ro;
+            }
+            field CH7_MAX_MULT_SIZE @'h30 {
+                bits 3;
+                access ro;
+            }
+            field CH7_DMS @'h33 {
+                bits 3;
+                access ro;
+            }
+            field CH7_LMS @'h36 {
+                bits 3;
+                access ro;
+            }
+            field CH7_SMS @'h39 {
+                bits 3;
+                access ro;
+            }
+            field CH7_FIFO_DEPTH @'h3c {
+                bits 3;
+                access ro;
+            }
+        }
+        register DMA_COMP_PARAMS_5 @'h38 {
+            bytes 8;
+            field CH6_DTW @'h0 {
+                bits 3;
+                access ro;
+            }
+            field CH6_STW @'h3 {
+                bits 3;
+                access ro;
+            }
+            field CH6_STAT_DST @'h6 {
+                access ro;
+            }
+            field CH6_STAT_SRC @'h7 {
+                access ro;
+            }
+            field CH6_DST_SCA_EN @'h8 {
+                access ro;
+            }
+            field CH6_SRC_GAT_EN @'h9 {
+                access ro;
+            }
+            field CH6_LOCK_EN @'ha {
+                access ro;
+            }
+            field CH6_MULTI_BLK_EN @'hb {
+                access ro;
+            }
+            field CH6_CTL_WB_EN @'hc {
+                access ro;
+            }
+            field CH6_HC_LLP @'hd {
+                access ro;
+            }
+            field CH6_FC @'he {
+                bits 2;
+                access ro;
+            }
+            field CH6_MAX_MULT_SIZE @'h10 {
+                bits 3;
+                access ro;
+            }
+            field CH6_DMS @'h13 {
+                bits 3;
+                access ro;
+            }
+            field CH6_LMS @'h16 {
+                bits 3;
+                access ro;
+            }
+            field CH6_SMS @'h19 {
+                bits 3;
+                access ro;
+            }
+            field CH6_FIFO_DEPTH @'h1c {
+                bits 3;
+                access ro;
+            }
+            field CH5_DTW @'h20 {
+                bits 3;
+                access ro;
+            }
+            field CH5_STW @'h23 {
+                bits 3;
+                access ro;
+            }
+            field CH5_STAT_DST @'h26 {
+                access ro;
+            }
+            field CH5_STAT_SRC @'h27 {
+                access ro;
+            }
+            field CH5_DST_SCA_EN @'h28 {
+                access ro;
+            }
+            field CH5_SRC_GAT_EN @'h29 {
+                access ro;
+            }
+            field CH5_LOCK_EN @'h2a {
+                access ro;
+            }
+            field CH5_MULTI_BLK_EN @'h2b {
+                access ro;
+            }
+            field CH5_CTL_WB_EN @'h2c {
+                access ro;
+            }
+            field CH5_HC_LLP @'h2d {
+                access ro;
+            }
+            field CH5_FC @'h2e {
+                bits 2;
+                access ro;
+            }
+            field CH5_MAX_MULT_SIZE @'h30 {
+                bits 3;
+                access ro;
+            }
+            field CH5_DMS @'h33 {
+                bits 3;
+                access ro;
+            }
+            field CH5_LMS @'h36 {
+                bits 3;
+                access ro;
+            }
+            field CH5_SMS @'h39 {
+                bits 3;
+                access ro;
+            }
+            field CH5_FIFO_DEPTH @'h3c {
+                bits 3;
+                access ro;
+            }
+        }
+        register DMA_COMP_PARAMS_4 @'h40 {
+            bytes 8;
+            field CH4_DTW @'h0 {
+                bits 3;
+                access ro;
+            }
+            field CH4_STW @'h3 {
+                bits 3;
+                access ro;
+            }
+            field CH4_STAT_DST @'h6 {
+                access ro;
+            }
+            field CH4_STAT_SRC @'h7 {
+                access ro;
+            }
+            field CH4_DST_SCA_EN @'h8 {
+                access ro;
+            }
+            field CH4_SRC_GAT_EN @'h9 {
+                access ro;
+            }
+            field CH4_LOCK_EN @'ha {
+                access ro;
+            }
+            field CH4_MULTI_BLK_EN @'hb {
+                access ro;
+            }
+            field CH4_CTL_WB_EN @'hc {
+                access ro;
+            }
+            field CH4_HC_LLP @'hd {
+                access ro;
+            }
+            field CH4_FC @'he {
+                bits 2;
+                access ro;
+            }
+            field CH4_MAX_MULT_SIZE @'h10 {
+                bits 3;
+                access ro;
+            }
+            field CH4_DMS @'h13 {
+                bits 3;
+                access ro;
+            }
+            field CH4_LMS @'h16 {
+                bits 3;
+                access ro;
+            }
+            field CH4_SMS @'h19 {
+                bits 3;
+                access ro;
+            }
+            field CH4_FIFO_DEPTH @'h1c {
+                bits 3;
+                access ro;
+            }
+            field CH3_DTW @'h20 {
+                bits 3;
+                access ro;
+            }
+            field CH3_STW @'h23 {
+                bits 3;
+                access ro;
+            }
+            field CH3_STAT_DST @'h26 {
+                access ro;
+            }
+            field CH3_STAT_SRC @'h27 {
+                access ro;
+            }
+            field CH3_DST_SCA_EN @'h28 {
+                access ro;
+            }
+            field CH3_SRC_GAT_EN @'h29 {
+                access ro;
+            }
+            field CH3_LOCK_EN @'h2a {
+                access ro;
+            }
+            field CH3_MULTI_BLK_EN @'h2b {
+                access ro;
+            }
+            field CH3_CTL_WB_EN @'h2c {
+                access ro;
+            }
+            field CH3_HC_LLP @'h2d {
+                access ro;
+            }
+            field CH3_FC @'h2e {
+                bits 2;
+                access ro;
+            }
+            field CH3_MAX_MULT_SIZE @'h30 {
+                bits 3;
+                access ro;
+            }
+            field CH3_DMS @'h33 {
+                bits 3;
+                access ro;
+            }
+            field CH3_LMS @'h36 {
+                bits 3;
+                access ro;
+            }
+            field CH3_SMS @'h39 {
+                bits 3;
+                access ro;
+            }
+            field CH3_FIFO_DEPTH @'h3c {
+                bits 3;
+                access ro;
+            }
+        }
+        register DMA_COMP_PARAMS_3 @'h48 {
+            bytes 8;
+            field CH2_DTW @'h0 {
+                bits 3;
+                access ro;
+            }
+            field CH2_STW @'h3 {
+                bits 3;
+                access ro;
+            }
+            field CH2_STAT_DST @'h6 {
+                access ro;
+            }
+            field CH2_STAT_SRC @'h7 {
+                access ro;
+            }
+            field CH2_DST_SCA_EN @'h8 {
+                access ro;
+            }
+            field CH2_SRC_GAT_EN @'h9 {
+                access ro;
+            }
+            field CH2_LOCK_EN @'ha {
+                access ro;
+            }
+            field CH2_MULTI_BLK_EN @'hb {
+                access ro;
+            }
+            field CH2_CTL_WB_EN @'hc {
+                access ro;
+            }
+            field CH2_HC_LLP @'hd {
+                access ro;
+            }
+            field CH2_FC @'he {
+                bits 2;
+                access ro;
+            }
+            field CH2_MAX_MULT_SIZE @'h10 {
+                bits 3;
+                access ro;
+            }
+            field CH2_DMS @'h13 {
+                bits 3;
+                access ro;
+            }
+            field CH2_LMS @'h16 {
+                bits 3;
+                access ro;
+            }
+            field CH2_SMS @'h19 {
+                bits 3;
+                access ro;
+            }
+            field CH2_FIFO_DEPTH @'h1c {
+                bits 3;
+                access ro;
+            }
+            field CH1_DTW @'h20 {
+                bits 3;
+                access ro;
+            }
+            field CH1_STW @'h23 {
+                bits 3;
+                access ro;
+            }
+            field CH1_STAT_DST @'h26 {
+                access ro;
+            }
+            field CH1_STAT_SRC @'h27 {
+                access ro;
+            }
+            field CH1_DST_SCA_EN @'h28 {
+                access ro;
+            }
+            field CH1_SRC_GAT_EN @'h29 {
+                access ro;
+            }
+            field CH1_LOCK_EN @'h2a {
+                access ro;
+            }
+            field CH1_MULTI_BLK_EN @'h2b {
+                access ro;
+            }
+            field CH1_CTL_WB_EN @'h2c {
+                access ro;
+            }
+            field CH1_HC_LLP @'h2d {
+                access ro;
+            }
+            field CH1_FC @'h2e {
+                bits 2;
+                access ro;
+            }
+            field CH1_MAX_MULT_SIZE @'h30 {
+                bits 3;
+                access ro;
+            }
+            field CH1_DMS @'h33 {
+                bits 3;
+                access ro;
+            }
+            field CH1_LMS @'h36 {
+                bits 3;
+                access ro;
+            }
+            field CH1_SMS @'h39 {
+                bits 3;
+                access ro;
+            }
+            field CH1_FIFO_DEPTH @'h3c {
+                bits 3;
+                access ro;
+            }
+        }
+        register DMA_COMP_PARAMS_2 @'h50 {
+            bytes 8;
+            field CH0_DTW @'h0 {
+                bits 3;
+                access ro;
+            }
+            field CH0_STW @'h3 {
+                bits 3;
+                access ro;
+            }
+            field CH0_STAT_DST @'h6 {
+                access ro;
+            }
+            field CH0_STAT_SRC @'h7 {
+                access ro;
+            }
+            field CH0_DST_SCA_EN @'h8 {
+                access ro;
+            }
+            field CH0_SRC_GAT_EN @'h9 {
+                access ro;
+            }
+            field CH0_LOCK_EN @'ha {
+                access ro;
+            }
+            field CH0_MULTI_BLK_EN @'hb {
+                access ro;
+            }
+            field CH0_CTL_WB_EN @'hc {
+                access ro;
+            }
+            field CH0_HC_LLP @'hd {
+                access ro;
+            }
+            field CH0_FC @'he {
+                bits 2;
+                access ro;
+            }
+            field CH0_MAX_MULT_SIZE @'h10 {
+                bits 3;
+                access ro;
+            }
+            field CH0_DMS @'h13 {
+                bits 3;
+                access ro;
+            }
+            field CH0_LMS @'h16 {
+                bits 3;
+                access ro;
+            }
+            field CH0_SMS @'h19 {
+                bits 3;
+                access ro;
+            }
+            field CH0_FIFO_DEPTH @'h1c {
+                bits 3;
+                access ro;
+            }
+            field CHO_MULTI_BLK_TYPE @'h20 {
+                bits 4;
+                access ro;
+            }
+            field CH1_MULTI_BLK_TYPE @'h24 {
+                bits 4;
+                access ro;
+            }
+            field CH2_MULTI_BLK_TYPE @'h28 {
+                bits 4;
+                access ro;
+            }
+            field CH3_MULTI_BLK_TYPE @'h2c {
+                bits 4;
+                access ro;
+            }
+            field CH4_MULTI_BLK_TYPE @'h30 {
+                bits 4;
+                access ro;
+            }
+            field CH5_MULTI_BLK_TYPE @'h34 {
+                bits 4;
+                access ro;
+            }
+            field CH6_MULTI_BLK_TYPE @'h38 {
+                bits 4;
+                access ro;
+            }
+            field CH7_MULTI_BLK_TYPE @'h3c {
+                bits 4;
+                access ro;
+            }
+        }
+        register DMA_COMP_PARAMS_1 @'h58 {
+            bytes 8;
+            field CHO_MAX_BLK_SIZE @'h0 {
+                bits 4;
+                access ro;
+            }
+            field CH1_MAX_BLK_SIZE @'h4 {
+                bits 4;
+                access ro;
+            }
+            field CH2_MAX_BLK_SIZE @'h8 {
+                bits 4;
+                access ro;
+            }
+            field CH3_MAX_BLK_SIZE @'hc {
+                bits 4;
+                access ro;
+            }
+            field CH4_MAX_BLK_SIZE @'h10 {
+                bits 4;
+                access ro;
+            }
+            field CH5_MAX_BLK_SIZE @'h14 {
+                bits 4;
+                access ro;
+            }
+            field CH6_MAX_BLK_SIZE @'h18 {
+                bits 4;
+                access ro;
+            }
+            field CH7_MAX_BLK_SIZE @'h1c {
+                bits 4;
+                access ro;
+            }
+            field BIG_ENDIAN @'h20 {
+                access ro;
+            }
+            field INTR_IO @'h21 {
+                bits 2;
+                access ro;
+            }
+            field MAX_ABRST @'h23 {
+                access ro;
+            }
+            field NUM_CHANNELS @'h28 {
+                bits 3;
+                access ro;
+            }
+            field NUM_MASTER_INT @'h2b {
+                bits 2;
+                access ro;
+            }
+            field S_HDATA_WIDTH @'h2d {
+                bits 2;
+                access ro;
+            }
+            field M1_HDATA_WIDTH @'h2f {
+                bits 2;
+                access ro;
+            }
+            field M2_HDATA_WIDTH @'h31 {
+                bits 2;
+                access ro;
+            }
+            field M3_HDATA_WIDTH @'h33 {
+                bits 2;
+                access ro;
+            }
+            field M4_HDATA_WIDTH @'h35 {
+                bits 2;
+                access ro;
+            }
+            field NUM_HS_INT @'h37 {
+                bits 5;
+                access ro;
+            }
+            field ADD_ENCODED_PARAMS @'h3c {
+                access ro;
+            }
+            field STATIC_ENDIAN_SELECT @'h3d {
+                access ro;
+            }
+        }
+        register DmaCompsID @'h60 {
+            bytes 8;
+            field DMA_COMP_TYPE @'h0 {
+                bits 32;
+                access ro;
+                hard_reset 'h44571110;
+            }
+            field DMA_COMP_VERSION @'h20 {
+                bits 32;
+                access ro;
+                hard_reset 'h3231342a;
+            }
+        }
+    }
+    block Interrupt_Registers @'h2c0 {
+        bytes 8;
+        register RawTfr @'h0 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register RawBlock @'h8 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register RawSrcTran @'h10 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register RawDstTran @'h18 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register RawErr @'h20 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register StatusTfr @'h28 {
+            bytes 8;
+            field RAW @'h0 {
+                access ro;
+                hard_reset 'h0;
+            }
+        }
+        register StatusBlock @'h30 {
+            bytes 8;
+            field RAW @'h0 {
+                access ro;
+                hard_reset 'h0;
+            }
+        }
+        register StatusSrcTran @'h38 {
+            bytes 8;
+            field RAW @'h0 {
+                access ro;
+                hard_reset 'h0;
+            }
+        }
+        register StatusDstTran @'h40 {
+            bytes 8;
+            field RAW @'h0 {
+                access ro;
+                hard_reset 'h0;
+            }
+        }
+        register StatusErr @'h48 {
+            bytes 8;
+            field RAW @'h0 {
+                access ro;
+                hard_reset 'h0;
+            }
+        }
+        register MaskTfr @'h50 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register MaskBlock @'h58 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register MaskSrcTran @'h60 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register MaskDstTran @'h68 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register MaskErr @'h70 {
+            bytes 8;
+            field RAW @'h0 {
+                hard_reset 'h0;
+            }
+        }
+        register ClearTfr @'h78 {
+            bytes 8;
+            field RAW @'h0 {
+                access wo;
+            }
+        }
+        register ClearBlock @'h80 {
+            bytes 8;
+            field RAW @'h0 {
+                access wo;
+            }
+        }
+        register ClearSrcTran @'h88 {
+            bytes 8;
+            field RAW @'h0 {
+                access wo;
+            }
+        }
+        register ClearDstTran @'h90 {
+            bytes 8;
+            field RAW @'h0 {
+                access wo;
+            }
+        }
+        register ClearErr @'h98 {
+            bytes 8;
+            field RAW @'h0 {
+                access wo;
+            }
+        }
+        register StatusInt @'ha0 {
+            bytes 8;
+            field TFR @'h0 {
+                hard_reset 'h0;
+            }
+            field BLOCK @'h1 {
+                hard_reset 'h0;
+            }
+            field SRCT @'h2 {
+                hard_reset 'h0;
+            }
+            field DSTT @'h3 {
+                hard_reset 'h0;
+            }
+            field ERR @'h4 {
+                hard_reset 'h0;
+            }
+        }
+    }
+    block Channel_0_Registers @'h0 {
+        bytes 8;
+        register SAR0 @'h0 {
+            bytes 8;
+            field SAR @'h0 {
+                bits 32;
+                hard_reset 'h0;
+            }
+        }
+        register DAR0 @'h8 {
+            bytes 8;
+            field DAR @'h0 {
+                bits 32;
+                hard_reset 'h0;
+            }
+        }
+        register CTL0 @'h18 {
+            bytes 8;
+            field INT_EN @'h0 {
+                hard_reset 'h1;
+            }
+            field DST_TR_WIDTH @'h1 {
+                bits 3;
+                hard_reset 'h2;
+            }
+            field SRC_TR_WIDTH @'h4 {
+                bits 3;
+                hard_reset 'h2;
+            }
+            field DINC @'h7 {
+                bits 2;
+                hard_reset 'h0;
+            }
+            field SINC @'h9 {
+                bits 2;
+                hard_reset 'h0;
+            }
+            field DEST_MSIZE @'hb {
+                bits 3;
+                hard_reset 'h1;
+            }
+            field SRC_MSIZE @'he {
+                bits 3;
+                hard_reset 'h1;
+            }
+            field TT_FC @'h14 {
+                bits 3;
+                hard_reset 'h3;
+            }
+            field DMS @'h17 {
+                bits 2;
+                hard_reset 'h0;
+            }
+            field SMS @'h19 {
+                bits 2;
+                hard_reset 'h0;
+            }
+            field LLP_DST_EN @'h1b {
+                hard_reset 'h0;
+            }
+            field LLP_SRC_EN @'h1c {
+                hard_reset 'h0;
+            }
+            field BLOCK_TS @'h20 {
+                bits 12;
+                hard_reset 'h2;
+            }
+        }
+        register CFG0 @'h40 {
+            bytes 8;
+            field CH_PRIOR @'h5 {
+                bits 3;
+                hard_reset 'h0;
+            }
+            field CH_SUSP @'h8 {
+                hard_reset 'h0;
+            }
+            field FIFO_EMPTY @'h9 {
+                hard_reset 'h0;
+            }
+            field HS_SEL_DST @'ha {
+                hard_reset 'h1;
+            }
+            field HS_SEL_SRC @'hb {
+                hard_reset 'h1;
+            }
+            field DST_HS_POL @'h12 {
+                hard_reset 'h0;
+            }
+            field SRC_HS_POL @'h13 {
+                hard_reset 'h0;
+            }
+            field MAX_ABRST @'h14 {
+                bits 10;
+                hard_reset 'h0;
+            }
+            field FCMODE @'h20 {
+                hard_reset 'h0;
+            }
+            field FIFO_MODE @'h21 {
+                hard_reset 'h0;
+            }
+            field PROTCTL @'h22 {
+                bits 3;
+                hard_reset 'h1;
+            }
+        }
+    }
+}
+

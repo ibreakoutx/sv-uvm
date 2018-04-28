@@ -1,0 +1,57 @@
+set_design_top tb/dut
+
+create_power_domain TOP
+create_power_domain EXEC -elements exec_unit
+
+create_supply_port VDD
+create_supply_port VSS
+create_supply_port VDDG
+
+create_supply_net VDD   -domain TOP
+create_supply_net VSS   -domain TOP
+create_supply_net VDDG  -domain TOP
+
+create_supply_net VDDG  -domain EXEC -reuse
+create_supply_net VSS   -domain EXEC -reuse
+#create_supply_net VDDGS -domain TOP
+create_supply_net VDDGS -domain EXEC 
+
+connect_supply_net VDD -ports {VDD}
+connect_supply_net VSS -ports {VSS}
+connect_supply_net VDDG -ports VDDG
+
+set_domain_supply_net TOP   -primary_power_net VDD   -primary_ground_net VSS
+set_domain_supply_net EXEC  -primary_power_net VDDGS -primary_ground_net VSS
+
+create_power_switch exec_sw \
+  -domain EXEC  \
+  -input_supply_port { in VDDG } \
+  -output_supply_port { out VDDGS } \
+  -control_port { pwr_down pwr_down } \
+  -on_state { exec_on_state in  {!pwr_down}}
+
+# ISO
+#set_isolation exec_iso_in \
+  -domain EXEC \
+  -isolation_power_net VDD -isolation_ground_net VSS \
+  -clamp_value 0 \
+  -applies_to inputs
+
+#set_isolation_control exec_iso_in \
+  -domain EXEC \
+  -isolation_signal inst_iso_in \
+  -isolation_sense high \
+  -location parent
+
+set_isolation exec_iso_out \
+  -domain EXEC \
+  -isolation_power_net VDD -isolation_ground_net VSS \
+  -clamp_value 0 \
+  -applies_to outputs
+
+set_isolation_control exec_iso_out \
+  -domain EXEC \
+  -isolation_signal  iso_enable \
+  -isolation_sense high \
+  -location parent
+

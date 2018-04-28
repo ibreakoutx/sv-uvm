@@ -1,0 +1,24 @@
+interface ec_intf (input logic clk);
+
+   wire [15:0] addr;
+   wire rd;
+   wire wr;
+   wire [63:0] data;
+   wire ale;
+   wire rst_;
+   wire sot;
+
+   clocking cb @(posedge clk);
+      default input #1;
+      default output #1;
+      output addr;
+      output rd;
+      output wr;
+      inout data;
+      output ale;
+      output rst_;
+      output sot;
+   endclocking
+   default clocking cb;
+
+endinterface

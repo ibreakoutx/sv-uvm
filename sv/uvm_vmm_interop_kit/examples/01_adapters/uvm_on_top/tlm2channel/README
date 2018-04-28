@@ -1,0 +1,27 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting UVM producer to VMM consumers
+ 
+		Objective: 	This example shows how to use the IK to connect UVM producers to VMM producer through the <avt_uvm_tlm2channel> adapter
+
+		Description:  This example uses an <avt_uvm_tlm2channel> adapter to connect an UVM producer (generator) to a VMM consumer (driver). With this adapter, any UVM producer component that outputs transactions via any flavor of the TLM put interfaces can be connected to any any VMM consumer xactor that uses a vmm_channel to  obtain transactions.
+
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

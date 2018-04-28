@@ -1,0 +1,41 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_simulation vmm_test vmm_unit
+
+Technical content:
+ 
+		Title: 		VMM_SIMULATION methods
+ 
+		Objective:     Usage of vmm_simulation methods.
+
+		Description:   This test shows the usage of these methods.
+		               - get_top()
+																	- get_sim()
+																	- allow_new_phases()
+																	- insert_pre_test_phases()
+																	- add_pre_test_phases()
+																	- insert_post_test_phases()
+																	- add_post_test_phases()
+																	- display_phases()
+																 - list()
+																	- run_tests()
+																	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_simulation/vmm_simulation_methods
+		DIAGRAMS: 		None
+

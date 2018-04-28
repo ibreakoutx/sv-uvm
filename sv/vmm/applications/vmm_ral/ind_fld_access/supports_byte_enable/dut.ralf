@@ -1,0 +1,49 @@
+register TEMP_REG {
+
+  bytes 16;
+
+  field a {
+    bits  4;
+    access rw;
+  }
+  field b {
+    bits  4;
+    access rw;
+  }
+		field c @12 {
+			 bits  4;
+				access rw;
+		}
+  field d @16 {
+    bits  8;
+    access rw;
+  }
+  field e @32 {
+    bits  32;
+    access rw;
+  }
+  field f {
+    bits  24;
+    access rw;
+  }
+  field g {
+    bits  16;
+    access rw;
+  }
+  field h {
+    bits  24;
+    access rw;
+  }
+
+}
+
+block DUT_BLK {
+  bytes 2;
+  register TEMP_REG @'00 ;
+    
+}
+
+system DUT {
+  bytes 2;
+  block DUT_BLK=DUT_BLK (dut);
+}

@@ -1,0 +1,64 @@
+
+
+Keywords:
+		Search keywords:  RALF , RAL     
+ 
+Technical content:
+		Title: 	       RALF to RTL  	     	
+		Objective:     usage of  "RALF to RTL" feature	
+		Description:   	This example illustrates the usage of "RALF to RTL" feature
+
+1. RTL generation: 
+ralgen -t slave -R rtl slave.ralf
+
+The above command will generate the RTL code for the registers specified in the RALF file.
+The RTL is generated in the directory rtl.
+
+2. RAL Model generation:
+ralgen -t slave -b -l sv slave.ralf
+
+This command will generate the RAL model.
+
+3. Instantiation of Generated RTL:
+
+The generated RTL is instantiated in the user RTL (user_RTL/dut.sv)
+
+4. Compilation:
+user can use either the built-in RAL testcases or their own testcases. 
+
+a. To compile with user defined testcase
+vcs -sverilog -ntb_opts rvm +incdir+apb+user_RTL+$VCS_HOME/etc/rvm/sv/RAL/RTL+rtl +define+SLAVE_TOP_PATH=tb_top.dut tb_top.sv user_test.sv 
+
+b. To compile with bult-in RAL testcase
+vcs -sverilog -ntb_opts rvm +incdir+apb+user_RTL+$VCS_HOME/etc/rvm/sv/RAL/RTL+rtl +define+SLAVE_TOP_PATH=tb_top.dut tb_top.sv $VCS_HOME/etc/vmm/sv/RAL/tests/reg_access.sv
+
+5. Simulation:
+simv
+
+NOTE on user defined testcase used:
+==================================
+The testcase "user_test.sv" walks over all the regisers in the RALF file & does the following operations:
+1. Frontdoor write & Frontdoor read
+2. Frontdoor write & Backdoor read
+3. Backdoor write & Frontdoor read
+4. Backdoor write & Backdoor read
+
+	
+		Additional setup: None
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/ralf2rtl/primer_example
+		DIAGRAMS: 		None
+	

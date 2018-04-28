@@ -1,0 +1,59 @@
+
+Keywords:
+		Search keywords: 	SV VMM coverage VIP
+ 
+Technical content:
+ 
+		Title:    	Developing VMM-compliant Wishbone VIP 
+ 
+		Objective:  How to create powerful, CDV based architectures for VIP for configurable Interconnect architectures	
+		Description:
+
+The WISHBONE1 System-on-Chip (SoC) Interconnection Architecture for Portable IP Cores is a flexible design methodology for use with semiconductor IP cores. Its purpose is to foster design reuse by alleviating System-on-Chip integration problems. This is accomplished by creating a common interface between IP cores. This improves the portability and reliability of the system,and results in faster time-to-market for the end user.
+The VIP components consits of Master, slave, callabcks, transaction class, and associated configuration decsription componets. These can be easily created from scartch by using the vmmgen utility.
+Files:
+
+	config.sv		Configuration Descriptor
+	cycle.sv		Transaction Descriptor
+	master.sv		Master Transactor
+	master_chk.sv		Master Protocol Checker
+	slave.sv		Slave Transactor
+	slave_chk.sv		Slave Protocol Checker
+	test.sv			VIP-only Test
+	wb_chk_coverage.sv	Protocol Checker Coverage Model
+	wb_if.sv		Interface Declaration
+	wishbone.sv		Top-level VIP file
+ The example test has the following structure:
+
+ 100 read & write <-> Wishbone <-> Wishbone  <-> Wishbone ->   RAM
+                       Master      Interface      Slave   <- Response
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/vip/wishbone/
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/examples/testbench/sv/vmm/vip/wishbone/Wishbone_b3.pdf
+
+			 Wishbone VIP Example
+
+
+
+
+
+
+
+

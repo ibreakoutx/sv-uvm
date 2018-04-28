@@ -1,0 +1,29 @@
+
+
+ 
+Technical content:
+ 
+		Title:  VMM on top   
+ 
+		Objective: This example demonstrates a simple UVM-on-top environment, where UVM controls the phasing of UVM and any integrated VMM envs.
+
+		Description:  
+Class- my_uvm_env
+ Top-level UVM container, which can later be reused as a block-level component.
+
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

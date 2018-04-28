@@ -1,0 +1,22 @@
+VCS Version: G-2012.09
+
+
+=========================DB CELL ASSOCIATION SUMMARY================================
+CellType                           : Number of Instances : Associated Instances
+====================================================================================
+Isolation Cells                    :           0 :           0
+Pure Level Shifter Cells           :           0 :           0
+Enable Level Shifter cells         :           0 :           0
+Retention cells                    :           0 :           0
+Always on cells                    :           0 :          NA
+Power Switch cells                 :           0 :          NA
+====================================================================================
+====================================================================================
+
+========================POLICY ASSOCIATION SUMMARY==========================
+PolicyName                         : Policy Type :     Associated DB Instance Count
+====================================================================================
+
+:::::::::::UnAssociated dbInstances::::::::::::::::
+
+::::::::::::Associated dbInstances:::::::::::::::::::

@@ -1,0 +1,22 @@
+set_design_top top
+
+create_power_domain TOP
+create_power_domain DOWN -elements down 
+
+create_supply_port VDD
+create_supply_port VSS
+
+create_supply_net VDD -domain TOP
+create_supply_net VDD -domain DOWN -reuse
+create_supply_net VDDG -domain DOWN
+create_supply_net VSS -domain TOP
+
+connect_supply_net VDD -ports {VDD}
+connect_supply_net VSS -ports {VSS}
+
+create_power_switch psw \
+-domain TOP  \
+-input_supply_port { in VDD } \
+-output_supply_port { out VDDG } \
+-control_port { down/pwr_ctl  down/pwr_ctl } \
+-on_state { on_state in {pwr_ctl} }

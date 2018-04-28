@@ -1,0 +1,118 @@
+INFO [LPA_CONFIG_FILE] : LPA control config file being read is '/tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_config.ini'.
+
+[0] [INFO] [LP_PD_INIT_STATE] Power domain 'tb/dut/TOP' started in NORMAL state.
+
+[0] [INFO] [LP_PPN_INIT_STATE] Primary power net 'VDD' of power domain 'tb/dut/TOP' started in FULL_ON state.
+
+[0] [INFO] [LP_PGN_INIT_STATE] Primary ground net 'VSS' of power domain 'tb/dut/TOP' started in FULL_ON state.
+
+[0] [INFO] [LP_PPN_INIT_VALUE] Primary power net 'VDD' of power domain 'tb/dut/TOP' started with voltage 1.000000 V.
+
+[0] [INFO] [LP_PGN_INIT_VALUE] Primary ground net 'VSS' of power domain 'tb/dut/TOP' started with voltage 1.000000 V.
+
+[0] [INFO] [LP_ISOPN_INIT] Isolation power net 'VDD' for isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' started in state FULL_ON. 
+
+[0] [INFO] [LP_ISOGN_INIT] Isolation ground net 'VSS' for isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' started in state FULL_ON.
+
+[0] [WARNING] [LP_ISOEN_INIT_INVALID] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' started with an invalid value 'StX'.
+
+[0] [WARNING] [LP_ISO_SEQFAIL1] Isolation enable 'tb/dut/iso_enable' for isolation strategy 'exec_iso_out' is not active when the source power domain 'tb/dut/EXEC' changed to CORRUPT state.
+
+[0] [INFO] [LP_PD_INIT_STATE] Power domain 'tb/dut/EXEC' started in CORRUPT state.
+
+[0] [INFO] [LP_PPN_INIT_STATE] Primary power net 'VDDGS' of power domain 'tb/dut/EXEC' started in UNDETERMINED state.
+
+[0] [INFO] [LP_PGN_INIT_STATE] Primary ground net 'VSS' of power domain 'tb/dut/EXEC' started in FULL_ON state.
+
+[0] [INFO] [LP_PPN_INIT_VALUE] Primary power net 'VDDGS' of power domain 'tb/dut/EXEC' started with voltage 0.000000 V.
+
+[0] [INFO] [LP_PGN_INIT_VALUE] Primary ground net 'VSS' of power domain 'tb/dut/EXEC' started with voltage 1.000000 V.
+
+[0] [ERROR] [LP_PSW_CTRL_INVALID] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' started with an invalid value 'StX'.
+
+[0] [INFO] [LP_PSW_ISP_INIT_STATE] Supply net 'tb/dut/VDDG' tied to input supply port 'in' of power switch 'tb/dut/exec_sw' started with state FULL_ON.
+
+[0] [INFO] [LP_PSW_ISP_INIT_VALUE] Supply net 'tb/dut/VDDG' tied to input supply port 'in' of power switch 'tb/dut/exec_sw' started with votlage 1.000000 V.
+
+[0] [INFO] [LP_PSW_OSP_INIT_STATE] Supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' started with state UNDETERMINED.
+
+[0] [INFO] [LP_PSW_OSP_INIT_VALUE] Supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' started with voltage 0.000000 V.
+
+[0] [INFO] [LP_PSW_INIT_STATE] Power switch 'tb/dut/exec_sw' started in UNDETERMINED (UNDETERMINED) state.
+
+[5] [INFO] [LP_ISOEN_CHANGE] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' changed from StX to St0. Isolation sense specified is 'high'.
+
+[5] [INFO] [LP_PSW_CTRL_CHANGE] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' changed from 'StX' to 'St0'.
+
+[5] [INFO] [LP_PSW_STATE_CHANGE] State of power switch 'tb/dut/exec_sw' changed from UNDETERMINED (UNDETERMINED) to exec_on_state (ON).
+
+[5] [INFO] [LP_PPN_VALUE_CHANGE] Voltage of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from 0.000000 V to 1.000000 V.
+
+[5] [INFO] [LP_PPN_STATE_CHANGE] State of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from UNDETERMINED to FULL_ON.
+
+[5] [INFO] [LP_PSW_OSP_STATE] State of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from UNDETERMINED to FULL_ON.
+
+[5] [INFO] [LP_PSW_OSP_VALUE] Voltage of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from 0.000000 V to 1.000000 V.
+
+[5] [INFO] [LP_PD_STATE_CHANGE] Power domain 'tb/dut/EXEC' state changed from CORRUPT to NORMAL.
+
+[415] [INFO] [LP_ISOEN_CHANGE] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' changed from St0 to St1. Isolation sense specified is 'high'.
+
+[415] [INFO] [LP_PSW_CTRL_CHANGE] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' changed from 'St0' to 'St1'.
+
+[415] [INFO] [LP_ISO_APPLIED] Isolation applied for strategy 'exec_iso_out' of power domain 'tb/dut/EXEC'.
+
+[415] [INFO] [LP_PSW_STATE_CHANGE] State of power switch 'tb/dut/exec_sw' changed from exec_on_state (ON) to UNDETERMINED (UNDETERMINED).
+
+[415] [INFO] [LP_PPN_VALUE_CHANGE] Voltage of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from 1.000000 V to 0.000000 V.
+
+[415] [INFO] [LP_PPN_STATE_CHANGE] State of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from FULL_ON to OFF.
+
+[415] [INFO] [LP_PSW_OSP_STATE] State of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from FULL_ON to OFF.
+
+[415] [INFO] [LP_PSW_OSP_VALUE] Voltage of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from 1.000000 V to 0.000000 V.
+
+[415] [INFO] [LP_PD_STATE_CHANGE] Power domain 'tb/dut/EXEC' state changed from NORMAL to CORRUPT.
+
+[10265] [INFO] [LP_PSW_CTRL_CHANGE] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' changed from 'St1' to 'St0'.
+
+[10265] [INFO] [LP_PSW_STATE_CHANGE] State of power switch 'tb/dut/exec_sw' changed from UNDETERMINED (UNDETERMINED) to exec_on_state (ON).
+
+[10265] [INFO] [LP_PPN_VALUE_CHANGE] Voltage of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from 0.000000 V to 1.000000 V.
+
+[10265] [INFO] [LP_PPN_STATE_CHANGE] State of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from OFF to FULL_ON.
+
+[10265] [INFO] [LP_PSW_OSP_STATE] State of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from OFF to FULL_ON.
+
+[10265] [INFO] [LP_PSW_OSP_VALUE] Voltage of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from 0.000000 V to 1.000000 V.
+
+[10265] [INFO] [LP_PD_STATE_CHANGE] Power domain 'tb/dut/EXEC' state changed from CORRUPT to NORMAL.
+
+[10285] [INFO] [LP_ISOEN_CHANGE] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' changed from St1 to St0. Isolation sense specified is 'high'.
+
+[10285] [INFO] [LP_ISO_REMOVED] Isolation removed for strategy 'exec_iso_out' of power domain 'tb/dut/EXEC'.
+
+[10485] [INFO] [LP_ISOEN_CHANGE] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' changed from St0 to St1. Isolation sense specified is 'high'.
+
+[10485] [INFO] [LP_PSW_CTRL_CHANGE] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' changed from 'St0' to 'St1'.
+
+[10485] [INFO] [LP_ISO_APPLIED] Isolation applied for strategy 'exec_iso_out' of power domain 'tb/dut/EXEC'.
+
+[10485] [INFO] [LP_PSW_STATE_CHANGE] State of power switch 'tb/dut/exec_sw' changed from exec_on_state (ON) to UNDETERMINED (UNDETERMINED).
+
+[10485] [INFO] [LP_PPN_VALUE_CHANGE] Voltage of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from 1.000000 V to 0.000000 V.
+
+[10485] [INFO] [LP_PPN_STATE_CHANGE] State of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from FULL_ON to OFF.
+
+[10485] [INFO] [LP_PSW_OSP_STATE] State of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from FULL_ON to OFF.
+
+[10485] [INFO] [LP_PSW_OSP_VALUE] Voltage of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from 1.000000 V to 0.000000 V.
+
+[10485] [INFO] [LP_PD_STATE_CHANGE] Power domain 'tb/dut/EXEC' state changed from NORMAL to CORRUPT.
+
+
+****************** LP Assertion Summary ********************
+
+ INFO = 52 , WARNING = 2 , ERROR = 1 , FATAL = 0
+
+*************************************************************

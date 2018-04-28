@@ -1,0 +1,29 @@
+
+
+Keywords:
+		Search keywords: 	testbench sv $unit
+ 
+Technical content:
+		Title: 		Compilation unit - $unit
+		
+		Objective: 		To Demonstrate usage of compilation unit - $unit
+
+		Description: 	This shows an example of accessiong compilation unit scope variables i.e. $unit variables.
+		
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/compilation_unit
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vcs.pdf  and $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf & $VCS_HOME/doc/UserGuide/sv_lrm.pdf

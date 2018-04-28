@@ -1,0 +1,36 @@
+
+
+Keywords:
+		Search keywords: 	testbench sv Aspect Extension (AOE) 
+ 
+Technical content:
+ 
+		Title: 		Aspect Extension (AOE) of Constraint
+ 
+		Objective: 	To Demonstrate how to use Aspect Extension inside a Constraint block to modify the constraints.
+		Description: The included example performs an aspect extension of the class Transaction.
+					The Transaction class is extended in-place, meaning the original definition is modified to include the additional constraint block.  The testcase can be run with and with/out the extension
+					Run the testcase with the original definition of Transaction (no aspects), just run "make"
+					Run the testcase with the inclusion of the aspect extension of Transaction (Note: the change in randomized values addr and data) just run "make aspect".
+					Usage notes:  The class Transaction is at the $root scope.  As such the test is compiled with the '+ntb_opts dtm' option.  The aspect is also at the $root scope (aspect extension must be at the same scope as the class). 
+
+		Additional setup: None	
+
+Using Makefile:
+        clean           -- To clean up the log files and executable of previous run
+        comp            -- To compile the design in native mode.
+        run             -- To run the design for the compiled one with native mode.
+        aspect_comp     -- To compile with aspect
+        aspect_run     -- To run the test for the compiled design with aspect
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh          -- To clean up the log files and executable of previous run
+        comp.csh           -- To compile the design in native mode.
+        run.csh            -- To run the design  for the compiled one with native mode.
+        aspect_comp.csh    -- To compile with aspect
+        aspect_run.csh     -- To run the test for the compiled design with aspect
+
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/aoe_of_constraints1
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/ntb_lrm.pdfand $VCS_HOME/doc/UserGuide/sv_lrm.pdf

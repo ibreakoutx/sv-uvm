@@ -1,0 +1,57 @@
+block slave {
+   bytes 4;
+   register CHIP_ID @'h0000 {
+      field REVISION_ID {
+         bits 8;
+         access ro;
+         reset 'h03;
+      }
+      field CHIP_ID {
+         bits 8;
+         access ro;
+         reset 'h5A;
+      }
+      field PRODUCT_ID {
+         bits 10;
+         access ro;
+         reset 'h176;
+      }
+   }
+   register STATUS @'h0004 {
+      field BUSY (BUSY) {
+         bits 1;
+         access ro;
+         reset 'h0;
+      }
+      field TXEN (TXEN) {
+         bits 1;
+         access rw;
+         reset 'h0;
+      }
+      field READY (RDY) @16 {
+         bits 1;
+         access w1c;
+         reset 'h0;
+      }
+   }
+   register MASK @'h0005 {
+      field READY (RDY_MSK) @16 {
+         bits 1;
+         access rw;
+         reset 'h0;
+      }
+   }
+   register COUNTERS[256] (COUNTERS[%d]) @'h0400 {
+      field value {
+         bits 32;
+         access ru;
+         reset 'h0;
+      }
+   }
+   memory DMA_RAM (DMA) @'h0800 {
+      size 1k;
+      bits 32;
+      access rw;
+   }
+}
+

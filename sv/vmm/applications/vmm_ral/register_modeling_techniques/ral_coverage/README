@@ -1,0 +1,34 @@
+
+
+Keywords:
+		Search keywords: 	VMM RAL SV Address Field Map coverage
+ 
+Technical content:
+ 
+		Title: 	RAL Address & Field Coverage
+ 
+		Objective: Is to illustrate the usage of RAL Address map & Field value Coverage
+		Description: 	This test will
+					1. Makes use of RAL Address Map coverage at block level.
+   					2. Makes use of RAL field value coverage at register level.
+					passing the options -c b -c a -c f to ralgencauses ralgen to spit out approptiate covergroups. Address mapped and bit based covergroups are sampled whenever the registers/fields assciated with this are accessed. Field value cover groups have to be explicitly sampled by the user. The ralf file can also contain these attribues. The dut.ralf file shows how different cover attributes can be specified using the cover directive. (turning on and off different kinds of coverage). It also shows how users can add their own covergroups to the fields.
+
+		Additional setup: User must use perl-5.6.0 or above to run the test case 
+
+To run the Example:
+	Using shell scripts:
+	comp.csh  	-- Compiles  the example 
+	run.csh   	-- Runs the example without using RAL
+	clean.csh 	-- Cleans up the logs and previous executables
+	
+	Using Makefile:
+	comp  	-- Compiles  the example without using RAL
+	run   	-- Runs the example without using RAL
+	clean 	-- Cleans up the logs and previous executables
+	all 	-- It does all the above steps.
+
+
+Location Information:
+		PATH: 		$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/register_modeling_techniques/ral_coverage
+		DIAGRAMS: 	None
+		Cross Reference: $VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf & $VCS_HOME/doc/UserGuide/pdf/ral_user_guide.pdf

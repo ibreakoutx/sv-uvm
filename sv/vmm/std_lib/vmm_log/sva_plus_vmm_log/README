@@ -1,0 +1,41 @@
+
+Keywords:
+                Search keywords:       sva,vmm_log 
+ 
+
+Technical content:
+
+                Title:   Using vmm_log with SVA 
+                Objective:  To Demonstrate using of vmm_log with SVA
+                Description: This examples illustrates the use of vmm_log to capture error/warning message from the assertions.
+	
+files required : interfaces.v, test_parallel.v, top_p.v  and run_parallel.csh
+
+				Hierarchy:
+				top
+				 |
+				 -- parallel
+ 			         |
+				 --test 
+
+To know how to use vmm_log, check the interfaces.v wherein three steps are given.
+
+ To run the example:
+      Using Makefile:
+        clean           -- To clean up the log files and executables of previous run
+        comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executables of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design
+
+                Additional setup: None
+
+Location Information:
+                PATH:  $VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_log/sva_plus_vmm_log
+                DIAGRAMS:  None
+                
+        
+

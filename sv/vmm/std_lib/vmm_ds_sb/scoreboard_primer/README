@@ -1,0 +1,26 @@
+Keywords:
+		Search keywords: 	SV VMM Datastream Scoreboard 
+ 
+Technical content:
+ 
+		Title:    	DataStream Scoreboard Primer Example
+		Objective: 	This example is designed to learn how to create a scoreboard based on the Data Stream Scoreboard foundation classes, and how to integrate this scoreboard in a verification environment.
+		Description:  Please check Datastream Scoreboard Primer in $VCS_HOME/doc/UserGuide
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	simple          -- To compile & run the test
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_ds_sb
+		DIAGRAMS: 		None
+		CROSS REFERENCE: $VCS_HOME/doc/UserGuide/pdf/scoreboard_primer.pdf
+		

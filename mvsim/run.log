@@ -1,0 +1,152 @@
+Command: ./simv -l run.log
+Chronologic VCS simulator copyright 1991-2012
+Contains Synopsys proprietary information.
+Compiler version G-2012.09; Runtime version G-2012.09;  Nov 13 02:49 2012
+VCD+ Writer G-2012.09 Copyright (c) 1991-2012 by Synopsys Inc.
+[0 ns] [ERROR] [LP_PSW_CTRL_INIT_INVALID] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' started with an invalid value 'StX'.
+
+[0 ns] [INFO] [LP_PSW_ISP_INIT_STATE] Supply net 'tb/dut/VDDG' tied to input supply port 'in' of power switch 'tb/dut/exec_sw' started with state FULL_ON.
+
+[0 ns] [INFO] [LP_PSW_ISP_INIT_VALUE] Supply net 'tb/dut/VDDG' tied to input supply port 'in' of power switch 'tb/dut/exec_sw' started with voltage 1 V.
+
+[0 ns] [INFO] [LP_PSW_OSP_INIT_STATE] Supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' started with state UNDETERMINED.
+
+[0 ns] [INFO] [LP_PSW_OSP_INIT_VALUE] Supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' started with voltage 0 V.
+
+[0 ns] [INFO] [LP_PSW_INIT_STATE] Power switch 'tb/dut/exec_sw' started in INVALID (ERROR) state.
+
+[0 ns] [INFO] [LP_PD_INIT_STATE] Power domain 'tb/dut/EXEC' started in 'CORRUPT' state.
+
+[0 ns] [INFO] [LP_PPN_INIT_STATE] Primary power net 'VDDGS' of power domain 'tb/dut/EXEC' started in UNDETERMINED state.
+
+[0 ns] [INFO] [LP_PGN_INIT_STATE] Primary ground net 'VSS' of power domain 'tb/dut/EXEC' started in FULL_ON state.
+
+[0 ns] [INFO] [LP_PPN_INIT_VALUE] Primary power net 'VDDGS' of power domain 'tb/dut/EXEC' started with voltage 0 V.
+
+[0 ns] [INFO] [LP_PGN_INIT_VALUE] Primary ground net 'VSS' of power domain 'tb/dut/EXEC' started with voltage 1 V.
+
+[0 ns] [INFO] [LP_ISOPN_INIT] Isolation power net 'VDD' for isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' started in state FULL_ON.
+
+[0 ns] [INFO] [LP_ISOGN_INIT] Isolation ground net 'VSS' for isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' started in state FULL_ON.
+
+[0 ns] [WARNING] [LP_ISOEN_INIT_INVALID] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' started with an invalid value 'StX'.
+
+[0 ns] [WARNING] [LP_ISO_SEQFAIL1] Isolation enable 'tb/dut/iso_enable' for isolation strategy 'exec_iso_out' is not active when the source power domain 'tb/dut/EXEC' changed to CORRUPT state.
+
+[0 ns] [INFO] [LP_SS_INIT] Supply Set 'tb/dut/EXEC.exec_iso_out.isolation_supply_set' initialized to state 'DEFAULT_NORMAL' with simstate 'NORMAL'.
+
+[0 ns] [INFO] [LP_SS_INIT] Supply Set 'tb/dut/EXEC.default_retention' initialized to state 'DEFAULT_CORRUPT' with simstate 'CORRUPT'.
+
+[0 ns] [INFO] [LP_SS_INIT] Supply Set 'tb/dut/EXEC.default_isolation' initialized to state 'DEFAULT_CORRUPT' with simstate 'CORRUPT'.
+
+[0 ns] [INFO] [LP_SS_INIT] Supply Set 'tb/dut/EXEC.primary' initialized to state 'DEFAULT_CORRUPT' with simstate 'CORRUPT'.
+
+[0 ns] [INFO] [LP_PD_INIT_STATE] Power domain 'tb/dut/TOP' started in 'NORMAL' state.
+
+[0 ns] [INFO] [LP_PPN_INIT_STATE] Primary power net 'VDD' of power domain 'tb/dut/TOP' started in FULL_ON state.
+
+[0 ns] [INFO] [LP_PGN_INIT_STATE] Primary ground net 'VSS' of power domain 'tb/dut/TOP' started in FULL_ON state.
+
+[0 ns] [INFO] [LP_PPN_INIT_VALUE] Primary power net 'VDD' of power domain 'tb/dut/TOP' started with voltage 1 V.
+
+[0 ns] [INFO] [LP_PGN_INIT_VALUE] Primary ground net 'VSS' of power domain 'tb/dut/TOP' started with voltage 1 V.
+
+[0 ns] [INFO] [LP_SS_INIT] Supply Set 'tb/dut/TOP.default_retention' initialized to state 'DEFAULT_CORRUPT' with simstate 'CORRUPT'.
+
+[0 ns] [INFO] [LP_SS_INIT] Supply Set 'tb/dut/TOP.default_isolation' initialized to state 'DEFAULT_CORRUPT' with simstate 'CORRUPT'.
+
+[0 ns] [INFO] [LP_SS_INIT] Supply Set 'tb/dut/TOP.primary' initialized to state 'DEFAULT_NORMAL' with simstate 'NORMAL'.
+
+[5 ns] [INFO] [LP_ISO_DIS_PWRDN] Isolation disabled for isolation strategy 'exec_iso_out' when Power Domain 'tb/dut/EXEC' is OFF.
+
+[5 ns] [INFO] [LP_ISOEN_CHANGE] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' changed from 'StX' to 'St0'. Isolation sense specified is 'high'.
+
+[5 ns] [INFO] [LP_PSW_CTRL_CHANGE] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' changed from 'StX' to 'St0'.
+
+[5 ns] [INFO] [LP_PSW_STATE_CHANGE] State of power switch 'tb/dut/exec_sw' changed from INVALID (ERROR) to exec_on_state (ON).
+
+[5 ns] [INFO] [LP_PSW_OSP_STATE] State of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from UNDETERMINED to FULL_ON.
+
+[5 ns] [INFO] [LP_PSW_OSP_VALUE] Voltage of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from 0 V to 1 V.
+
+[5 ns] [INFO] [LP_SS_STATE_CHANGE] Supply Set 'tb/dut/EXEC.primary' transitioned to state 'DEFAULT_NORMAL' with simstate 'NORMAL'.
+
+[5 ns] [INFO] [LP_PD_STATE_CHANGE] Power domain 'tb/dut/EXEC' state changed from 'CORRUPT' to 'NORMAL'.
+
+[5 ns] [INFO] [LP_PPN_VALUE_CHANGE] Voltage of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from 0 V to 1 V.
+
+[5 ns] [INFO] [LP_PPN_STATE_CHANGE] State of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from UNDETERMINED to FULL_ON.
+
+[415 ns] [INFO] [LP_ISO_EN] Isolation enabled for isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC'.
+
+[415 ns] [INFO] [LP_ISOEN_CHANGE] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' changed from 'St0' to 'St1'. Isolation sense specified is 'high'.
+
+[415 ns] [INFO] [LP_PSW_CTRL_CHANGE] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' changed from 'St0' to 'St1'.
+
+[415 ns] [INFO] [LP_PSW_STATE_CHANGE] State of power switch 'tb/dut/exec_sw' changed from exec_on_state (ON) to INVALID (ERROR).
+
+[415 ns] [INFO] [LP_PSW_OSP_STATE] State of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from FULL_ON to OFF.
+
+[415 ns] [INFO] [LP_PSW_OSP_VALUE] Voltage of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from 1 V to 0 V.
+
+[415 ns] [INFO] [LP_SS_STATE_CHANGE] Supply Set 'tb/dut/EXEC.primary' transitioned to state 'DEFAULT_CORRUPT' with simstate 'CORRUPT'.
+
+[415 ns] [INFO] [LP_PD_STATE_CHANGE] Power domain 'tb/dut/EXEC' state changed from 'NORMAL' to 'CORRUPT'.
+
+[415 ns] [INFO] [LP_PPN_VALUE_CHANGE] Voltage of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from 1 V to 0 V.
+
+[415 ns] [INFO] [LP_PPN_STATE_CHANGE] State of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from FULL_ON to OFF.
+
+[10265 ns] [INFO] [LP_PSW_CTRL_CHANGE] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' changed from 'St1' to 'St0'.
+
+[10265 ns] [INFO] [LP_PSW_STATE_CHANGE] State of power switch 'tb/dut/exec_sw' changed from INVALID (ERROR) to exec_on_state (ON).
+
+[10265 ns] [INFO] [LP_PSW_OSP_STATE] State of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from OFF to FULL_ON.
+
+[10265 ns] [INFO] [LP_PSW_OSP_VALUE] Voltage of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from 0 V to 1 V.
+
+[10265 ns] [INFO] [LP_SS_STATE_CHANGE] Supply Set 'tb/dut/EXEC.primary' transitioned to state 'DEFAULT_NORMAL' with simstate 'NORMAL'.
+
+[10265 ns] [INFO] [LP_PD_STATE_CHANGE] Power domain 'tb/dut/EXEC' state changed from 'CORRUPT' to 'NORMAL'.
+
+[10265 ns] [INFO] [LP_PPN_VALUE_CHANGE] Voltage of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from 0 V to 1 V.
+
+[10265 ns] [INFO] [LP_PPN_STATE_CHANGE] State of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from OFF to FULL_ON.
+
+[10285 ns] [INFO] [LP_ISO_DIS] Isolation disabled for isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC'.
+
+[10285 ns] [INFO] [LP_ISOEN_CHANGE] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' changed from 'St1' to 'St0'. Isolation sense specified is 'high'.
+
+[10485 ns] [INFO] [LP_ISO_EN] Isolation enabled for isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC'.
+
+[10485 ns] [INFO] [LP_ISOEN_CHANGE] Isolation enable 'tb/dut/iso_enable' of isolation strategy 'exec_iso_out' of power domain 'tb/dut/EXEC' changed from 'St0' to 'St1'. Isolation sense specified is 'high'.
+
+[10485 ns] [INFO] [LP_PSW_CTRL_CHANGE] Signal 'tb/dut/pwr_down' connected to control port 'pwr_down' of power switch 'tb/dut/exec_sw' changed from 'St0' to 'St1'.
+
+[10485 ns] [INFO] [LP_PSW_STATE_CHANGE] State of power switch 'tb/dut/exec_sw' changed from exec_on_state (ON) to INVALID (ERROR).
+
+[10485 ns] [INFO] [LP_PSW_OSP_STATE] State of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from FULL_ON to OFF.
+
+[10485 ns] [INFO] [LP_PSW_OSP_VALUE] Voltage of supply net 'tb/dut/VDDGS' tied to output supply port 'out' of power switch 'tb/dut/exec_sw' changed from 1 V to 0 V.
+
+[10485 ns] [INFO] [LP_SS_STATE_CHANGE] Supply Set 'tb/dut/EXEC.primary' transitioned to state 'DEFAULT_CORRUPT' with simstate 'CORRUPT'.
+
+[10485 ns] [INFO] [LP_PD_STATE_CHANGE] Power domain 'tb/dut/EXEC' state changed from 'NORMAL' to 'CORRUPT'.
+
+[10485 ns] [INFO] [LP_PPN_VALUE_CHANGE] Voltage of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from 1 V to 0 V.
+
+[10485 ns] [INFO] [LP_PPN_STATE_CHANGE] State of the primary power net 'VDDGS' of power domain 'tb/dut/EXEC' changed from FULL_ON to OFF.
+
+$finish called from file "tb.v", line 52.
+
+*************Low Power Message Summary*******************
+
+INFO = 64, WARNING = 2, ERROR = 1, FATAL = 0
+
+*********************************************************
+
+$finish at simulation time                20315
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 20315 ns
+CPU Time:      0.430 seconds;       Data structure size:   0.1Mb
+Tue Nov 13 02:49:18 2012

@@ -1,0 +1,26 @@
+
+
+Keywords:
+		Search keywords: 	testbench sv program 
+Technical content:
+		Title: 			PROGRAM BLOCK WITH MODULES 
+		
+		Objective: 		To demonstrate program block with modules 
+		Description: 	 	 It explains an example on how to create  a main block and how to hook it up in VCS
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/prog_block_with_modules 
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vcs.pdf , $VCS_HOME/doc/UserGuide/sv_lrm.pdf  and $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf

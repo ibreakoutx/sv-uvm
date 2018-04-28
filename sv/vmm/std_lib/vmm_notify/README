@@ -1,0 +1,33 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_notify notification 
+ 
+Technical content:
+ 
+		Title:    Usage of vmm_notify	
+ 
+		Objective: 	To demonstrate how to implement an interface to the notification service a synchronization mechanism for concurrent threads or transactors. 
+		Description: 	
+		This specific example shows how to set up a ON_OFF notification using :
+		(ntfy.configure(ID, vmm_notify::ON_OFF )
+		Once configured, the user can check whether the notification is ON or OFF using the is_on() method. As forsk are being spawned out, the user can wait on the notification using the 'waif_for' methdod wherale a parallel thread can unblock the former by triggering the notification through the 'indicate' method.
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_notify
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

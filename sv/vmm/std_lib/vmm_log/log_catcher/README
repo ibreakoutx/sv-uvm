@@ -1,0 +1,35 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM  vmm_log watchpoint
+ 
+Technical content:
+ 
+		Title:   Usage of VMM Log catcher 
+ 
+		Objective: To demonstrate how to use vmm_log_catcher to execute user specific code to deal with exception messages issued from vmm log. 
+		Description: 	
+VMM provides a mechanism to execute user-specific code using the vmm_log_catcher class if a certain message is issued from the testbench environments.  The vmm_log_catcher is based on regexp to specify matching vmm_log messages.  If a message with the specified regexp is issued during simulation, the user specfied code is executed.
+The vmm_log_catcher::caught method can be used to  modify the caught message, changing its type and sverity. In the example, the 'caught' function modifies the Error svereity of the message to 'WARNING_SEV' and adds the staring 'ACCEPTABLE ERROR'. The user can also choose to ignore the message in which case it will not be displayed. The message can be displayed as is after executing user specified code. The updated message can be displayed by calling vmm_log_catcher::issue in the caught methd. 
+The caught message, modified or unmodified,  can be passed to other catchers that have have been registered, using the vmm_log_catcher::throw function.  The messages to be caught are registered with the vmm_log class using the vmm_log::catch method. In this example, all ERROR_SEV messages coming from the soreboard with the string 'Mismatch' are caught using the following statement: 
+env.sb.log.catch(ctcher, .severity(vmm_log::ERROR_SEV), .text("/Mismatch/"));
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_log/log_catcher
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

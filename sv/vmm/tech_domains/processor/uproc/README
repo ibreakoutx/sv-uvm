@@ -1,0 +1,115 @@
+
+Keywords:
+        Search keywords:    SV VMM Instrution Generation 
+		 
+		 Technical content:
+		  
+		          Title:      CPU Instruction Generation Example 
+				   
+				  Objective:   To explain how to use VMM components to come up with efficient constraint based Instruction Generation Techiques
+			      Description:
+
+
+
+
+==================================================================
+
+Instruction Generation Example
+ - sv/   implemented using SystemVerilog
+
+
+==================================================================
+
+This is an example showcasing a solution to create random processor
+instructions using VMM.
+
+
+
+GENERAL ISA INFORMATION
+-----------------------
+
+  I1) Supported opcodes are limited to: 
+
+      Class          Opcode/Syntax              Description
+      -----------    -------------------------- ---------------------------
+      NoOperation:   NOP:                       no operation
+
+      Load/Store :   LW (load word): 
+                        LW rd, imm(rs)          addr = rs + sext({imm, 2'b0})
+                                                rd = mem[addr]
+
+                     SB (store byte):
+                        SB rt, imm(rs)          addr = rs + sext({imm, 1'b0})
+                                                mem[addr] = rt
+
+      Computation:   ADD (add):  
+                        ADD rd, rs, rt          rd = rs + rt
+
+                     ADDI (add immediate):
+                        ADDI rd, rs, imm        rd = rs + sext(imm)
+    
+                     SRL (logic shift right):
+                        SRL rd, rs, imm         t[63:0] = {rs,32'b0} >> imm[4:0]
+                                                rd = t[31:0]
+
+                     SRL (logic shift left):
+                        SRL rd, rs, imm         t[63:0] = {rs,32'b0} << imm[4:0]
+                                                rd = t[31:0]
+
+                     XOR (exclusive OR):
+                        XOR rd, rs, rt          rd = rs ^ rt
+
+      Control    :   BNE (branch if not equal):
+                        BNE rs, rt, imm         if (rs==rt) PC = PC + sext(imm)
+ 
+  I2) Each instruction comprises of 2 operations executed in 2 parallel slots
+      e.g.:       SLOT 0   ;  SLOT 1
+                  =========================
+                    nop    ;  add r1, r2, r3
+
+  I3) 48 general purpose 32-bit registers shared by two slots
+
+  I4) Memory load and store operations must appear in slot 0
+
+  I5) Memory load/store address must be aligned
+
+  I6) Two operations in the same instruction must not write to the same
+      destination register
+
+
+KNOWN LIMITATION
+----------------
+
+While these are limitations to this example, they do not take away
+the important concepts away from this solution for a processor
+instruction generation problem.  
+
+  L1) byte_unpack() / byte_pack() are not yet implemented
+
+  L2) branch operations can only appear in slot 0
+      - one label per scenario, one branch per scenario
+        each time a scenario is randomized, either a backward
+        or a forward branch will be selected in slot 0
+      - each scenario has 20 instruction items, including 1 label
+      - label is somewhere between 4 and 16
+      - branch is from 2 or from 18
+
+
+Additional setup: None
+ 
+  To run the example:
+        Using Makefile:
+	       clean           -- To clean up the log files and executable of previous run
+		   comp            -- To compile the design
+		   run             -- To run the design
+		   all             -- It does all the above steps.
+		Using shell scripts:
+		   clean.csh       -- To clean up the log files and executable of previous run
+		   comp.csh        -- To compile the design
+		   run.csh         -- To run the design
+
+
+Location Information:
+		PATH:           $VCS_HOME/doc/examples/testbench/sv/vmm/tech_domains/processor/uproc
+	    DIAGRAMS:       None
+																					         Cross Reference:    $VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

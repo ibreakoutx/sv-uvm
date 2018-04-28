@@ -1,0 +1,44 @@
+Keywords:
+		Search keywords: 	SV VMM RAL APB register verification register abstraction
+ 
+Technical content:
+ 
+		Title:   RAL APB Primer example
+		Objective: This designe example is designed to learn how to create a RAL model of the registers and memories in a design, how to integrate this model in a verification environment and how to verify the implementation of those registers and memories using the predefined tests. It will also show how the RAL model can be used to model the configuration and DUT driver code so it can be reusable in a system-level environment. Finally, it shows how the RAL model is used to implement additional functional tests. 
+		
+		Description: 	Please refer to the RAL Primer in $VCS_HOME/doc/UserGuide
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	bit_bash        -- To compile & run the bit bash design
+       	hw_reset        -- To compile & run the hw_reset design
+       	mem_walk        -- To compile & run the mem_walk design
+       	mem_access      -- To compile & run the mem_access design
+       	gen_html        -- To compile & run the gen_html design
+       	user_test       -- To compile & run the user_test design
+        all             -- It does all the above steps.
+
+
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp1.csh        -- To compile the bit_bash design
+        run1.csh         -- To run the bit_bash design  
+        comp2.csh        -- To compile the hw_rest design
+        run2.csh         -- To run the hw_reset design  
+        comp3.csh        -- To compile the mem_acccess design
+        run3.csh         -- To run the mem_access design  
+        comp4.csh        -- To compile the mem_walk design
+        run4.csh         -- To run the mem_walk design  
+        comp5.csh        -- To compile the gen_html design
+        run5.csh         -- To run the gen_html design  
+        comp6.csh        -- To compile the user_test design
+        run6.csh         -- To run the user_test design  
+
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/ral_apb_primer
+		DIAGRAMS: 		None
+	    CROSS REFERENCE :   $VCS_HOME/doc/UserGuide/Ral Primer.pdf	

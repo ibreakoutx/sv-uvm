@@ -1,0 +1,31 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting  UVM sequence to VMM driver
+ 
+		Objective: 	This example shows how to use the IK to connect UVM sequencer to a VMM driver using the <avt_uvm_tlm2channel> adapter
+
+		Description: This example uses the <avt_uvm_tlm2channel> adapter to connect an UVM sequencer to  a VMM driver type. While this example does not illustrate use of a separate channel for returning responses back to the requester, the adapter is capable of handling such a configuration. During construction, the adapter may be given an existing channel handle to  use. If such a handle were not provided, the adapter creates a default channel  instance for itself.
+ During operation, an adapter process continually pulls transaction items from the UVM sequencer, converts, and puts them to the request channel. This triggers the VMM driver process waiting on a peek or get to resume, pick up the transaction and execute it.
+ If the response channel is used, the VMM driver would then place a response in this channel, and a second, independent adapter process would get it from the  channel, convert, and forward to the attached sequencer.
+ If the VMM driver uses the original request to put response information, the  adapter can be configured to do a reverse conversion to reflect the response  back to the UVM sequencer/sequence via the originating request handle.
+ In the example below, we create all the components in the build method.  The driver's ~num_insts~ and the sequencer's ~num_trans~ parameters are set using the UVM configuration facility. In the run task, we create and start (execute) a sequence, which returns once the configured number of transactions have been executed by the driver.
+
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

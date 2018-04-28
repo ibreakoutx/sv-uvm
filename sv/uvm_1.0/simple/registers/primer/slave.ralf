@@ -1,0 +1,91 @@
+register SOCKET {
+
+  field IP @'h0 {
+    bits 48;
+    reset 'h0;
+    access rw;
+  }
+  field PORT @'h30 {
+    bits 16;
+    reset 'h0;
+    access rw;
+  }
+
+}
+
+register ID {
+
+  field REVISION_ID @'h0 {
+    bits 8;
+    reset 'h03;
+    access ro;
+  }
+
+  field CHIP_ID @'h8 {
+    bits 8;
+    reset 'h5a;
+    access ro;
+  }    
+
+  field PRODUCT_ID @'h10 {
+    bits 10;
+    reset 'h176;
+    access ro;
+  }  
+
+}  
+
+register INDEX {
+
+  field value @'h0 {
+    bits 8;
+    access rw;
+    reset 'h0;
+  }
+
+}
+
+register DATA {
+
+  field value @'h0 {
+    bits 32;
+    access ro;
+    reset 'h0;
+  }
+
+}
+
+regfile SESSION {
+
+  register SOCKET=SRC;
+  register SOCKET=DST;
+
+}
+
+register TABLES {
+
+  field value @'h0 {
+    bits 32;
+    access rw;
+    reset 'h0;
+  }
+
+}
+
+memory DMA_RAM {
+  bits 32;
+  size 1024;
+  access rw;
+}
+
+block slave {
+
+  bytes 4;
+  register ID @'h0; 
+  register INDEX @'h20;
+  register DATA @'h24;
+  regfile SESSION[256];
+  register TABLES[256] @'h1000+4;
+  memory DMA_RAM @'h2000;
+
+}

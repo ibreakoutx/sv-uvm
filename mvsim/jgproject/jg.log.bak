@@ -1,0 +1,2579 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 8.0
+# platform  : Linux 2.6.18-194.8.1.el5
+# version   : 8.0ea008 64 bits
+# build date: 2011.07.31 22:03:52 PDT
+#----------------------------------------
+# started Thu Nov 08 10:09:46 CST 2012
+# hostname  : hagon
+# pid       : 10476
+# arguments : 
+
+Any disclosure about the Jasper Design Automation software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Jasper Design Automation and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+JASPER DESIGN AUTOMATION, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF JASPER
+DESIGN AUTOMATION, INC.
+
+Copyright (C) 2000-2011 Jasper Design Automation, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Jasper Design Automation, Inc.
+                          707 California Street
+                          Mountain View, CA 94041
+
+For technical assistance please contact the Jasper Design Automation
+Technical Support Center at (650) 966-0200 or send email to
+support@jasper-da.com.
+
+For more information on the Jasper Design Automation products
+send email to info@jasper-da.com.
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[WARN (VERI-1372)] xorexec.v(40): redeclaration of ansi port ofifo_push is not allowed
+[WARN (VERI-1372)] xorexec.v(41): redeclaration of ansi port ififo_pop is not allowed
+[WARN (VERI-1372)] xorexec.v(42): redeclaration of ansi port odata is not allowed
+[ERROR (VERI-1137)] xorexec.v(51): syntax error near :
+[ERROR (VERI-1137)] xorexec.v(88): syntax error near always
+[ERROR (VERI-1137)] xorexec.v(106): syntax error near endmodule
+Summary of errors detected:
+	[ERROR (VERI-1137)] xorexec.v(51): syntax error near :
+	[ERROR (VERI-1137)] xorexec.v(88): syntax error near always
+	[ERROR (VERI-1137)] xorexec.v(106): syntax error near endmodule
+ERROR (ENL034): 3 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[ERROR (VERI-1137)] xorexec.v(51): syntax error near :
+[ERROR (VERI-1137)] xorexec.v(88): syntax error near always
+[ERROR (VERI-1137)] xorexec.v(106): syntax error near endmodule
+Summary of errors detected:
+	[ERROR (VERI-1137)] xorexec.v(51): syntax error near :
+	[ERROR (VERI-1137)] xorexec.v(88): syntax error near always
+	[ERROR (VERI-1137)] xorexec.v(106): syntax error near endmodule
+ERROR (ENL034): 3 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[ERROR (VERI-1128)] xorexec.v(52): s0 is not declared
+[ERROR (VERI-1128)] xorexec.v(58): s1 is not declared
+[ERROR (VERI-1128)] xorexec.v(61): s1 is not declared
+[ERROR (VERI-1128)] xorexec.v(72): s2 is not declared
+[ERROR (VERI-1128)] xorexec.v(77): s2 is not declared
+[ERROR (VERI-1128)] xorexec.v(83): s0 is not declared
+[ERROR (VERI-1128)] xorexec.v(96): s0 is not declared
+[ERROR (VERI-1072)] xorexec.v(107): module xorexec ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1128)] xorexec.v(52): s0 is not declared
+	[ERROR (VERI-1128)] xorexec.v(58): s1 is not declared
+	[ERROR (VERI-1128)] xorexec.v(61): s1 is not declared
+	[ERROR (VERI-1128)] xorexec.v(72): s2 is not declared
+	[ERROR (VERI-1128)] xorexec.v(77): s2 is not declared
+	[ERROR (VERI-1128)] xorexec.v(83): s0 is not declared
+	[ERROR (VERI-1128)] xorexec.v(96): s0 is not declared
+	[ERROR (VERI-1072)] xorexec.v(107): module xorexec ignored due to previous errors
+ERROR (ENL034): 8 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[ERROR (VERI-1137)] xorexec_sva.sv(30): syntax error near @
+[WARN (VERI-1763)] xorexec_sva.sv(34): the sva directive is not sensitive to clock
+[WARN (VERI-1763)] xorexec_sva.sv(35): the sva directive is not sensitive to clock
+[ERROR (VERI-1072)] xorexec_sva.sv(37): module xorexec_sva ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1137)] xorexec_sva.sv(30): syntax error near @
+	[ERROR (VERI-1072)] xorexec_sva.sv(37): module xorexec_sva ignored due to previous errors
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[WARN (VERI-1209)] xorexec.v(68): expression size 32 truncated to fit in target size 8
+[INFO] Module Name xorexec
+xorexec
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO] Module Name xorexec
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+xorexec
+% prove 1
+INFO (IPF029): Assigning name "property:0" to proof target "1".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 1 properties to prove with 0 already proven/unreachable
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 2 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 2 cycles. Assigned values for 0 of 20 design flops, 0 of 8 design latches, 0 of 0 internal elements.
+WARNING (WRS018): Reset information is not defined. It may cause some inconsistent initial values for the proof.
+    Use the "reset" command before starting the proof to enable reset analysis.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+Proof Grid utilizable level: 1
+0.D: Proofgrid shell started at 10857@hagon(local)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.D: Starting proof for property "property:0"	[0.00 s].
+0.D: Targets     : Input(   0) Flop(   0) And(    0) Xor(   0) Mux(   0)
+0.D: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): The property "property:0" was proven in 0.00 s.
+0.D: All properties determined. [0.00 s]
+0.D: Exited with Success (@ 0.30 s)
+0.Hp: Proofgrid shell started at 10855@hagon(local)
+0.Hp: Interrupted. [0.00 s]
+0.Hp: Exited with Success (@ 0.30 s)
+0.Ht: Proofgrid shell started at 10856@hagon(local)
+0.Ht: Interrupted. [0.00 s]
+0.Ht: Exited with Success (@ 0.30 s)
+0.B: Proofgrid shell started at 10858@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.30 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+proven
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO] Module Name xorexec
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove 1
+INFO (IPF029): Assigning name "property:0" to proof target "1".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 1 properties to prove with 0 already proven/unreachable
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 20 of 20 design flops, 0 of 8 design latches, 0 of 0 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+Proof Grid utilizable level: 1
+0.Hp: Proofgrid shell started at 10887@hagon(local)
+0.D: Proofgrid shell started at 10889@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.Hp: Starting proof for property "property:0"	[0.00 s].
+0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): The property "property:0" was proven in 0.00 s.
+0.Hp: Targets     : Input(   0) Flop(   0) And(    0) Xor(   0) Mux(   0)
+0.Hp: All properties determined. [0.00 s]
+0.Hp: Exited with Success (@ 0.16 s)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.D: All properties determined. [0.00 s]
+0.D: Exited with Success (@ 0.16 s)
+0.B: Proofgrid shell started at 10890@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.16 s)
+0.Ht: Proofgrid shell started at 10888@hagon(local)
+0.Ht: Interrupted. [0.00 s]
+0.Ht: Exited with Success (@ 0.19 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+proven
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] xorexec_sva.sv(14): compiling module xorexec_sva
+[INFO] Module Name xorexec
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove 1
+INFO (IPF029): Assigning name "property:0" to proof target "1".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 1 properties to prove with 0 already proven/unreachable
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 20 of 20 design flops, 0 of 8 design latches, 2 of 2 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): The property "property:0" was proven in 0.00 s.
+ERROR (EAS008): Assumptions overconstrain the task at cycle 2.
+    For message help, type "help -message eas008"
+INFO (IPF059): Completed proof on task:  <embedded>
+overconstrained
+% help -message eas008
+This message is an indication of state removal. It means that
+because of assumptions (constraints) and the logic driven by the
+design, all states between iterations have been removed. If you
+get this message, examine the assumptions you have made to find
+the one causing this issue. This can either be the case where
+the assumptions contradict themselves, or the assumptions
+contradict the design.
+
+JasperGold provides a Check Assumptions feature that checks
+whether the assumption set removes states for the number of
+iterations you specify and reports if it identified that all
+states are removed (assumptions consistency), or that at least
+one state was removed. Both symptoms indicate that the
+assumption might be stronger than you intended. If all states
+are removed, then also at least one state is removed.
+
+Related command:
+  check_assumptions
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] xorexec_sva.sv(14): compiling module xorexec_sva
+[INFO] Module Name xorexec
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 2 properties to prove with 0 already proven/unreachable
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+background
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 20 of 20 design flops, 0 of 8 design latches, 3 of 3 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+Proof Grid utilizable level: 2
+0.Ht: Proofgrid shell started at 10987@hagon(local)
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  12) And(   77) Xor(   8) Mux(   8)
+0.Ht: Trace Attempt  1	structure size is      0	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is      3	[0.00 s]
+0.Ht: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.as_ififo_pop:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 1
+0.Ht: Trace Attempt  3	structure size is     61	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is    300	[0.00 s]
+0.Ht: A trace with 4 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.cp_push" was covered in 0.02 s.
+0.Ht: All properties determined. [0.00 s]
+0.Ht: Exited with Success (@ 0.10 s)
+0.B: Proofgrid shell started at 10990@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.12 s)
+0.D: Proofgrid shell started at 10988@hagon(local)
+0.D: Interrupted. [0.00 s]
+0.D: Exited with Success (@ 0.12 s)
+0.Hp: Proofgrid shell started at 10986@hagon(local)
+0.Hp: Interrupted. [0.00 s]
+0.Hp: Exited with Success (@ 0.13 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 3
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 2
+	       - unreachable  : 0 (0%)
+	       - covered      : 2 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::xorexec.sva_inst.cp_push"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] xorexec_sva.sv(14): compiling module xorexec_sva
+[INFO] Module Name xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 2 properties to prove with 0 already proven/unreachable
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 20 of 20 design flops, 0 of 8 design latches, 4 of 4 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+background
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 2
+0.Hp: Proofgrid shell started at 11024@hagon(local)
+0.Ht: Proofgrid shell started at 11025@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  12) And(   82) Xor(   8) Mux(   8)
+0.Hp: Union       : Input(  10) Flop(  12) And(   82) Xor(   8) Mux(   8)
+0.Hp: Proof Attempt  1.1	structure size is     18	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Hp: Proof Attempt  2.1	structure size is    649	[0.00 s]
+0.Hp: Union       : Input(  10) Flop(  12) And(   82) Xor(   8) Mux(   8)
+0.Hp: Proof Attempt  2.2	structure size is    344	[0.00 s]
+0.Hp: Trace Attempt  2	structure size is     33	[0.00 s]
+0.Hp: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.as_ififo_pop:precondition1" was covered in 0.02 s.
+Proof Grid utilizable level: 1
+0.Hp: Proof Attempt  3.1	structure size is    670	[0.00 s]
+0.Hp: Proof Attempt  3.2	structure size is    723	[0.00 s]
+0.Hp: Trace Attempt  3	structure size is    102	[0.00 s]
+0.Hp: Proof Attempt  4.1	structure size is   1090	[0.00 s]
+0.Hp: Proof Attempt  4.2	structure size is    466	[0.00 s]
+0.Hp: Trace Attempt  4	structure size is    356	[0.00 s]
+0.Hp: Proof Attempt  5.1	structure size is    796	[0.00 s]
+0.Hp: Trace Attempt  5	structure size is    613	[0.00 s]
+0.Hp: Proof Attempt  6.1	structure size is   1122	[0.00 s]
+0.Hp: Proof Attempt  7.1	structure size is   1449	[0.01 s]
+0.Hp: Proof Attempt  7.2	structure size is   1293	[0.01 s]
+0.Hp: A trace with 7 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.cp_push" was covered in 0.04 s.
+0.Hp: Trace Attempt  7	structure size is   1103	[0.01 s]
+0.Hp: All properties determined. [0.01 s]
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  12) And(   82) Xor(   8) Mux(   8)
+0.Ht: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     33	[0.00 s]
+0.Ht: Trace Attempt  3	structure size is    102	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is    356	[0.00 s]
+0.Ht: Trace Attempt  5	structure size is    613	[0.00 s]
+0.Ht: Trace Attempt  7	structure size is   1103	[0.00 s]
+0.Ht: All properties determined. [0.00 s]
+0.Hp: Exited with Success (@ 0.11 s)
+0.Ht: Exited with Success (@ 0.11 s)
+0.B: Proofgrid shell started at 11028@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.12 s)
+0.D: Proofgrid shell started at 11026@hagon(local)
+0.D: Interrupted. [0.00 s]
+0.D: Exited with Success (@ 0.14 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 2
+	       - unreachable  : 0 (0%)
+	       - covered      : 2 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::xorexec.sva_inst.cp_push"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] xorexec_sva.sv(14): compiling module xorexec_sva
+[INFO] Module Name xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 2 properties to prove with 0 already proven/unreachable
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 20 of 20 design flops, 0 of 8 design latches, 4 of 4 internal elements.
+background
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+Proof Grid utilizable level: 2
+0.Hp: Proofgrid shell started at 11178@hagon(local)
+0.B: Proofgrid shell started at 11188@hagon(local)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.B: Starting proof for property "xorexec.sva_inst.as_ififo_pop:precondition1"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  11) And(  103) Xor(   8) Mux(   0)
+0.B: Trace Attempt  1	structure size is      7	[0.00 s]
+0.B: Trace Attempt  2	structure size is     43	[0.00 s]
+0.B: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.as_ififo_pop:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 1
+----------------------------------------
+0.B: Starting proof for property "xorexec.sva_inst.cp_push"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  12) And(  104) Xor(   8) Mux(   0)
+0.B: Trace Attempt  1	structure size is      7	[0.00 s]
+0.B: Trace Attempt  2	structure size is     43	[0.00 s]
+0.B: Trace Attempt  3	structure size is    136	[0.00 s]
+0.B: Trace Attempt  4	structure size is    272	[0.00 s]
+0.B: Trace Attempt  5	structure size is    405	[0.00 s]
+0.B: A trace with 7 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.cp_push" was covered in 0.02 s.
+0.B: Trace Attempt  7	structure size is    578	[0.01 s]
+0.B: All properties determined. [0.01 s]
+0.B: Exited with Success (@ 0.11 s)
+0.D: Proofgrid shell started at 11180@hagon(local)
+0.D: Interrupted. [0.00 s]
+0.D: Exited with Success (@ 0.13 s)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  12) And(   80) Xor(   8) Mux(   8)
+0.Hp: All properties determined. [0.00 s]
+0.Hp: Exited with Success (@ 0.14 s)
+0.Ht: Proofgrid shell started at 11179@hagon(local)
+0.Ht: Interrupted. [0.00 s]
+0.Ht: Exited with Success (@ 0.14 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 2
+	       - unreachable  : 0 (0%)
+	       - covered      : 2 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::xorexec.sva_inst.cp_push"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] xorexec_sva.sv(14): compiling module xorexec_sva
+[WARN (VERI-1209)] xorexec_sva.sv(44): expression size 32 truncated to fit in target size 4
+[INFO] Module Name xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 3 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 24 of 24 design flops, 0 of 8 design latches, 6 of 6 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+Proof Grid utilizable level: 3
+0.Hp: Proofgrid shell started at 14215@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  16) And(   86) Xor(  12) Mux(  11)
+0.Hp: Union       : Input(  10) Flop(  16) And(   86) Xor(  12) Mux(  11)
+0.Hp: Proof Attempt  1.1	structure size is     30	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Hp: Proof Attempt  2.1	structure size is    739	[0.00 s]
+0.Hp: Union       : Input(  10) Flop(  16) And(   86) Xor(  12) Mux(  11)
+0.Hp: Proof Attempt  2.2	structure size is    399	[0.00 s]
+0.Hp: Trace Attempt  2	structure size is     33	[0.00 s]
+0.Hp: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.as_ififo_pop:precondition1" was covered in 0.02 s.
+Proof Grid utilizable level: 2
+0.Hp: Proof Attempt  3.1	structure size is    774	[0.00 s]
+0.Hp: Trace Attempt  3	structure size is     69	[0.01 s]
+0.Hp: Proof Attempt  4.1	structure size is   1121	[0.01 s]
+0.Hp: Proof Attempt  4.2	structure size is   1121	[0.01 s]
+0.Hp: Proof Attempt  4.3	structure size is   1163	[0.01 s]
+0.Hp: Trace Attempt  4	structure size is    120	[0.01 s]
+0.Hp: Proof Attempt  5.1	structure size is   1603	[0.01 s]
+0.Hp: Trace Attempt  5	structure size is    386	[0.01 s]
+0.Hp: Proof Attempt  6.1	structure size is   1959	[0.01 s]
+0.Hp: Proof Attempt  7.1	structure size is   2335	[0.01 s]
+0.Hp: Proof Attempt  8.1	structure size is   2711	[0.01 s]
+0.Hp: Proof Attempt  9.1	structure size is   3087	[0.01 s]
+0.Hp: Proof Attempt  9.2	structure size is   3091	[0.01 s]
+0.Hp: Proof Attempt 10.1	structure size is   3497	[0.01 s]
+0.Hp: Proof Attempt 10.2	structure size is   3503	[0.01 s]
+0.Hp: Proof Attempt 11.1	structure size is   3947	[0.02 s]
+0.Hp: Proof Attempt 12.1	structure size is   4309	[0.02 s]
+0.Hp: Proof Attempt 12.2	structure size is   4317	[0.02 s]
+0.Hp: Proof Attempt 13.1	structure size is   4763	[0.02 s]
+0.Hp: Proof Attempt 13.2	structure size is   4773	[0.02 s]
+0.Ht: Proofgrid shell started at 14216@hagon(local)
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  16) And(   86) Xor(  12) Mux(  11)
+0.Ht: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     33	[0.00 s]
+0.Ht: Trace Attempt  3	structure size is     51	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is    123	[0.00 s]
+0.Ht: Trace Attempt  5	structure size is    392	[0.00 s]
+0.B: Proofgrid shell started at 14218@hagon(local)
+0.D: Proofgrid shell started at 14217@hagon(local)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.D: Starting proof for property "xorexec.sva_inst.as_ofifo_not_full:precondition1"	[0.00 s].
+0.D: Union       : Input(  10) Flop(  16) And(  119) Xor(  12) Mux(   0)
+0.D: Trace Attempt  1	structure size is     17	[0.00 s]
+0.D: Trace Attempt  2	structure size is    218	[0.00 s]
+0.D: Proof Attempt  1.3	structure size is    210	[0.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is    700	[0.00 s]
+0.D: Proof Attempt  2.4	structure size is    686	[0.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   1032	[0.00 s]
+0.D: Proof Attempt  3.5	structure size is   1020	[0.00 s]
+0.D: Proof Attempt  3.6	structure size is   1019	[0.01 s]
+0.D: Proof Attempt  3.7	structure size is   1028	[0.01 s]
+0.D: A proof was found: No trace exists. [0.01 s]
+INFO (IPF051): The cover property "xorexec.sva_inst.as_ofifo_not_full:precondition1" was proven unreachable in 0.02 s.
+Proof Grid utilizable level: 1
+----------------------------------------
+0.D: Starting proof for property "xorexec.sva_inst.cp_push"	[0.01 s].
+0.D: Union       : Input(  10) Flop(  16) And(  119) Xor(  12) Mux(   0)
+0.D: Trace Attempt  1	structure size is     17	[0.01 s]
+0.D: Trace Attempt  2	structure size is     17	[0.01 s]
+0.D: A proof was found: No trace exists. [0.01 s]
+INFO (IPF051): The cover property "xorexec.sva_inst.cp_push" was proven unreachable in 0.00 s.
+0.D: All properties determined. [0.01 s]
+0.D: Exited with Success (@ 0.28 s)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.B: All properties determined. [0.00 s]
+0.B: Exited with Success (@ 0.28 s)
+0.Hp: Trace Attempt 12	structure size is   2874	[0.02 s]
+0.Hp: All properties determined. [0.03 s]
+0.Hp: Exited with Success (@ 0.28 s)
+0.Ht: Trace Attempt 13	structure size is   3267	[0.00 s]
+0.Ht: All properties determined. [0.00 s]
+0.Ht: Exited with Success (@ 0.28 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 6
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 3
+	       - unreachable  : 2 (66.6667%)
+	       - covered      : 1 (33.3333%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% 
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] xorexec_sva.sv(14): compiling module xorexec_sva
+[WARN (VERI-1209)] xorexec_sva.sv(44): expression size 32 truncated to fit in target size 4
+[INFO] Module Name xorexec
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 2 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 24 of 24 design flops, 0 of 8 design latches, 4 of 4 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+Proof Grid utilizable level: 2
+0.Ht: Proofgrid shell started at 14288@hagon(local)
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  16) And(   86) Xor(  12) Mux(  11)
+0.Ht: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     33	[0.00 s]
+0.Ht: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.as_ififo_pop:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 1
+0.Ht: Trace Attempt  3	structure size is     69	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is    117	[0.00 s]
+0.Ht: Trace Attempt  5	structure size is    368	[0.00 s]
+0.B: Proofgrid shell started at 14293@hagon(local)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.B: Starting proof for property "xorexec.sva_inst.cp_push"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  16) And(  119) Xor(  12) Mux(   0)
+0.B: Trace Attempt  1	structure size is      7	[0.00 s]
+0.B: Trace Attempt  2	structure size is     43	[0.00 s]
+0.B: Trace Attempt  3	structure size is    136	[0.00 s]
+0.B: Trace Attempt  4	structure size is    277	[0.00 s]
+0.B: Trace Attempt  5	structure size is    415	[0.00 s]
+0.D: Proofgrid shell started at 14289@hagon(local)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.D: Starting proof for property "xorexec.sva_inst.cp_push"	[0.00 s].
+0.D: Union       : Input(  10) Flop(  16) And(  119) Xor(  12) Mux(   0)
+0.D: Trace Attempt  1	structure size is     16	[0.00 s]
+0.D: Trace Attempt  2	structure size is    227	[0.00 s]
+0.D: Proof Attempt  1.3	structure size is    219	[0.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is    688	[0.00 s]
+0.D: Proof Attempt  2.4	structure size is    675	[0.00 s]
+0.D: Proof Attempt  2.5	structure size is    671	[0.00 s]
+0.D: Proof Attempt  2.6	structure size is    677	[0.00 s]
+0.D: Proof Attempt  2.7	structure size is    677	[0.00 s]
+0.D: ================================================================
+0.D: Proof Attempt  6.8	structure size is   1997	[0.01 s]
+0.D: Trace Attempt  7	structure size is   2008	[0.01 s]
+0.D: A proof was found: No trace exists. [0.01 s]
+INFO (IPF051): The cover property "xorexec.sva_inst.cp_push" was proven unreachable in 0.01 s.
+0.D: All properties determined. [0.01 s]
+0.D: Exited with Success (@ 0.40 s)
+0.Ht: Trace Attempt 171	structure size is  59923	[0.08 s]
+0.Ht: All properties determined. [0.08 s]
+0.Ht: Exited with Success (@ 0.40 s)
+0.B: Trace Attempt 22	structure size is   3062	[0.03 s]
+0.B: All properties determined. [0.03 s]
+0.B: Exited with Success (@ 0.40 s)
+0.Hp: Proofgrid shell started at 14287@hagon(local)
+0.Hp: Interrupted. [0.00 s]
+0.Hp: Exited with Success (@ 0.41 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 2
+	       - unreachable  : 1 (50%)
+	       - covered      : 1 (50%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+background
+INFO (IPF036): Starting proof on task:  <embedded>, 0 properties to prove with 1 already proven/unreachable
+INFO (IPF060): There are no unresolved assertions in task:  <embedded>
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 2
+	       - unreachable  : 1 (50%)
+	       - covered      : 1 (50%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec_sva.sv
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] xorexec_sva.sv(14): compiling module xorexec_sva
+[WARN (VERI-1209)] xorexec_sva.sv(44): expression size 32 truncated to fit in target size 4
+[INFO] Module Name xorexec
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 2 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 24 of 24 design flops, 0 of 8 design latches, 4 of 4 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+Proof Grid utilizable level: 2
+0.Ht: Proofgrid shell started at 14327@hagon(local)
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  16) And(   91) Xor(  13) Mux(  11)
+0.Ht: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     33	[0.00 s]
+0.Ht: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.as_ififo_pop:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 1
+0.Ht: Trace Attempt  3	structure size is     69	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is    117	[0.00 s]
+0.Ht: Trace Attempt  5	structure size is    393	[0.00 s]
+0.Ht: A trace with 10 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "xorexec.sva_inst.cp_push" was covered in 0.03 s.
+0.Ht: Trace Attempt 10	structure size is   2187	[0.00 s]
+0.Ht: All properties determined. [0.00 s]
+0.Ht: Exited with Success (@ 0.12 s)
+0.D: Proofgrid shell started at 14328@hagon(local)
+0.D: Interrupted. [0.00 s]
+0.D: Exited with Success (@ 0.12 s)
+0.B: Proofgrid shell started at 14334@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.12 s)
+0.Hp: Proofgrid shell started at 14326@hagon(local)
+0.Hp: Interrupted. [0.00 s]
+0.Hp: Exited with Success (@ 0.13 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 2
+	       - unreachable  : 0 (0%)
+	       - covered      : 2 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::xorexec.sva_inst.cp_push"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[WARN (VERI-1158)] top_xorexec.v(1): use of undefined macro time
+[ERROR (VERI-1137)] top_xorexec.v(1): syntax error near 1ns
+Summary of errors detected:
+	[ERROR (VERI-1137)] top_xorexec.v(1): syntax error near 1ns
+ERROR (ENL034): 1 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[WARN (VERI-1158)] top_xorexec.v(1): use of undefined macro time
+[ERROR (VERI-1137)] top_xorexec.v(1): syntax error near 1ns
+Summary of errors detected:
+	[ERROR (VERI-1137)] top_xorexec.v(1): syntax error near 1ns
+ERROR (ENL034): 1 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[ERROR (VERI-1137)] top_xorexec.v(43): syntax error near .
+[ERROR (VERI-1072)] top_xorexec.v(63): module top_xorexec ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1137)] top_xorexec.v(43): syntax error near .
+	[ERROR (VERI-1072)] top_xorexec.v(63): module top_xorexec ignored due to previous errors
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[ERROR (VERI-1162)] top_xorexec.v(49): port connections cannot be mixed ordered and named
+[WARN (VERI-1011)] top_xorexec.v(46): cannot index into non-array exec_odata
+[ERROR (VERI-1072)] top_xorexec.v(63): module top_xorexec ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1162)] top_xorexec.v(49): port connections cannot be mixed ordered and named
+	[ERROR (VERI-1072)] top_xorexec.v(63): module top_xorexec ignored due to previous errors
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo
+[WARN] hfifo.v(29): array fmem (size 2048) automatically BLACK-BOXED. Use the "elaborate -bboxa" command to prevent automatic black-boxing.
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 8
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 8
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1063)] top_xorexec.v(61): instantiating unknown module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+ERROR (ENL058): Unable to elaborate module/entity "xorexec" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bBoxM xorexec" if you want to black box this module/entity.
+[WARN] xorexec is not defined and is not blackboxed. Use '-bboxm xorexec' if you want to blackbox this module/entity.
+Summary of errors detected:
+	ERROR (ENL058): Unable to elaborate module/entity "xorexec" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bBoxM xorexec" if you want to black box this module/entity.
+
+ERROR (ENL034): 1 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo
+[WARN] hfifo.v(29): array fmem (size 2048) automatically BLACK-BOXED. Use the "elaborate -bboxa" command to prevent automatic black-boxing.
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 8
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 8
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 9
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 2 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 40 of 168 design flops, 0 of 8 design latches, 4 of 4 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 2
+0.Hp: Proofgrid shell started at 31774@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  90) And(  317) Xor(  25) Mux(  85)
+0.Hp: Union       : Input(  10) Flop(  90) And(  317) Xor(  25) Mux(  85)
+0.Hp: Proof Attempt  1.1	structure size is     45	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1558	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_pop:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 1
+0.Hp: Proof Attempt  2.1	structure size is   1633	[0.00 s]
+0.Hp: Trace Attempt  2	structure size is    100	[0.01 s]
+0.Hp: A trace with 2 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 0.03 s.
+0.Hp: All properties determined. [0.01 s]
+0.Hp: Exited with Success (@ 0.14 s)
+0.D: Proofgrid shell started at 31776@hagon(local)
+0.D: Interrupted. [0.00 s]
+0.D: Exited with Success (@ 0.16 s)
+0.Ht: Proofgrid shell started at 31775@hagon(local)
+0.Ht: Interrupted. [0.00 s]
+0.Ht: Exited with Success (@ 0.17 s)
+0.B: Proofgrid shell started at 31777@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.18 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 2
+	       - unreachable  : 0 (0%)
+	       - covered      : 2 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 2 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 40 of 168 design flops, 0 of 8 design latches, 4 of 4 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 2
+0.Hp: Proofgrid shell started at 31819@hagon(local)
+0.Ht: Proofgrid shell started at 31820@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  90) And(  317) Xor(  25) Mux(  85)
+0.Hp: Union       : Input(  10) Flop(  90) And(  317) Xor(  25) Mux(  85)
+0.Hp: Proof Attempt  1.1	structure size is     45	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1558	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_pop:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 1
+0.Hp: Proof Attempt  2.1	structure size is   1633	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is    100	[0.01 s]
+0.Hp: A trace with 2 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 0.03 s.
+0.Hp: All properties determined. [0.01 s]
+0.Hp: Exited with Success (@ 0.13 s)
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.B: Proofgrid shell started at 31823@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.14 s)
+0.Ht: Union       : Input(  10) Flop(  90) And(  317) Xor(  25) Mux(  85)
+0.Ht: All properties determined. [0.00 s]
+0.Ht: Exited with Success (@ 0.14 s)
+0.D: Proofgrid shell started at 31821@hagon(local)
+0.D: Interrupted. [0.00 s]
+0.D: Exited with Success (@ 0.15 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 2
+	       - unreachable  : 0 (0%)
+	       - covered      : 2 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 3 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 40 of 168 design flops, 0 of 8 design latches, 6 of 6 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 3
+0.Hp: Proofgrid shell started at 31861@hagon(local)
+0.Ht: Proofgrid shell started at 31862@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  90) And(  318) Xor(  25) Mux(  85)
+0.Hp: Union       : Input(  10) Flop(  90) And(  318) Xor(  25) Mux(  85)
+0.Hp: Proof Attempt  1.1	structure size is     75	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1559	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 2
+0.Hp: Proof Attempt  2.1	structure size is   1639	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  90) And(  318) Xor(  25) Mux(  85)
+0.Hp: Proof Attempt  2.2	structure size is   1639	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is    100	[0.01 s]
+0.Hp: Proof Attempt  3.1	structure size is   4399	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  90) And(  318) Xor(  25) Mux(  85)
+0.Hp: Proof Attempt  3.2	structure size is   3203	[0.01 s]
+0.Hp: Trace Attempt  3	structure size is    115	[0.02 s]
+0.Hp: Proof Attempt  4.1	structure size is   5963	[0.02 s]
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  90) And(  318) Xor(  25) Mux(  85)
+0.Ht: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     30	[0.00 s]
+0.Ht: Trace Attempt  3	structure size is     45	[0.00 s]
+0.B: Proofgrid shell started at 31865@hagon(local)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  90) And(  566) Xor(  25) Mux(   0)
+0.B: Trace Attempt  1	structure size is     12	[0.00 s]
+0.B: Trace Attempt  2	structure size is    206	[0.00 s]
+0.B: Trace Attempt  3	structure size is    491	[0.00 s]
+0.B: Trace Attempt  4	structure size is    981	[0.01 s]
+0.B: Trace Attempt  5	structure size is   1674	[0.01 s]
+0.B: A trace with 5 cycles was found. [0.02 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ofifo_pop:precondition1" was covered in 0.02 s.
+Proof Grid utilizable level: 1
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.02 s].
+0.B: Union       : Input(  10) Flop(  90) And(  566) Xor(  25) Mux(   0)
+0.B: Trace Attempt  1	structure size is     12	[0.02 s]
+0.B: Trace Attempt  2	structure size is    206	[0.02 s]
+0.B: Trace Attempt  3	structure size is    491	[0.02 s]
+0.B: Trace Attempt  4	structure size is    981	[0.02 s]
+0.B: Trace Attempt  5	structure size is   1682	[0.03 s]
+0.B: A trace with 5 cycles was found. [0.04 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 0.02 s.
+0.B: All properties determined. [0.03 s]
+0.B: Exited with Success (@ 0.20 s)
+0.D: Proofgrid shell started at 31863@hagon(local)
+0.D: Interrupted. [0.00 s]
+0.D: Exited with Success (@ 0.22 s)
+0.Hp: All properties determined. [0.02 s]
+0.Hp: Exited with Success (@ 0.22 s)
+0.Ht: Trace Attempt  4	structure size is     60	[0.00 s]
+0.Ht: All properties determined. [0.00 s]
+0.Ht: Exited with Success (@ 0.22 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 6
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 3
+	       - unreachable  : 0 (0%)
+	       - covered      : 3 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[ERROR (VERI-1137)] xorexec.v(124): syntax error near end
+[ERROR (VERI-1072)] xorexec.v(134): module xorexec ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1137)] xorexec.v(124): syntax error near end
+	[ERROR (VERI-1072)] xorexec.v(134): module xorexec ignored due to previous errors
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 3 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 41 of 169 design flops, 0 of 8 design latches, 6 of 6 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 3
+0.Hp: Proofgrid shell started at 32170@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  91) And(  361) Xor(  23) Mux(  70)
+0.Hp: Union       : Input(  10) Flop(  91) And(  361) Xor(  23) Mux(  70)
+0.Hp: Proof Attempt  1.1	structure size is     75	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1590	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push:precondition1" was covered in 0.02 s.
+Proof Grid utilizable level: 2
+0.Hp: Proof Attempt  2.1	structure size is   1670	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  361) Xor(  23) Mux(  70)
+0.Hp: Proof Attempt  2.2	structure size is   1670	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is     76	[0.01 s]
+0.Hp: Proof Attempt  3.1	structure size is   4464	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  361) Xor(  23) Mux(  70)
+0.Hp: Proof Attempt  3.2	structure size is   3265	[0.02 s]
+0.D: Proofgrid shell started at 32172@hagon(local)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.D: Union       : Input(  10) Flop(  91) And(  571) Xor(  23) Mux(   0)
+0.D: Trace Attempt  1	structure size is     53	[0.00 s]
+0.D: Trace Attempt  2	structure size is   1474	[0.00 s]
+0.D: Proof Attempt  1.3	structure size is   1452	[0.01 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is   2870	[0.01 s]
+0.D: Proof Attempt  2.4	structure size is   2849	[0.01 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   4263	[0.01 s]
+0.D: Proof Attempt  3.5	structure size is   4242	[0.02 s]
+0.D: ================================================================
+0.D: Trace Attempt  5	structure size is   5656	[0.02 s]
+0.D: Proof Attempt  4.6	structure size is   5666	[0.03 s]
+0.D: ================================================================
+0.D: A trace with 6 cycles was found. [0.04 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ofifo_pop:precondition1" was covered in 0.05 s.
+Proof Grid utilizable level: 1
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.04 s].
+0.D: Union       : Input(  10) Flop(  91) And(  571) Xor(  23) Mux(   0)
+0.D: Trace Attempt  1	structure size is     53	[0.03 s]
+0.D: Trace Attempt  2	structure size is   1474	[0.04 s]
+0.D: Proof Attempt  1.3	structure size is   1452	[0.04 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is   2870	[0.04 s]
+0.D: Proof Attempt  2.4	structure size is   2849	[0.04 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   4263	[0.05 s]
+0.D: Proof Attempt  3.5	structure size is   4242	[0.05 s]
+0.D: ================================================================
+0.D: Trace Attempt  5	structure size is   5656	[0.06 s]
+0.D: Proof Attempt  4.6	structure size is   5666	[0.06 s]
+0.D: ================================================================
+0.D: A trace with 6 cycles was found. [0.07 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 0.05 s.
+0.D: Trace Attempt  6	structure size is   7049	[0.07 s]
+0.D: All properties determined. [0.07 s]
+0.D: Exited with Success (@ 0.30 s)
+0.B: Proofgrid shell started at 32173@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.32 s)
+0.Hp: All properties determined. [0.02 s]
+0.Hp: Exited with Success (@ 0.32 s)
+0.Ht: Proofgrid shell started at 32171@hagon(local)
+0.Ht: Interrupted. [0.00 s]
+0.Ht: Exited with Success (@ 0.32 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 6
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 3
+	       - unreachable  : 0 (0%)
+	       - covered      : 3 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 3 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 41 of 169 design flops, 0 of 8 design latches, 6 of 6 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 3
+0.Hp: Proofgrid shell started at 32371@hagon(local)
+0.Ht: Proofgrid shell started at 32372@hagon(local)
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  70)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  70)
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  70)
+0.Hp: Proof Attempt  1.1	structure size is     75	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1587	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 2
+0.Hp: Proof Attempt  2.1	structure size is   1667	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  70)
+0.Hp: Proof Attempt  2.2	structure size is   1667	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is     76	[0.01 s]
+0.Hp: Proof Attempt  3.1	structure size is   4419	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  70)
+0.Hp: Proof Attempt  3.2	structure size is   3259	[0.02 s]
+0.Hp: Trace Attempt  3	structure size is     91	[0.02 s]
+0.D: Proofgrid shell started at 32373@hagon(local)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.D: Union       : Input(  10) Flop(  91) And(  570) Xor(  23) Mux(   0)
+0.D: Trace Attempt  1	structure size is     53	[0.00 s]
+0.D: Trace Attempt  2	structure size is   1469	[0.00 s]
+0.D: Proof Attempt  1.3	structure size is   1447	[0.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is   2860	[0.01 s]
+0.D: Proof Attempt  2.4	structure size is   2839	[0.01 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   4248	[0.01 s]
+0.D: Proof Attempt  3.5	structure size is   4227	[0.02 s]
+0.D: ================================================================
+0.D: Trace Attempt  5	structure size is   5636	[0.02 s]
+0.D: Proof Attempt  4.6	structure size is   5646	[0.03 s]
+0.D: ================================================================
+0.D: Proof Attempt  5.7	structure size is   7096	[0.04 s]
+0.D: ================================================================
+0.D: Proof Attempt  6.8	structure size is   8483	[0.06 s]
+0.D: Proof Attempt  6.9	structure size is   8571	[0.07 s]
+0.D: ================================================================
+0.B: Proofgrid shell started at 32375@hagon(local)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  91) And(  570) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     12	[0.00 s]
+0.B: Trace Attempt  2	structure size is    164	[0.00 s]
+0.B: Trace Attempt  3	structure size is    308	[0.00 s]
+0.B: Trace Attempt  4	structure size is    740	[0.01 s]
+0.B: Trace Attempt  5	structure size is   1414	[0.01 s]
+0.B: A trace with 9 cycles was found. [0.04 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ofifo_pop:precondition1" was covered in 0.04 s.
+Proof Grid utilizable level: 1
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.04 s].
+0.B: Union       : Input(  10) Flop(  91) And(  570) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     12	[0.04 s]
+0.B: Trace Attempt  2	structure size is    164	[0.04 s]
+0.B: Trace Attempt  3	structure size is    308	[0.04 s]
+0.B: Trace Attempt  4	structure size is    740	[0.04 s]
+0.B: Trace Attempt  5	structure size is   1414	[0.05 s]
+0.B: A trace with 9 cycles was found. [0.08 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 0.06 s.
+0.B: Trace Attempt  9	structure size is   5170	[0.07 s]
+0.B: All properties determined. [0.07 s]
+0.B: Exited with Success (@ 0.43 s)
+0.Ht: All properties determined. [0.00 s]
+0.Ht: Exited with Success (@ 0.43 s)
+0.Hp: All properties determined. [0.02 s]
+0.Hp: Exited with Success (@ 0.43 s)
+0.D: Trace Attempt  9	structure size is  11188	[0.08 s]
+0.D: All properties determined. [0.09 s]
+0.D: Exited with Success (@ 0.43 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 6
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 3
+	       - unreachable  : 0 (0%)
+	       - covered      : 3 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 3 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 41 of 169 design flops, 0 of 8 design latches, 6 of 6 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 3
+0.Hp: Proofgrid shell started at 32451@hagon(local)
+0.Ht: Proofgrid shell started at 32452@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  91) And(  362) Xor(  23) Mux(  71)
+0.Hp: Union       : Input(  10) Flop(  91) And(  362) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  1.1	structure size is     75	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     15	[0.00 s]
+0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push:precondition1" was covered in 0.02 s.
+Proof Grid utilizable level: 2
+0.Hp: Proof Attempt  2.1	structure size is   1679	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  362) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  2.2	structure size is   1679	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is     76	[0.01 s]
+0.Hp: Proof Attempt  3.1	structure size is   4463	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  362) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  3.2	structure size is   3283	[0.02 s]
+0.Hp: Trace Attempt  3	structure size is     91	[0.02 s]
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.B: Proofgrid shell started at 32455@hagon(local)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  91) And(  575) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     12	[0.00 s]
+0.B: Trace Attempt  2	structure size is    164	[0.00 s]
+0.B: Trace Attempt  3	structure size is    308	[0.00 s]
+0.B: Trace Attempt  4	structure size is    749	[0.01 s]
+0.B: Trace Attempt  5	structure size is   1437	[0.01 s]
+0.B: A trace with 9 cycles was found. [0.04 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ofifo_pop:precondition1" was covered in 0.05 s.
+Proof Grid utilizable level: 1
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.04 s].
+0.B: Union       : Input(  10) Flop(  91) And(  575) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     12	[0.04 s]
+0.B: Trace Attempt  2	structure size is    164	[0.04 s]
+0.B: Trace Attempt  3	structure size is    308	[0.04 s]
+0.B: Trace Attempt  4	structure size is    749	[0.04 s]
+0.B: Trace Attempt  5	structure size is   1437	[0.05 s]
+0.B: A trace with 9 cycles was found. [0.08 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 0.05 s.
+0.B: Trace Attempt  9	structure size is   5145	[0.07 s]
+0.B: All properties determined. [0.08 s]
+0.B: Exited with Success (@ 0.28 s)
+0.Hp: All properties determined. [0.02 s]
+0.Hp: Exited with Success (@ 0.28 s)
+0.Ht: Union       : Input(  10) Flop(  91) And(  362) Xor(  23) Mux(  71)
+0.Ht: All properties determined. [0.00 s]
+0.Ht: Exited with Success (@ 0.28 s)
+0.D: Proofgrid shell started at 32453@hagon(local)
+0.D: Interrupted. [0.00 s]
+0.D: Exited with Success (@ 0.29 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 6
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 3
+	       - unreachable  : 0 (0%)
+	       - covered      : 3 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 3 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 41 of 169 design flops, 0 of 8 design latches, 6 of 6 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 3
+0.Hp: Proofgrid shell started at 32518@hagon(local)
+0.Ht: Proofgrid shell started at 32519@hagon(local)
+0.B: Proofgrid shell started at 32522@hagon(local)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ififo_push:precondition1"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is      9	[0.00 s]
+0.B: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push:precondition1" was covered in 0.01 s.
+Proof Grid utilizable level: 2
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.01 s].
+0.B: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is      9	[0.00 s]
+0.B: Trace Attempt  2	structure size is    161	[0.00 s]
+0.B: Trace Attempt  3	structure size is    297	[0.00 s]
+0.B: Trace Attempt  4	structure size is    726	[0.01 s]
+0.B: Trace Attempt  5	structure size is   1411	[0.01 s]
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  91) And(  359) Xor(  23) Mux(  71)
+0.Hp: Union       : Input(  10) Flop(  91) And(  359) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  1.1	structure size is     66	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1590	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is      6	[0.00 s]
+0.Hp: Proof Attempt  2.1	structure size is   3185	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is     12	[0.01 s]
+0.Hp: Proof Attempt  3.1	structure size is   4744	[0.01 s]
+0.Hp: Trace Attempt  3	structure size is     18	[0.01 s]
+0.Hp: Proof Attempt  4.1	structure size is   6339	[0.01 s]
+0.Hp: Trace Attempt  4	structure size is     24	[0.01 s]
+0.Hp: Proof Attempt  5.1	structure size is   6153	[0.01 s]
+0.Hp: Trace Attempt  5	structure size is    618	[0.02 s]
+0.Hp: Proof Attempt  6.1	structure size is   7748	[0.02 s]
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  91) And(  359) Xor(  23) Mux(  71)
+0.Ht: Trace Attempt  1	structure size is      6	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     12	[0.00 s]
+0.D: Proofgrid shell started at 32520@hagon(local)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.D: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.D: Trace Attempt  1	structure size is     50	[0.00 s]
+0.D: Trace Attempt  2	structure size is   1474	[0.00 s]
+0.D: Proof Attempt  1.3	structure size is   1452	[0.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is   2873	[0.00 s]
+0.D: Proof Attempt  2.4	structure size is   2852	[0.01 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   4269	[0.01 s]
+0.D: Proof Attempt  3.5	structure size is   4248	[0.01 s]
+0.D: ================================================================
+0.D: Trace Attempt  5	structure size is   5665	[0.02 s]
+0.D: Proof Attempt  4.6	structure size is   5663	[0.02 s]
+0.D: ================================================================
+0.D: Proof Attempt  5.7	structure size is   7089	[0.04 s]
+0.D: Proof Attempt  5.8	structure size is   7195	[0.05 s]
+0.D: ================================================================
+0.D: Proof Attempt  7.9	structure size is   9998	[0.07 s]
+0.D: Proof Attempt  7.10	structure size is   9933	[0.09 s]
+0.Hp: Proof Attempt  7.1	structure size is   9343	[0.02 s]
+0.Hp: Proof Attempt  8.1	structure size is  10938	[0.03 s]
+0.Hp: Proof Attempt  9.1	structure size is  11706	[0.04 s]
+0.Hp: Proof Attempt  9.2	structure size is  11706	[0.04 s]
+0.Hp: Proof Attempt 10.1	structure size is  13457	[0.07 s]
+0.Hp: Proof Attempt 11.1	structure size is  14860	[0.08 s]
+0.Hp: Proof Attempt 11.2	structure size is  14862	[0.09 s]
+0.Ht: Trace Attempt  3	structure size is     18	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is     24	[0.00 s]
+0.Ht: Trace Attempt  5	structure size is    618	[0.00 s]
+0.D: Proof Attempt  7.11	structure size is   9990	[0.11 s]
+0.D: Proof Attempt  7.12	structure size is  10202	[0.14 s]
+0.D: Proof Attempt  7.13	structure size is  10458	[0.18 s]
+0.Hp: Proof Attempt 12.1	structure size is  16961	[0.15 s]
+0.Hp: Proof Attempt 13.1	structure size is  18368	[0.15 s]
+0.Hp: Proof Attempt 14.1	structure size is  19969	[0.16 s]
+0.Hp: Proof Attempt 14.2	structure size is  19975	[0.17 s]
+0.D: ================================================================
+0.Hp: Proof Attempt 14.3	structure size is  20289	[0.23 s]
+0.Hp: Proof Attempt 15.1	structure size is  22242	[0.25 s]
+0.Hp: Proof Attempt 16.1	structure size is  23849	[0.25 s]
+0.Hp: Proof Attempt 16.2	structure size is  23861	[0.26 s]
+0.D: Proof Attempt 12.14	structure size is  16972	[0.29 s]
+0.Hp: Proof Attempt 17.1	structure size is  25430	[0.33 s]
+0.Hp: Proof Attempt 18.1	structure size is  27039	[0.34 s]
+0.Hp: Proof Attempt 19.1	structure size is  28260	[0.36 s]
+0.Hp: Proof Attempt 20.1	structure size is  29869	[0.37 s]
+0.Hp: Proof Attempt 21.1	structure size is  31090	[0.39 s]
+0.Hp: Proof Attempt 22.1	structure size is  32699	[0.40 s]
+0.D: Proof Attempt 12.15	structure size is  17264	[0.40 s]
+0.Hp: Proof Attempt 23.1	structure size is  34308	[0.42 s]
+0.Hp: Proof Attempt 24.1	structure size is  35917	[0.44 s]
+0.Hp: Proof Attempt 25.1	structure size is  36750	[0.45 s]
+0.Hp: Proof Attempt 25.2	structure size is  36764	[0.47 s]
+0.D: Proof Attempt 12.16	structure size is  17229	[0.57 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  359) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 25.3	structure size is  38346	[0.74 s]
+0.Hp: Proof Attempt 25.4	structure size is  38666	[0.76 s]
+0.D: Proof Attempt 12.17	structure size is  18669	[0.80 s]
+0.Hp: Proof Attempt 26.1	structure size is  41173	[0.92 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  359) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 26.2	structure size is  39941	[0.97 s]
+0.B: Trace Attempt 36	structure size is  30566	[0.96 s]
+0.B: Time limit expired (1.00 s) [1.01 s]
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.96 s].
+0.B: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is      9	[1.01 s]
+0.B: Trace Attempt  2	structure size is    161	[1.01 s]
+0.B: Trace Attempt  3	structure size is    297	[1.01 s]
+0.B: Trace Attempt  4	structure size is    726	[1.01 s]
+0.B: Trace Attempt  5	structure size is   1411	[1.02 s]
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.92 s].
+0.D: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.D: Trace Attempt  1	structure size is     50	[0.97 s]
+0.D: Trace Attempt  2	structure size is   1474	[0.97 s]
+0.D: Proof Attempt  1.3	structure size is   1452	[0.98 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is   2873	[0.98 s]
+0.D: Proof Attempt  2.4	structure size is   2852	[0.98 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   4269	[0.98 s]
+0.D: Proof Attempt  3.5	structure size is   4248	[0.99 s]
+0.D: ================================================================
+0.D: Trace Attempt  5	structure size is   5665	[0.99 s]
+0.D: Proof Attempt  4.6	structure size is   5663	[1.00 s]
+0.D: ================================================================
+0.D: Proof Attempt  5.7	structure size is   7087	[1.01 s]
+0.D: Proof Attempt  5.8	structure size is   7221	[1.02 s]
+0.D: Proof Attempt  5.9	structure size is   7133	[1.03 s]
+0.D: Proof Attempt  5.10	structure size is   7289	[1.05 s]
+0.D: ================================================================
+0.Hp: Proof Attempt 26.3	structure size is  40204	[1.05 s]
+0.D: Proof Attempt  9.11	structure size is  12731	[1.09 s]
+0.D: Proof Attempt  9.12	structure size is  12741	[1.14 s]
+0.D: Proof Attempt  9.13	structure size is  12870	[1.19 s]
+0.D: Proof Attempt  9.14	structure size is  13961	[1.28 s]
+0.D: Proof Attempt  9.15	structure size is  15262	[1.37 s]
+0.Hp: Proof Attempt 26.4	structure size is  43128	[1.42 s]
+0.D: Proof Attempt  9.16	structure size is  14097	[1.47 s]
+0.D: Proof Attempt  9.17	structure size is  13671	[1.55 s]
+0.D: Proof Attempt  9.18	structure size is  14100	[1.66 s]
+0.D: ================================================================
+0.Hp: Proof Attempt 27.1	structure size is  42800	[1.79 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  359) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 27.2	structure size is  41536	[1.84 s]
+0.Hp: Proof Attempt 27.3	structure size is  41751	[1.91 s]
+0.B: Trace Attempt 36	structure size is  30622	[2.00 s]
+0.B: Time limit expired (1.00 s) [2.02 s]
+0.B: Next scan (1) will use per property time limit: 1s * 6 ^ 1 = 6s
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[2.00 s].
+0.B: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is      9	[2.02 s]
+0.B: Trace Attempt  2	structure size is    161	[2.02 s]
+0.B: Trace Attempt  3	structure size is    297	[2.02 s]
+0.B: Trace Attempt  4	structure size is    726	[2.02 s]
+0.B: Trace Attempt  5	structure size is   1411	[2.03 s]
+0.D: Next scan (1) will use per property time limit: 1s * 6 ^ 1 = 6s
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[1.69 s].
+0.D: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.Hp: Proof Attempt 28.1	structure size is  44427	[2.07 s]
+0.D: Proof Attempt 12.14	structure size is  16972	[2.06 s]
+0.D: Proof Attempt 12.15	structure size is  17264	[2.17 s]
+0.D: Proof Attempt 12.16	structure size is  17229	[2.34 s]
+0.Hp: Proof Attempt 28.2	structure size is  42831	[2.36 s]
+0.D: Proof Attempt 12.17	structure size is  18669	[2.57 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  359) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 28.3	structure size is  43131	[2.59 s]
+0.Hp: Proof Attempt 28.4	structure size is  43301	[2.65 s]
+0.D: Proof Attempt 12.18	structure size is  18997	[2.80 s]
+0.Hp: Proof Attempt 29.1	structure size is  45493	[2.97 s]
+0.D: Proof Attempt 12.19	structure size is  18245	[3.00 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  359) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 29.2	structure size is  44726	[3.09 s]
+0.Hp: Proof Attempt 30.1	structure size is  46926	[3.16 s]
+0.B: A trace with 37 cycles was found. [3.12 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ofifo_pop:precondition1" was covered in 4.84 s.
+Proof Grid utilizable level: 1
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[3.12 s].
+0.B: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is      9	[3.12 s]
+0.B: Trace Attempt  2	structure size is    161	[3.12 s]
+0.B: Trace Attempt  3	structure size is    297	[3.12 s]
+0.B: Trace Attempt  4	structure size is    726	[3.12 s]
+0.B: Trace Attempt  5	structure size is   1411	[3.13 s]
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[3.08 s].
+0.D: Union       : Input(  10) Flop(  91) And(  572) Xor(  23) Mux(   0)
+0.Hp: Proof Attempt 31.1	structure size is  47880	[3.22 s]
+0.Hp: Proof Attempt 32.1	structure size is  44631	[3.26 s]
+0.Hp: Proof Attempt 33.1	structure size is  45248	[3.27 s]
+0.Hp: Proof Attempt 33.2	structure size is  45248	[3.30 s]
+0.D: Proof Attempt 17.19	structure size is  24552	[3.91 s]
+0.Ht: Trace Attempt 36	structure size is  42019	[4.01 s]
+0.Hp: Proof Attempt 33.3	structure size is  48902	[4.12 s]
+0.B: A trace with 37 cycles was found. [4.24 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 4.60 s.
+0.B: Trace Attempt 37	structure size is  31566	[4.19 s]
+0.B: All properties determined. [4.24 s]
+0.B: Exited with Success (@ 18.04 s)
+0.D: Trace Attempt 18	structure size is  23813	[3.20 s]
+0.D: All properties determined. [4.22 s]
+0.D: Exited with Success (@ 18.05 s)
+0.Hp: Trace Attempt 10	structure size is   6694	[0.08 s]
+0.Hp: All properties determined. [4.26 s]
+0.Hp: Exited with Success (@ 18.05 s)
+0.Ht: All properties determined. [4.25 s]
+0.Ht: Exited with Success (@ 18.06 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 6
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 3
+	       - unreachable  : 0 (0%)
+	       - covered      : 3 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 3 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 41 of 169 design flops, 0 of 8 design latches, 6 of 6 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 3
+0.Hp: Proofgrid shell started at 32588@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  1.1	structure size is     69	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1593	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is      9	[0.00 s]
+0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push:precondition1" was covered in 0.02 s.
+Proof Grid utilizable level: 2
+0.Hp: Proof Attempt  2.1	structure size is   1667	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  2.2	structure size is   1667	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is     64	[0.01 s]
+0.Hp: Proof Attempt  3.1	structure size is   4445	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  3.2	structure size is   3265	[0.01 s]
+0.Hp: Trace Attempt  3	structure size is     73	[0.02 s]
+0.Hp: Proof Attempt  4.1	structure size is   6043	[0.02 s]
+0.Ht: Proofgrid shell started at 32589@hagon(local)
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.D: Proofgrid shell started at 32590@hagon(local)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.D: Union       : Input(  10) Flop(  91) And(  573) Xor(  23) Mux(   0)
+0.D: Trace Attempt  1	structure size is     51	[0.00 s]
+0.D: Trace Attempt  2	structure size is   1476	[0.00 s]
+0.D: Proof Attempt  1.3	structure size is   1454	[0.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is   2876	[0.01 s]
+0.D: Proof Attempt  2.4	structure size is   2855	[0.01 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   4273	[0.01 s]
+0.D: Proof Attempt  3.5	structure size is   4252	[0.01 s]
+0.D: ================================================================
+0.D: Trace Attempt  5	structure size is   5670	[0.02 s]
+0.D: Proof Attempt  4.6	structure size is   5672	[0.03 s]
+0.D: ================================================================
+0.D: Proof Attempt  5.7	structure size is   7157	[0.04 s]
+0.D: ================================================================
+0.D: Proof Attempt  6.8	structure size is   8595	[0.06 s]
+0.D: Proof Attempt  6.9	structure size is   8499	[0.07 s]
+0.D: Proof Attempt  6.10	structure size is   8628	[0.09 s]
+0.B: Proofgrid shell started at 32592@hagon(local)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  91) And(  573) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     10	[0.00 s]
+0.B: Trace Attempt  2	structure size is    162	[0.00 s]
+0.B: Trace Attempt  3	structure size is    300	[0.00 s]
+0.B: Trace Attempt  4	structure size is    742	[0.01 s]
+0.B: Trace Attempt  5	structure size is   1434	[0.01 s]
+0.Ht: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Ht: Trace Attempt  1	structure size is      9	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     18	[0.00 s]
+0.Ht: Trace Attempt  3	structure size is     27	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is     36	[0.00 s]
+0.Ht: Trace Attempt  5	structure size is    633	[0.00 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  4.2	structure size is   4863	[0.03 s]
+0.Hp: Proof Attempt  4.3	structure size is   6191	[0.03 s]
+0.Hp: Proof Attempt  5.1	structure size is   7641	[0.05 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  5.2	structure size is   6461	[0.06 s]
+0.Hp: Proof Attempt  5.3	structure size is   7741	[0.06 s]
+0.Hp: Proof Attempt  6.1	structure size is   9239	[0.08 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  6.2	structure size is   8059	[0.09 s]
+0.Hp: Proof Attempt  7.1	structure size is   8976	[0.09 s]
+0.Hp: Union       : Input(  10) Flop(  91) And(  360) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  7.2	structure size is   9657	[0.10 s]
+0.Hp: Proof Attempt  8.1	structure size is  10574	[0.11 s]
+0.D: Proof Attempt  6.11	structure size is   8830	[0.11 s]
+0.D: ================================================================
+0.D: Proof Attempt 10.12	structure size is  14125	[0.17 s]
+0.B: A trace with 21 cycles was found. [0.17 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ofifo_pop:precondition1" was covered in 0.55 s.
+Proof Grid utilizable level: 1
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.17 s].
+0.B: Union       : Input(  10) Flop(  91) And(  573) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     10	[0.17 s]
+0.B: Trace Attempt  2	structure size is    162	[0.17 s]
+0.B: Trace Attempt  3	structure size is    300	[0.17 s]
+0.B: Trace Attempt  4	structure size is    742	[0.18 s]
+0.Ht: A trace with 21 cycles was found. [0.16 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 0.79 s.
+0.Ht: Trace Attempt 21	structure size is  21789	[0.15 s]
+0.Ht: All properties determined. [0.16 s]
+0.Ht: Exited with Success (@ 0.97 s)
+0.Hp: All properties determined. [0.11 s]
+0.Hp: Exited with Success (@ 0.97 s)
+0.D: Trace Attempt 11	structure size is  14052	[0.12 s]
+0.D: All properties determined. [0.19 s]
+0.D: Exited with Success (@ 0.97 s)
+0.B: All properties determined. [0.18 s]
+0.B: Exited with Success (@ 0.98 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 6
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 3
+	       - unreachable  : 0 (0%)
+	       - covered      : 3 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IPF036): Starting proof on task:  <embedded>, 4 properties to prove with 0 already proven/unreachable
+background
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 41 of 169 design flops, 0 of 8 design latches, 8 of 9 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.00 s
+Proof Grid utilizable level: 4
+0.Ht: Proofgrid shell started at 32652@hagon(local)
+0.Hp: Proofgrid shell started at 32651@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  1.1	structure size is     72	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1594	[0.00 s]
+0.Hp: Trace Attempt  1	structure size is     12	[0.00 s]
+0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push:precondition1" was covered in 0.03 s.
+Proof Grid utilizable level: 3
+0.Hp: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push_stutter:precondition1" was covered in 0.05 s.
+Proof Grid utilizable level: 2
+0.Hp: Proof Attempt  2.1	structure size is   1675	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  2.2	structure size is   1675	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is     68	[0.01 s]
+0.Hp: Proof Attempt  3.1	structure size is   4454	[0.01 s]
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.B: Proofgrid shell started at 32655@hagon(local)
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.B: Union       : Input(  10) Flop(  92) And(  574) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     13	[0.00 s]
+0.B: Trace Attempt  2	structure size is    167	[0.00 s]
+0.B: Trace Attempt  3	structure size is    306	[0.00 s]
+0.B: Trace Attempt  4	structure size is    733	[0.00 s]
+0.B: Trace Attempt  5	structure size is   1423	[0.01 s]
+0.D: Proofgrid shell started at 32653@hagon(local)
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  3.2	structure size is   3278	[0.02 s]
+0.Hp: Trace Attempt  3	structure size is     80	[0.02 s]
+0.Hp: Proof Attempt  4.1	structure size is   6057	[0.02 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  4.2	structure size is   4881	[0.03 s]
+0.Hp: Proof Attempt  4.3	structure size is   6201	[0.04 s]
+0.Hp: Trace Attempt  4	structure size is     92	[0.05 s]
+0.Hp: Proof Attempt  5.1	structure size is   7660	[0.05 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  5.2	structure size is   6484	[0.06 s]
+0.Hp: Trace Attempt  5	structure size is    528	[0.07 s]
+0.Hp: Proof Attempt  6.1	structure size is   9263	[0.07 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  6.2	structure size is   8087	[0.08 s]
+0.Hp: Proof Attempt  7.1	structure size is   8997	[0.09 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  7.2	structure size is   9690	[0.10 s]
+0.Hp: Proof Attempt  7.3	structure size is  10860	[0.10 s]
+0.Ht: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Ht: Trace Attempt  1	structure size is     12	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     24	[0.00 s]
+0.Ht: Trace Attempt  3	structure size is     36	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is     48	[0.00 s]
+0.Ht: Trace Attempt  5	structure size is    532	[0.00 s]
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[0.00 s].
+0.D: Union       : Input(  10) Flop(  92) And(  574) Xor(  23) Mux(   0)
+0.D: Trace Attempt  1	structure size is     54	[0.00 s]
+0.D: Trace Attempt  2	structure size is   1484	[0.00 s]
+0.D: Proof Attempt  1.3	structure size is   1462	[0.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is   2889	[0.01 s]
+0.D: Proof Attempt  2.4	structure size is   2868	[0.01 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   4291	[0.01 s]
+0.D: Proof Attempt  3.5	structure size is   4270	[0.02 s]
+0.D: ================================================================
+0.D: Trace Attempt  5	structure size is   5693	[0.02 s]
+0.D: Proof Attempt  4.6	structure size is   5695	[0.03 s]
+0.D: ================================================================
+0.D: Proof Attempt  5.7	structure size is   7185	[0.04 s]
+0.D: ================================================================
+0.D: Proof Attempt  6.8	structure size is   8616	[0.06 s]
+0.D: Proof Attempt  6.9	structure size is   8569	[0.08 s]
+0.Hp: Proof Attempt  8.1	structure size is  10600	[0.15 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  8.2	structure size is  11293	[0.17 s]
+0.Hp: Proof Attempt  9.1	structure size is  12203	[0.17 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  9.2	structure size is  12896	[0.19 s]
+0.Hp: Proof Attempt 10.1	structure size is  13806	[0.20 s]
+0.Hp: Proof Attempt 10.2	structure size is  13022	[0.20 s]
+0.D: Proof Attempt  6.10	structure size is   8652	[0.09 s]
+0.D: Proof Attempt  6.11	structure size is   8697	[0.11 s]
+0.D: Proof Attempt  6.12	structure size is   8844	[0.13 s]
+0.D: ================================================================
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 10.3	structure size is  14499	[0.24 s]
+0.Hp: Proof Attempt 10.4	structure size is  15519	[0.25 s]
+0.Hp: Proof Attempt 11.1	structure size is  15655	[0.30 s]
+0.D: Proof Attempt 11.13	structure size is  15761	[0.20 s]
+0.D: Proof Attempt 11.14	structure size is  16399	[0.27 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 11.2	structure size is  16102	[0.32 s]
+0.Hp: Proof Attempt 11.3	structure size is  17072	[0.34 s]
+0.Hp: Proof Attempt 11.4	structure size is  18177	[0.41 s]
+0.D: Proof Attempt 11.15	structure size is  16047	[0.38 s]
+0.Hp: Proof Attempt 12.1	structure size is  17261	[0.43 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 12.2	structure size is  17705	[0.45 s]
+0.Hp: Proof Attempt 12.3	structure size is  18625	[0.47 s]
+0.Hp: Proof Attempt 13.1	structure size is  18867	[0.53 s]
+0.Hp: Proof Attempt 13.2	structure size is  18259	[0.55 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 13.3	structure size is  19308	[0.61 s]
+0.D: Proof Attempt 11.16	structure size is  15821	[0.50 s]
+0.Hp: Proof Attempt 13.4	structure size is  20178	[0.62 s]
+0.Hp: Proof Attempt 13.5	structure size is  20551	[0.62 s]
+0.Hp: Proof Attempt 14.1	structure size is  21265	[0.67 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 14.2	structure size is  20911	[0.70 s]
+0.Hp: Proof Attempt 15.1	structure size is  22679	[0.71 s]
+0.D: Proof Attempt 11.17	structure size is  17015	[0.64 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 15.2	structure size is  22514	[0.74 s]
+0.Hp: Proof Attempt 15.3	structure size is  23284	[0.75 s]
+0.Hp: Proof Attempt 15.4	structure size is  23651	[0.85 s]
+0.Hp: Proof Attempt 16.1	structure size is  24289	[0.91 s]
+0.D: Proof Attempt 11.18	structure size is  16914	[0.80 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 16.2	structure size is  24117	[0.94 s]
+0.Hp: Proof Attempt 16.3	structure size is  24837	[0.95 s]
+0.Hp: Proof Attempt 16.4	structure size is  25204	[1.01 s]
+0.B: Trace Attempt 35	structure size is  29925	[0.94 s]
+0.B: Time limit expired (1.00 s) [1.01 s]
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.94 s].
+0.B: Union       : Input(  10) Flop(  92) And(  574) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     13	[1.01 s]
+0.B: Trace Attempt  2	structure size is    167	[1.01 s]
+0.B: Trace Attempt  3	structure size is    306	[1.01 s]
+0.B: Trace Attempt  4	structure size is    733	[1.01 s]
+0.Hp: Proof Attempt 17.1	structure size is  25899	[1.04 s]
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.cp_rdy"	[0.88 s].
+0.D: Union       : Input(  10) Flop(  92) And(  574) Xor(  23) Mux(   0)
+0.D: Trace Attempt  1	structure size is     54	[0.99 s]
+0.D: Trace Attempt  2	structure size is   1484	[0.99 s]
+0.D: Proof Attempt  1.3	structure size is   1462	[0.99 s]
+0.D: ================================================================
+0.D: Trace Attempt  3	structure size is   2889	[0.99 s]
+0.D: Proof Attempt  2.4	structure size is   2868	[1.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  4	structure size is   4291	[1.00 s]
+0.D: Proof Attempt  3.5	structure size is   4270	[1.00 s]
+0.D: ================================================================
+0.D: Trace Attempt  5	structure size is   5693	[1.01 s]
+0.D: Proof Attempt  4.6	structure size is   5695	[1.01 s]
+0.D: ================================================================
+0.D: Proof Attempt  5.7	structure size is   7193	[1.03 s]
+0.D: ================================================================
+0.D: Proof Attempt  6.8	structure size is   8520	[1.05 s]
+0.D: Proof Attempt  6.9	structure size is   8610	[1.06 s]
+0.B: Trace Attempt  5	structure size is   1423	[1.02 s]
+0.D: Proof Attempt  6.10	structure size is   8623	[1.08 s]
+0.D: Proof Attempt  6.11	structure size is   9071	[1.10 s]
+0.D: Proof Attempt  6.12	structure size is   9169	[1.13 s]
+0.D: Proof Attempt  6.13	structure size is   9086	[1.16 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 17.2	structure size is  25720	[1.21 s]
+0.Hp: Proof Attempt 17.3	structure size is  26390	[1.23 s]
+0.D: Proof Attempt  6.14	structure size is   8884	[1.18 s]
+0.D: ================================================================
+0.Hp: Proof Attempt 18.1	structure size is  26921	[1.31 s]
+0.Hp: Proof Attempt 18.2	structure size is  26732	[1.34 s]
+0.D: Proof Attempt 13.15	structure size is  18410	[1.34 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 18.3	structure size is  27323	[1.44 s]
+0.Hp: Proof Attempt 18.4	structure size is  27943	[1.45 s]
+0.Hp: Proof Attempt 18.5	structure size is  28307	[1.57 s]
+0.D: Proof Attempt 13.16	structure size is  19601	[1.49 s]
+0.D: Proof Attempt 13.17	structure size is  21685	[1.69 s]
+0.Hp: Proof Attempt 18.6	structure size is  31264	[1.86 s]
+0.Hp: Proof Attempt 19.1	structure size is  29739	[1.88 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 19.2	structure size is  28926	[1.92 s]
+0.Hp: Proof Attempt 19.3	structure size is  29490	[1.94 s]
+0.B: A trace with 36 cycles was found. [1.97 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 4.08 s.
+Proof Grid utilizable level: 1
+0.B: Last scan. Per property time limit: 0s
+----------------------------------------
+0.B: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[1.97 s].
+0.B: Union       : Input(  10) Flop(  92) And(  574) Xor(  23) Mux(   0)
+0.B: Trace Attempt  1	structure size is     13	[1.97 s]
+0.B: Trace Attempt  2	structure size is    167	[1.97 s]
+0.B: Trace Attempt  3	structure size is    306	[1.97 s]
+0.B: Trace Attempt  4	structure size is    733	[1.97 s]
+0.B: Trace Attempt  5	structure size is   1423	[1.98 s]
+0.Hp: Proof Attempt 20.1	structure size is  31157	[2.01 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  361) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt 20.2	structure size is  30529	[2.04 s]
+0.Hp: Proof Attempt 21.1	structure size is  32132	[2.09 s]
+0.D: Last scan. Per property time limit: 0s
+----------------------------------------
+0.D: Starting proof for property "top_xorexec.sva_inst.as_ofifo_pop:precondition1"	[1.81 s].
+0.D: Union       : Input(  10) Flop(  92) And(  574) Xor(  23) Mux(   0)
+0.D: Proof Attempt 11.13	structure size is  15761	[2.03 s]
+0.Hp: Proof Attempt 21.2	structure size is  32593	[2.13 s]
+0.D: Proof Attempt 11.14	structure size is  16399	[2.10 s]
+0.Hp: Proof Attempt 21.3	structure size is  34442	[2.28 s]
+0.D: Proof Attempt 11.15	structure size is  16047	[2.21 s]
+0.D: Proof Attempt 11.16	structure size is  15821	[2.33 s]
+0.Hp: Proof Attempt 22.1	structure size is  39744	[2.46 s]
+0.Hp: Proof Attempt 23.1	structure size is  41312	[2.48 s]
+0.Hp: Proof Attempt 24.1	structure size is  42930	[2.50 s]
+0.Hp: Proof Attempt 24.2	structure size is  42945	[2.51 s]
+0.D: Proof Attempt 11.17	structure size is  17015	[2.47 s]
+0.D: Proof Attempt 11.18	structure size is  16914	[2.63 s]
+0.Hp: Proof Attempt 25.1	structure size is  44836	[2.76 s]
+0.Hp: Proof Attempt 26.1	structure size is  46405	[2.79 s]
+0.Hp: Proof Attempt 27.1	structure size is  48024	[2.80 s]
+0.D: Proof Attempt 11.19	structure size is  17347	[2.83 s]
+0.Hp: Proof Attempt 28.1	structure size is  49543	[2.91 s]
+0.Hp: Proof Attempt 28.2	structure size is  49509	[2.95 s]
+0.D: ================================================================
+0.Hp: Proof Attempt 29.1	structure size is  51870	[3.00 s]
+0.Hp: Proof Attempt 30.1	structure size is  53441	[3.01 s]
+0.Hp: Proof Attempt 31.1	structure size is  55062	[3.03 s]
+0.Hp: Proof Attempt 32.1	structure size is  56683	[3.05 s]
+0.B: A trace with 36 cycles was found. [3.04 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ofifo_pop:precondition1" was covered in 4.47 s.
+0.B: Trace Attempt 36	structure size is  30882	[3.01 s]
+0.B: All properties determined. [3.04 s]
+0.B: Exited with Success (@ 13.01 s)
+0.Hp: Trace Attempt  6	structure size is   1198	[0.08 s]
+0.Hp: All properties determined. [3.09 s]
+0.Hp: Exited with Success (@ 13.01 s)
+0.Ht: Trace Attempt 29	structure size is  32182	[2.87 s]
+0.Ht: All properties determined. [3.06 s]
+0.Ht: Exited with Success (@ 13.02 s)
+0.D: Trace Attempt 19	structure size is  25321	[2.90 s]
+0.D: All properties determined. [3.04 s]
+0.D: Exited with Success (@ 13.02 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 8
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 4
+	       - unreachable  : 0 (0%)
+	       - covered      : 4 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+INFO (IVS027): Removed Visualize recipe "visualize:0".
+INFO (IVS029): Removed all Visualize recipes.
+INFO (INL003): Clearing all state information (assumes, stopats, etc.).
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "rst".
+% prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    per_property_time_limit  = 1s * 6 ^ scan
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+background
+INFO (IPF036): Starting proof on task:  <embedded>, 4 properties to prove with 0 already proven/unreachable
+INFO (IRS020): Starting the reset analysis simulation with a limit of 99 cycles.
+INFO (IRS024): Reset cycles 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 cycles. Assigned values for 41 of 169 design flops, 0 of 8 design latches, 8 of 9 internal elements.
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+Proof Simplification completed in 0.01 s
+Proof Grid utilizable level: 4
+0.Hp: Proofgrid shell started at 32690@hagon(local)
+0.D: Proofgrid shell started at 32692@hagon(local)
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Union       : Input(  10) Flop(  92) And(  363) Xor(  23) Mux(  71)
+0.Hp: Union       : Input(  10) Flop(  92) And(  363) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  1.1	structure size is     78	[0.00 s]
+0.Hp: Proof Attempt  1.2	structure size is   1600	[0.01 s]
+0.Hp: Trace Attempt  1	structure size is     18	[0.01 s]
+0.Hp: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push:precondition1" was covered in 0.03 s.
+Proof Grid utilizable level: 3
+0.Hp: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ififo_push_stutter:precondition1" was covered in 0.05 s.
+Proof Grid utilizable level: 2
+0.Hp: Proof Attempt  2.1	structure size is   1687	[0.01 s]
+0.Hp: Union       : Input(  10) Flop(  92) And(  363) Xor(  23) Mux(  71)
+0.Hp: Proof Attempt  2.2	structure size is   1687	[0.01 s]
+0.Hp: Trace Attempt  2	structure size is     80	[0.01 s]
+0.Hp: Proof Attempt  3.1	structure size is   4472	[0.01 s]
+0.Ht: Proofgrid shell started at 32691@hagon(local)
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Union       : Input(  10) Flop(  92) And(  363) Xor(  23) Mux(  71)
+0.Ht: Trace Attempt  1	structure size is     18	[0.00 s]
+0.Ht: Trace Attempt  2	structure size is     36	[0.00 s]
+0.Ht: Trace Attempt  3	structure size is     54	[0.00 s]
+0.Ht: Trace Attempt  4	structure size is     72	[0.00 s]
+0.Ht: Trace Attempt  5	structure size is    562	[0.00 s]
+0.Ht: A trace with 12 cycles was found. [0.01 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.as_ofifo_pop:precondition1" was covered in 0.05 s.
+Proof Grid utilizable level: 1
+0.Ht: A trace with 12 cycles was found. [0.02 s]
+INFO (IPF047): The cover property "top_xorexec.sva_inst.cp_rdy" was covered in 0.07 s.
+0.Ht: Trace Attempt 12	structure size is   9079	[0.01 s]
+0.Ht: All properties determined. [0.02 s]
+0.Ht: Exited with Success (@ 0.30 s)
+0.B: Proofgrid shell started at 32693@hagon(local)
+0.B: Interrupted. [0.00 s]
+0.B: Exited with Success (@ 0.30 s)
+0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.D: All properties determined. [0.00 s]
+0.D: Exited with Success (@ 0.30 s)
+0.Hp: Union       : Input(  10) Flop(  92) And(  363) Xor(  23) Mux(  71)
+0.Hp: All properties determined. [0.02 s]
+0.Hp: Exited with Success (@ 0.31 s)
+Proof Grid utilizable level: 0
+Proof Grid utilizable level: 0
+INFO (IPF059): Completed proof on task:  <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 8
+	      assertions      : 0
+	       - proven       : 0
+	       - cex          : 0
+	       - ar_cex       : 0
+	       - undetermined : 0
+	       - unprocessed  : 0
+	       - error        : 0
+	      covers          : 4
+	       - unreachable  : 0 (0%)
+	       - covered      : 4 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+% trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IPF031): Settings used for this proof:
+    time_limit               = 7200s
+    engine_mode              = engineHp engineHt engineD engineB
+    proofgrid_max_licenses   = 1
+    proofgrid_mode           = local
+INFO (IVS017): Using partially cached trace for replot.
+INFO (IVS008): Expanding analysis region to enable visualization of "<target>".

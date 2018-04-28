@@ -1,0 +1,27 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting VMM producer to a UVM consumer
+ 
+		Objective: This example uses an <avt_channel2uvm_tlm> to connect an VMM producer (generator) to an UVM consumer.	
+
+		Description:  With this adapter, any VMM producer using a vmm_channel to inject transactions can be connected to any UVM consumer that uses TLM port and exports.
+
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

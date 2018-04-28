@@ -1,0 +1,36 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_ms_scenario_gen Multistream Scenario Generator
+
+ 
+Technical content:
+ 
+		Title:    Usage of Multistream scenario generation 
+ 
+		Objective: 	Demonstrate how to use MSS to synchronize multiple streams of generation of different VMM transactions 
+		Description: 	
+VMM has base classes called vmm_ms_scenario and vmm_ms_scenario_gen for defining multi stream scenarios and executing them. Multi stream scenario allows user to execute scenarios/transactions of different stream with a synchronization among them.
+   User has to extend vmm_ms_scenario class and define the execution of transaction/scenario inside the method execute(). This scenario instance is registered to the generator instance of vmm_ms_scenario_gen through register_ms_scenario() method of the generator. Generator randomizes the scenario and calls its execute() method.
+   Any number of scenarios can be registered to a multi stream generator. It executes registered scenarios in round robin order by default until stop_after_n_scenarios or stop_after_n_insts limit is reached.
+	The example shows basic usage of multi stream scenario where 2 different kinds of transactions are executed concurrenlty. User can change the order of execution accroding to the requirement.(dynamic, reactive, etc).
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_mss/mss_simple
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

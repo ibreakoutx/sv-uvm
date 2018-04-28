@@ -1,0 +1,108 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2012.11.08.15.36.09;	author vsananda;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@`timescale 1ns/1ns
+
+module huffman_encode_tb ;
+
+   parameter c_width = 4 ;//fixed length code width
+   
+   parameter vlc_width=5  ; //max variable length code width 
+   parameter vlcz_width=3 ; //code size width
+   
+   parameter p_width=32 ; //packed data width 
+   parameter p_width_msb=31 ; //packed data width
+   
+   parameter EOM = 5'b11111 ;
+   parameter EOM_LENGTH = 4 ;//code length - 1
+   
+   /*AUTOREGINPUT*/
+   // Beginning of automatic reg inputs (for undeclared instantiated-module inputs)
+   reg			clk;			// To dut of huffman_encode.v
+   reg [3:0]		code;			// To dut of huffman_encode.v
+   reg			not_full;		// To dut of huffman_encode.v
+   reg			rdy;			// To dut of huffman_encode.v
+   reg			reset;			// To dut of huffman_encode.v
+   // End of automatics
+   /*AUTOWIRE*/
+   // Beginning of automatic wires (for undeclared instantiated-module outputs)
+   wire [p_width-1:0]	odata;			// From dut of huffman_encode.v
+   wire			pop;			// From dut of huffman_encode.v
+   wire			push;			// From dut of huffman_encode.v
+   // End of automatics
+
+   reg [vlc_width-1:0] 	cdata_r ; //incoming code
+   reg [vlcz_width-1:0] ldata_r ; //incoming code length
+   wire [vlc_width-1:0] 	cdata ; //incoming code
+   wire [vlcz_width-1:0] ldata ; //incoming code length   
+   //    
+   initial
+     begin
+	$dumpvars;
+	code=0;
+	clk=0;
+	reset=1;
+	cdata_r=1;
+	ldata_r=4;
+	rdy=0;
+	not_full=0;
+	#250 ;
+	reset=0;
+	repeat (10000) @@(posedge clk);
+	$finish;
+     end
+
+   always
+     #5 clk = ~clk ;
+
+   always @@(posedge clk )
+     if ( ~reset )
+       begin
+	  rdy <= 1;
+	  not_full <= 1 ;
+	  if ( pop )
+	    begin
+	       code <= code + 1;
+	       if ( code > 6 ) code <= 0;
+	    end
+       end
+
+   always @@(posedge clk)
+     begin
+	if ( push)
+	  $display($time," ns::Packed data = 0x%h", odata);
+     end
+	  
+   huffman_encode dut(/*AUTOINST*/
+		      // Outputs
+		      .odata		(odata[p_width-1:0]),
+		      .push		(push),
+		      .pop		(pop),
+		      // Inputs
+		      .code		(code[3:0]),
+		      .rdy		(rdy),
+		      .not_full		(not_full),
+		      .clk		(clk),
+		      .reset		(reset));
+
+endmodule // huffman_encode_tb
+@

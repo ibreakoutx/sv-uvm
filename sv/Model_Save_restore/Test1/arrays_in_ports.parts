@@ -1,0 +1,2 @@
+partition {top.a_inst(A), top.c_inst(C)};
+partition {top.b_inst(B)};

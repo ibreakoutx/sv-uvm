@@ -1,0 +1,30 @@
+
+Keywords:
+        Search keywords:       RAL, indirect-addressing
+
+Technical content:
+        Title:                 Indirect addressing with RAL 
+         Objective:            To illustrate how indirect addressing can be handled for RAL registers
+
+        Description:           In this example the counter array has indirect addressing scheme in DUT.  Index register and value register are introduced in RALF file to model this behaviour and additional required changes (as in slave.ralf file).  The appropriate modifications will be made tb_env.sv Environment class to implement the INDEXING scheme for access to register array COUNTERS. The INDEX and RIDx have been introduced into the address map. These will be used to implement indexed access for the COUNTER registers. The objective is to install a user defined frontdoor to implement the indexed access.For RAL read() to handle the way DUT will be handling the read from this array ,user defined frontdoor is created for each element of counter.  This user defined frontdoor read actually first writes address into corresponding index register and then reads from value regiser of corresponding counter element. tb_env.sv should be reviewed to see how the user defined frondoor mechnism is handled  and how the frondoor classes is registered in the environment.
+		                       
+        Modification Comments:  
+        Additional setup:      None
+
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+        all             -- It does compile and run the design. 
+
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			    $VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/register_modeling_techniques/Indirect_Addressing
+		DIAGRAMS: 		    None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/ral_user_guide.pdf
+

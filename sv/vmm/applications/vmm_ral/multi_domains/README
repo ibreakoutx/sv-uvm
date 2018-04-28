@@ -1,0 +1,47 @@
+
+
+Keywords:
+		Search keywords: 	VMM RAL SV
+ 
+Technical content:
+ 
+		Title: 	Verifying Registers accessible through multiple physical interfaces using  RAL 
+ 
+		Objective: demonstrate how to use RAL to bring in automation for register verification when registers/memories  are accesssed through multiple physical interfaces/buses (each with unique properties such as bus width, permissions and addressing). The same example can also be run with a differnt makefile option "make MODEL=shared" to demonstrate how to model shared registers in RALF and to access them using different domains (a shared register is physically shared by all domains in a block that instantiates it.)
+		
+		Description:
+		The example demonstrates how the configuration of s et of registers can be done through one access mechanism  and the subsequent register transcation done through a different access mechanism. In this case, the same BFM is used but this example can be extrapolated to use multiple BFMs or physical interfaces
+		drop_domains.ralf : RALF file which shows how registers accessible through different physical interfaces/domains can be represented
+		drop_shared.ralf: RAL file which shows how shared registers across different domains can be represented
+		dropbox.sv :  Simple dropbox design to pass messages between two physical interfaces.   Used as an example to illustrate the multiple domain and base address configurability of RAL
+		simple.sv : Implements the "simple_if" interface, the "simple" transcation class and the "simple_bfm" for register access.
+		tb_env.sv : Implements the RAL RW XACTOR BFMs for translating the ral transactions to "simple" transactionwhich can be driven by the "simple_bfm" into different modes of the "simple" transaction. Tgis file also intsantiates all the different components and registers the generated ral_model in the vmm_ral_env
+		tb_top.sv : top level wrapper module
+		user_test1.sv : example of an user test of accessing the registers through different domains
+		user_test.sv : /simple example that iterates through the ral model, reads each field of each register except the Counters Array
+
+
+   				
+   				
+   				
+
+		Additional setup: 
+
+To run the Example:
+	Using shell scripts:
+	comp.csh  	         -- Compiles  the example for RAL bit bash test
+	comp_hw_reset.csh  	 -- Compiles  the example for RAL hw_reset 
+	run.csh   -- Runs the example 
+	clean.csh -- Cleans up the logs and previous executables
+	Using Makefile:
+	user_test       -- To compile & run the test for a block and system with 2 physical interfaces
+	all,model=DOMAINS       -- To compile & run the test for a block and system with 2 physical interfaces for both the bit bash and hw_reset testcases
+	clean 	 	-- Cleans up the logs and previous executables
+	all 		-- It does all the above steps.
+
+Location Information:
+		PATH: 		$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/mulit_domains
+		DIAGRAMS: 	None
+		Cross Reference: $VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf & $VCS_HOME/doc/UserGuide/pdf/ral_user_guide.pdf
+
+ 

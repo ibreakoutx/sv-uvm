@@ -1,0 +1,26 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting UVM components to VMM consumers through the vmm_channel_adapter
+ 
+		Objective: 	This example uses an <vmm_channel_adapter> to connect an UVM producer  (generator) to a VMM consumer (driver). 
+
+		Description: UVM producer -> VMM consumer - The UVM producer connects to the Adapter's blocking transport export and the adpater is then connected to the VMM consumer
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

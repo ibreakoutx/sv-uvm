@@ -1,0 +1,36 @@
+
+
+Keywords:
+		Search keywords: 	VMM RAL SV
+ 
+Technical content:
+ 
+		Title: 	USING RAL 
+ 
+		Objective: This is a VCS example of using RAL to access registers in the design
+		Description: 	This test will
+   					1. Use RAL to print out all registers by name and its reset value.
+   					2. Compare register reset value between RAL and the design.
+   					3. Before a basic register write and read
+
+		Additional setup: User must use perl-5.6.0 or above to run the test case 
+
+To run the Example:
+	Using shell scripts:
+	comp_no_ral.csh  -- Compiles  the example without using RAL
+	run_no_ral.csh   -- Runs the example without using RAL
+	comp_ral.csh 	 -- Compiles  the example using RAL.
+	run_ral.csh      --  Runs the example  using RAL
+	clean.csh 	 -- Cleans up the logs and previous executables
+	Using Makefile:
+	comp_no_ral  	-- Compiles  the example without using RAL
+	run_no_ral   	-- Runs the example without using RAL
+	comp_ral 	-- Compiles  the example using RAL.
+	run_ral     	--  Runs the example  using RAL
+	clean 	 	-- Cleans up the logs and previous executables
+	all 		-- It does all the above steps.
+
+Location Information:
+		PATH: 		$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/ral_ec
+		DIAGRAMS: 	None
+		Cross Reference: $VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf & $VCS_HOME/doc/UserGuide/pdf/ral_user_guide.pdf

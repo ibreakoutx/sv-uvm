@@ -1,0 +1,16 @@
+Please follow the steps below to do this section of the lab
+step1:  cd test/
+step2:  create arb_test.v which will do the following tasks. 
+        1) reset_test: asserting and checking reset
+        2) drive_test1: driving request and checking grant for CPU0
+        3) drive_test2: driving request and checking grant for CPU1 
+        4) drive_test3: driving request and checking grant for both CPU0 and CPU1 
+step3:  compile and run the simulation
+
+
+
+To verify the arbiter using VCS, please do the 
+following:
+1. Open the file "setup" to set paths and environment variables.
+2. Run the script "run.csh". 
+

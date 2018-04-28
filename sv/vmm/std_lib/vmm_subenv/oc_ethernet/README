@@ -1,0 +1,31 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_subenv Environment Composition Block to System reuse 
+ 
+Technical content:
+ 
+		Title:    	Use of vmm_subenv for Environment composition and reuse from block to system level
+ 
+		Objective: Demonstrate how vmm_subenv and its associated methods can be used to ensure ease of resuse when moving from block level to system level as well as identify and architect reusable sub-environments when you first design and architect a verification environment.
+
+		Description: 	Please refer to the SubEnv primer in the $VCS_HOME/doc/UserGuide area
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_subsenv/oc_ethernet
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/SubEnv.pdf

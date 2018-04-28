@@ -1,0 +1,22 @@
+VCS Version: G-2012.09
+
+
+
+::::::::POWER DOMAIN :  tb/dut/EXEC:::::::::::
+
+::::::::DON'T TOUCH SIGNET PORTS :::::::::
+
+:::::::::Port  VS ISO Policy Associated:::::::::::
+Port Name : tb.dut.exec_unit.odata[7]		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.odata[6]		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.odata[5]		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.odata[4]		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.odata[3]		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.odata[2]		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.odata[0]		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.odata[1]		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.ofifo_push		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.ififo_pop		Associated Policy : tb/dut/exec_iso_out
+Port Name : tb.dut.exec_unit.exec_idle		Associated Policy : tb/dut/exec_iso_out
+
+::::::::: Port VS LS Policy Associtated :::::::::::

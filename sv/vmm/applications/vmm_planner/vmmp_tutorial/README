@@ -1,0 +1,28 @@
+
+This tutorial is intended to give you a very solid hands-on
+exposure to the New SystemVerilog for TestBench technology in VCS.
+You would need VCS 2005.06 or a later version in order to
+be able to run all the simulations in this package.
+
+You need -sverilog compile-time option to compile SystemVerilog program. 
+
+The design being used consists of a memory system that is 
+accessed by two CPUs. There is a common system bus that allows 
+the CPUs access to the memory through a controller, and an 
+arbiter decides which CPU gets control of the system bus.
+
+There are 4 directories at this level: sram, arb, cntrlr and
+memsys. Each of these, except sram (sram only contains the 
+directory "rtl"), in turn, contains the following 3 directories: 
+1. Directory "rtl", containing its relevant Verilog code.
+2. Directory "solution", containing the solution testbench, 
+   interface, top-level verilog, compile-script and run-script 
+   files. To run the simulation under each solution directory, 
+   please go into that directory and look in the README there 
+   for details.
+3. Directory "test", where you will write your own testbench, 
+   interface, top-level verilog and other files such as scripts. 
+
+We hope you'll enjoy going through this hands-on tutorial.
+
+Thank you.

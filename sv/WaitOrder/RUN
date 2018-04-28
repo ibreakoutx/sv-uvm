@@ -1,0 +1,10 @@
+#!/bin/csh -f
+
+\rm -rf simv* csrc  *.key 
+
+vcs $SIM_MODE wait_order_example.v -sverilog
+simv
+
+\rm -rf simv* csrc  *.key
+
+

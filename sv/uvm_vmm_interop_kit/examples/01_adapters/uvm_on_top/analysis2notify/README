@@ -1,0 +1,35 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting UVM publisher to a VMM xactor
+ 
+		Objective: 	This example shows how to use the <avt_analysis2notify> adapter to connect an UVM publisher to a VMM xactor that receives data via vmm_notify  event notifications.
+
+
+
+		Description: 
+ This example shows how to use the <avt_analysis2notify> adapter to connect  an UVM publisher to a VMM xactor that receives data via vmm_notify  event notifications.   The UVM publisher broadcasts an UVM transaction to the adapter, which is  serving as an UVM subscriber. The adapter converts the transaction then  indicates a pre-configured notification, passing the converted transaction  as its status argument.   There are at least two ways VMM components may choose  to receive the transaction:
+
+ - wait for the notification and call status() once the wait returns. This    is not recommended because multiple non-blocking broadcasts from the UVM    publisher can take place before the waiting process has a chance to wake    up. 
+
+
+ - define and register a callback on the notification so that data is received    immediately. The receiver must process the transaction without blocking.    If this is not possible, the transaction must be cached/queued.  
+ This example applies the 2nd approach. The VMM watcher component defines a  callback that will forward the transaction back to the watcher for  processing.  When instantiating the adapter, we pass it the handle to the watcher's  notify object and notification id. When the adapter receives an UVM  transaction via its analysis export, it will convert the transaction to  VMM and indicate the given notification. 
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

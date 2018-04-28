@@ -1,0 +1,39 @@
+
+
+Keywords:
+		Search keywords: Complex types ,Clocking Blocks 	
+
+Technical content:
+ 
+		Title: 	Complex types using Clocking Blocks	 
+ 
+		Objective:  Learning Complex types using Clocking Blocks
+
+		Description:
+		Fixed array with multiple dimensions
+                Fixed array of unpacked structures
+                Fixed array of packed structures
+                Multiple dimensions of  packed array
+                Limitations 
+                Queues, Dynamic arrays (strings) as well associative arrays not supported
+                Expressions involving streaming, Function call returns,  unpacked array  concatenation
+
+		
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/ComplexTypesInClockingBlk
+		DIAGRAMS: 		None
+	

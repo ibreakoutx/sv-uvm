@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_xactor Command layer Transactors 
+ 
+Technical content:
+ 
+		Title:    Writing  Command Layer Master Transactors	
+ 
+		Objective: 	 This example is to help learn how to write VMM-compliant command-lever master transactorstransactors with a transaction-level interface on one side and pin wiggling on the other, also known as bus-functional models (BFM).
+		Description: Please refer to the Master Xactor Primer, " Writing Command Layer Master Transactors" in the $VCS_HOME/doc/UserGuide are	
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_xactor/Command_Master_Xactor
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

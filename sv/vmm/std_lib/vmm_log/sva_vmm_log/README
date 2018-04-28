@@ -1,0 +1,46 @@
+
+
+Keywords:
+	Search keywords: SVA checker library 
+ 
+Technical content:
+	Title: SVA VMM LOG 		     	
+	Objective: To explain SVA checkers for few and many instances.
+	Description: The test explains common and unique logging for few and many instances of SVA checkers. 
+
+Step 1: During VCS compilation. 
+ (a) Point to the sva_std_tasks.h provided.
+     Replace +incdir+$VCS_HOME/packages/sva 
+     to +indir+$YOUR_PATH/your_directory
+
+ (b) Add a new definition "+define+SVA_VMM_LOG_ON"
+
+ (c) Add compile time switch "-ntb_opts rvm"
+
+Step 2: Run simulation as usual.
+ Observation: When an assertion is fired, the SVA error message is now formatted to vmm_log, and is recognized by log.report(); in the testbench.
+
+(1) If you have many (>100)instances of SVA checkers, consider using common logger. 
+    To run the example :
+	Using Makefile:
+	  make common_logger (or) make comp_common_logger  & make run_common_logger
+ 	Using shell scripts:
+	  comp_common_logger.csh & run_common_logger.csh to compile and run using common logger. 
+
+(2) If you have just a few instances of SVA checkers, you can use
+    unique logger per instance of SVA checker.
+
+    To run the example:
+	Using Makefile:
+	  make unique_logger (or) make comp_unique_logger & make run_unique_logger
+ 	Using shell scripts:
+	  comp_unique_logger.csh &  run_unique_logger.csh to  compile and run using unique logger
+
+	Additional setup: 
+ 	   Environment Setting:
+		- SVA checker library users.
+
+Location Information:
+		PATH: 	$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_log/sva_vmm_log
+		DIAGRAMS: None
+		

@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM CPU MEMSYS
+ 
+Technical content:
+ 
+		Title:    	Developing VMM1.1-compliant verification environment f with multiple CPU's
+ 
+		Objective: 	To explain how to efficiently coordinate two CPU transaction generation
+		Description: 	The design being used consists of a memory system that is accessed by two CPUs. There is a common system bus that allows the CPUs access to the memory through a controller, and an arbiter decides which CPU gets control of the system bus.The verification environment is the CPU's. Each CPU subenv contains a driver and a generator. The CPU scenarios are controlled by a multi stream scenario generator which is a top level generator.
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/memsys
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

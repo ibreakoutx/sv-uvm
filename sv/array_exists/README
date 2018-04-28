@@ -1,0 +1,29 @@
+
+
+Keywords:
+		Search keywords: 	testbench sv string array aggregate exists
+ 
+Technical content:
+		Title: 		array.exists
+		
+		Objective: 		To Demonstrate usage of array method exists()
+
+		Description: 	This shows an example of array aggregate method exists
+		
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/array_exists
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vcs.pdf  and $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf & $VCS_HOME/doc/UserGuide/sv_lrm.pdf

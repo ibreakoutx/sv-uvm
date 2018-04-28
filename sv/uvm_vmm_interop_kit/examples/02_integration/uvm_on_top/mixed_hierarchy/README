@@ -1,0 +1,26 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Mixed Hierarchy
+ 
+		Objective: 	This example demonstrates how testbench environments can evolve to become mixed component hierarchies, where UVM instantiates VMM that instantiates UVM and so on.
+
+		Description: The detailed description is in test.sv
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

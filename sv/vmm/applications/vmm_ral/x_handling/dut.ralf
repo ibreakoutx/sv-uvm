@@ -1,0 +1,20 @@
+
+register REG {
+  bytes 1;
+  field REG_VAL {
+    bits  8;
+    access ro;
+		}		
+}
+
+block DUT_BLK {
+  bytes 1;
+  register REG=CTRL_REG @8'h00;
+  register REG=DATA_REG @8'h01;
+  register REG=STATUS_REG @8'h02;
+}
+
+system DUT {
+  bytes 1;
+  block DUT_BLK (dut)@9'h000;
+}

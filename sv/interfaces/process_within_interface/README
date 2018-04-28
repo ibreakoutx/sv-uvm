@@ -1,0 +1,39 @@
+Keywords:
+ Search keywords      : testbench sv interface process
+
+
+Technical content:
+ Title                : PROCESSES WITHIN INTERFACES.
+ Objective            : To illustrate embedding processes within an interface.
+ Description          : This example has processes synchronous to a clock which sets or resets flags based on certain signals.
+ 
+ Additional setup     : None
+
+
+Run scripts:
+    Using Makefile
+ clean                - To clean up the log files and executable of previous run
+ comp                 - To compile the design
+ run                  - To run the design
+ all                  - It does all the above steps.
+
+    Using shell scripts
+ clean.csh            - To clean up the log files and executable of previous run
+ comp.csh             - To compile the design
+ run.csh              - To run the design
+
+
+Additional notes:
+The example consists of the following files.
+
+interface.sv  :	This file has the interface block defined with all its member functions and processes defined in it.
+
+test.sv : Consists of the program block which takes an instance of the interface from the top and calls methods defined within the interface. The program basically calls the write function to push 4 bytes into stack and then reads out or pops out the 4 bytes pushed into it.
+
+top.v :	Creates an instances of the test, the interface and connects a clock to them.
+
+
+Location information:
+ PATH                 : $VCS_HOME/doc/examples/testbench/sv/interfaces/process_within_interface
+ DIAGRAMS             : None
+ Cross Reference      : $VCS_HOME/doc/UserGuide/sv_lrm.pdf, $VCS_HOME/doc/UserGuide/vcs.pdf and $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf

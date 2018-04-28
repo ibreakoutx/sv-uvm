@@ -1,0 +1,66 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_channel record playback vmm_opts vmm_xactor_iter typed
+		 
+		 Technical content:
+		  
+		  		Title:   Demonstrate the usage of record/playback capability in vmm_channel 
+				 
+				 		Objective: 	To show how the stimuls generated in one simulation and can be recorded and played back in a subsequent simulation. using this feature one can shutdown any part of verification environment such a MSS, functional transactors, etc. It helps tto maintain the same random stimuls acroos different simulator version and brings superior throughput and memory consumption (less GC)
+
+					    Description: 	
+
+This test demonstrates the usage of vmm_channel, vmm_xactor_iter and vmm_opts class.
+
+Usage:
+======
+1) vmm_channel
+   Parameterized vmm_channel is used in the environment and the driver.
+   Record/Playback capability, set_consumer is used
+
+2) vmm_xactor_iter
+   foreach macro for iterator is used for general and specific(only generators)
+   transactor iterations.
+
+3) vmm_opts
+   Runtime control of num. of channels, record/playback mode, num of
+   transactions is done through this class.
+
+Files:
+======
+1) trans.sv - transaction class with predefined macros.
+
+2) driver.sv - driver class which gets transaction objects 
+               from a set of input channels.
+
+3) tb_cfg.sv - Configuration class to configure number of channels,
+               number of transactions, etc.
+               This class shows the usage of vmm_opts
+               The fields in this class can be controlled during runtime
+
+4) tb_env.sv - Environment class which shows vmm_channel capabilities,
+               vmm_xactor_iter macros.
+
+5) test.sv   - program block which instantiates and run environment object.
+
+The test takes options through the runtime command line through +vmm_opts and sets the configuration mode in the confifuration class in tb_cfg.sv. It also takes in the number of transactions and channels as an input paremter. This is then used by the environment to create the corresponding number of transactors and channels. It iterates through the channle though the `foreach_vmm_xactor macro and starts all these componenst as well as dynamically assigns these transactors to be the consumers of the channels. n 'RECORD' mode, the generated transactions are written out to o/p files and in PLAYBACK mode, the stimuli is read from the coresponing find instead of being generated through the generators
+	Additional setup: None	
+	 
+	  To run the example:
+	        Using Makefile:
+			    clean           -- To clean up the log files and executable of previous run
+				comp            -- To compile the design
+				run             -- To run the design
+				all             -- It does all the above steps.
+			Using shell scripts:
+			    clean.csh       -- To clean up the log files and executable of previous run
+			    comp.csh        -- To compile the design
+			    run.csh         -- To run the design  
+																		  
+
+Location Information:
+				PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/vip/apb
+			    DIAGRAMS: 		None
+			    Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf
+       

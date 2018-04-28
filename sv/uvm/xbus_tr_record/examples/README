@@ -1,0 +1,95 @@
+--------------------------------------------
+UVM Transaction Recording Background:
+--------------------------------------------
+What is UVM transaction recording?  
+- It is a built-in API infrastructure for recording transactions and sequences.
+
+The UVM recording API implementation is vendor specific:
+- The UVM recording API infrastructure is simply a set of empty functions found in:
+  <UVM install dir>/src/base/uvm_misc.sv
+
+Once enabled and simulation completed, recorded transactions and sequences can be viewed within the vendor's GUI:
+- Transaction pane/browser/etc  
+- Waveform window
+
+--------------------------------------------
+VCS and UVM Recording:
+--------------------------------------------
+Background: VCS transaction recording is based on 2 system tasks (available starting in the 2009.12 release):
+- $msglog   -- Generally intended for transaction and message recording 
+- $tblog    -- Generally intended for class dynamic data recording
+
+
+VCS and UVM recording can be broken into 3 pieces.  Users can choose one, a combination, or all of the following: 
+(1) VCS plumbing for the UVM transaction recording API infrastructure. 
+(2) Additions to user code to capatilize on the UVM recording infrastructure. (User modifications necessary)
+(3) uvm_report_* message viewing in a waveform and transaction pane.
+
+
+Details:
+
+(1) UVM transaction recording API infrastructure.
+        - Description:
+          - Provides stream and msg_name creation and the associated $mslog calls
+	  - Also provides a text based output for displaying this same data to a file or stdout.
+
+        - Usage:
+          - To enable UVM recording (this is built-into UVM already):
+            set_config_int("*", "recording_detail", UVM_FULL);
+          - To write the textual based output to a file instead of stdout:
+            set_recording_detail_file("tr.log");
+
+(2) uvm_report_* message viewing in a waveform and transaction pane. 
+    - This feature has nothing to do with transaction recording itself.  Instead, this feature simply
+      captures any uvm_report_* messages for viewing in a waveform and transaction pane. However, transaction 
+      details are typically displayed in UVM messages and therefore would be captured by this
+      utility.
+
+    - Usage:
+      1. Create a new uvm_report_global_server and an instance of the uvm_msglog_report_server:
+         uvm_report_global_server  glob                 = new(); 
+         uvm_msglog_report_server  msglog_report_server = new();
+ 
+      2. Setup the global server to use the instance of the uvm_msglog_report_server:
+         glob.set_server(msglog_report_server); 
+
+
+------------------------------------------------
+IMPORTANT: Understanding the Output and Display
+------------------------------------------------
+It is imperative that you understand how UVM records transactions in order to understand the output and
+display of (1) and (2) above.
+
+Although the start of the sequence is recorded at the beginning of the sequence, the transaction property/data 
+recording occurs at the END of each sequence and not at the start of the sequence.
+
+Why?  Let's examine the `uvm_do sequence macro: 
+`define uvm_do(UVM_SEQUENCE_ITEM) \
+  begin \
+  `uvm_create(UVM_SEQUENCE_ITEM) \
+  start_item(UVM_SEQUENCE_ITEM); \
+  if(!UVM_SEQUENCE_ITEM.randomize()) begin \
+    uvm_report_warning("RNDFLD", "Randomization failed in uvm_do action"); \
+  end \
+  finish_item(UVM_SEQUENCE_ITEM); \
+  end
+
+Notice that randomize() is called after start_item.  start_item is where the sequence start process occurs, 
+but is not where the transaction property/data is recorded since it has not yet been randomized.  Therefore, the
+transaction property/data recording does not occur until finish_item is called.
+
+
+
+================================================
+Understanding and running the example
+================================================
+
+--------------------------------------------
+Running the example
+--------------------------------------------
+(1) make all    -- compiles and runs the simulation
+(2) dve 	-- example session with waves provided (tested with 09.12-3 and 2010.06-B3)
+(3) In DVE:
+    - Edit -> Preferences -> Transaction Debug
+      Check all boxes with:  "Show values" /  "Show relations"
+

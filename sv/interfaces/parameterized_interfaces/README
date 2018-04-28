@@ -1,0 +1,38 @@
+Keywords:
+ Search keywords      : testbench sv interface parameter
+
+
+Technical content:
+ Title                : PARAMETERIZED INTERFACES.
+ Objective            : To illustrate how to pass parameters through interfaces.
+ Description          : This example has a simple bus interface which takes parameters of address and data widths which is set to a default of 32.
+ 
+ Additional setup     : None
+
+Run scripts:
+    Using Makefile
+ clean                - To clean up the log files and executable of previous run
+ comp                 - To compile the design
+ run                  - To run the design
+ all                  - It does all the above steps.
+
+    Using shell scripts 
+ clean.csh            - To clean up the log files and executable of previous run
+ comp.csh             - To compile the design
+ run.csh              - To run the design	
+
+
+Additional Notes:	
+The example consists of the following files.
+
+interface.sv : This file has the Bus interface block defined with all its properties, clocking blocks and modports.
+
+test.sv : Consists of the program block which takes an instance of the interface from the top and drives address and data variables of the interface.
+
+top.v : Creates an instance of the test, the interface and connects a clock to them.
+
+
+Location information:
+ PATH                 : $VCS_HOME/doc/examples/testbench/sv/interfaces/parameterized_interfaces
+ DIAGRAMS             : None
+ Cross Reference      : $VCS_HOME/doc/UserGuide/sv_lrm.pdf, $VCS_HOME/doc/UserGuide/vcs.pdf and $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf

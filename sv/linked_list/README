@@ -1,0 +1,27 @@
+
+
+Keywords:
+		Search keywords: 	testbench sv linked list
+ 
+Technical content:
+		Title: 		Linked List
+		
+		Objective: 		To  demonstrate a Linked List with an example 
+		Description: 	 	This is a simple example showing how to use a linked list with different types
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/linked_list
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vcs.pdf and $VCS_HOME/doc/UserGuide/sv_lrm.pdf 

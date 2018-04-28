@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM ALU
+ 
+Technical content:
+ 
+		Title:    	Developing VMM based verification environmentt for ALU verification
+ 
+		Objective: 	 To explain how to quickly setup a verification environment efficiently for an ALU using VMM1.1 components
+		Description: The verification environment consists of the transaction class easily created using the VMM shorthand macros, the ALU configuration descriptor class, coverage class for tracking different kind of transactions,	the Transaction level interfaces created through vmm_channle, atomic generators, the driver components extended from vmm_xactor, the monitor, env and asociated classes
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_env/cpu_alu_basic
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

@@ -1,0 +1,33 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_env 
+ 
+Technical content:
+ 
+		Title:    Auto execution of simulation sequences with vmm_env
+ 
+		Objective 	: demonstrate the set of sequences which vmm_env phases through during a simulation run
+		Description: 	the successful simulation of a testcase to completion involves the execution of the following major functions: generating testcase configuration, Building the verification environment around the DUT according to the generated testcase configuration, Disabling all assertions and resetting the DUT, Configuring the DUT according to the generated testcase configuration, Enabling assertions and starting all transactors and generators in the environment, Detecting the end-of-test conditions, Stopping all generators in an orderly fashion, Draining the DUT and collecting statistics, Reporting on the success or failure of the simulation run. Not all DUTs require all of those steps. Some steps may be trivial for some DUTs. Others may be very complex. But every successful simulation follows this sequence of generic steps. Individual testcases intervene at various points in the simulation flow to implement the unique aspect of each testcase.
+		The vmm_env base class formalizes these simulation steps into well-defined virtual methods. These methods must be extended for a verification environment to implement its DUT-specific requirements. The vmm_env base class supports the development of a verification environment by extending each virtual method to implement the individual simulation steps as required by the target DUT. The base class already contains the functionality to manage the sequencing and execution of the simulation steps. This example shows how the base class helps manage the sequencing and execution of these steps
+
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_env/explicit_phasing
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

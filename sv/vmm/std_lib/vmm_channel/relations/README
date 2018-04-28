@@ -1,0 +1,31 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_channel channel relationships 
+ 
+Technical content:
+ 
+		Title:    Usage of vmm_channel APIs to query/setup channel relationships
+ 
+		Objective: 	Demonstrate how to dynamically setup producers and consumers for the channel implemented Transaction level Interfaces  and query for the appropriate interfaces
+		Description: 	
+		The set_consumer and set_producer methods are used to dynmaically connect transcators and generators to the channels. This example also shows how the get_consumer/get_producer methods are used to verify the the transactions flow in an appropiate manner
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_channel/relations
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

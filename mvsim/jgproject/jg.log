@@ -1,0 +1,74 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 8.0
+# platform  : Linux 2.6.18-194.8.1.el5
+# version   : 8.0ea008 64 bits
+# build date: 2011.07.31 22:03:52 PDT
+#----------------------------------------
+# started Fri Dec 07 11:16:26 CST 2012
+# hostname  : hagon
+# pid       : 12204
+# arguments : 
+
+Any disclosure about the Jasper Design Automation software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Jasper Design Automation and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+JASPER DESIGN AUTOMATION, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF JASPER
+DESIGN AUTOMATION, INC.
+
+Copyright (C) 2000-2011 Jasper Design Automation, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Jasper Design Automation, Inc.
+                          707 California Street
+                          Mountain View, CA 94041
+
+For technical assistance please contact the Jasper Design Automation
+Technical Support Center at (650) 966-0200 or send email to
+support@jasper-da.com.
+
+For more information on the Jasper Design Automation products
+send email to info@jasper-da.com.
+
+% source run.tcl
+[-- (VERI-1482)] Analyzing Verilog file /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/verilog/packages/std/std.sv
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file hfifo.v
+[-- (VERI-1482)] Analyzing Verilog file xorexec.v
+[-- (VERI-1482)] Analyzing Verilog file top_xorexec_sva.sv
+[INFO (VERI-1018)] top_xorexec.v(2): compiling module top_xorexec
+[INFO (VERI-1018)] hfifo.v(7): compiling module hfifo:(size=8,dwidth=8)
+[WARN (VERI-1209)] hfifo.v(69): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(74): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] hfifo.v(79): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] hfifo.v(80): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] xorexec.v(14): compiling module xorexec
+[WARN (VERI-1063)] top_xorexec.v(78): instantiating unknown module pmu
+[INFO (VERI-1018)] top_xorexec_sva.sv(1): compiling module top_xorexec_sva
+[INFO] Module Name top_xorexec
+ERROR (ENL058): Unable to elaborate module/entity "pmu" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bBoxM pmu" if you want to black box this module/entity.
+[WARN] pmu is not defined and is not blackboxed. Use '-bboxm pmu' if you want to blackbox this module/entity.
+Summary of errors detected:
+	ERROR (ENL058): Unable to elaborate module/entity "pmu" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bBoxM pmu" if you want to black box this module/entity.
+
+ERROR (ENL034): 1 errors detected in the design file(s).
+

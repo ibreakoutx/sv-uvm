@@ -1,0 +1,469 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0x00002aaaaff4fef0, pid=10759, tid=1102481728
+#
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (1.5.0_11-b03 mixed mode)
+# Problematic frame:
+# C  [libjaspergui.so+0x38cef0]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000004a1b87f0):  JavaThread "qtgui-main" [_thread_in_native, id=10772]
+
+siginfo:si_signo=11, si_errno=0, si_code=1, si_addr=0x00000000000000c0
+
+Registers:
+RAX=0x0000000000000000, RBX=0x0000000049dddd50, RCX=0x0000000041b655c0, RDX=0x0000000049d794c0
+RSP=0x0000000041b65520, RBP=0x0000000041b65830, RSI=0x0000000049dddd50, RDI=0x0000000041b65830
+R8 =0x0000000000000000, R9 =0x0000000041b654e0, R10=0x0000000000000000, R11=0x00002aaaaffa9160
+R12=0x0000000041b65790, R13=0x00002aaaab5d62f0, R14=0x0000000041b66128, R15=0x0000000041b66120
+RIP=0x00002aaaaff4fef0, EFL=0x0000000000010202, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x0000000041b65520)
+0x0000000041b65520:   0000000aafc390e0 0000000041b655e0
+0x0000000041b65530:   0000000041b65830 0000000041b655c0
+0x0000000041b65540:   00000000492fddf0 0000000000000000
+0x0000000041b65550:   0000000049d79480 000000004a7ff6fc
+0x0000000041b65560:   000000004a7ff6d0 0000000000000002
+0x0000000041b65570:   00002aaaab5d5ce0 0000000049d79480
+0x0000000041b65580:   0000000041b65e40 0000000041b65790
+0x0000000041b65590:   00002aaaab5d62f0 0000000041b66128
+0x0000000041b655a0:   0000000041b66120 000000379b2728db
+0x0000000041b655b0:   00002aaaab5d62f0 0000000041b66128
+0x0000000041b655c0:   0000000041b66120 00002aaaab21cfac
+0x0000000041b655d0:   0000000049e2f958 0000000049dddd40
+0x0000000041b655e0:   0000000041b65830 0000000041b65790
+0x0000000041b655f0:   00002aaaab5d62f0 0000000041b66128
+0x0000000041b65600:   0000000041b66120 00002aaaaff50756
+0x0000000041b65610:   0000000000008003 0000000000000001
+0x0000000041b65620:   0000000041b65670 0000000041b658d0
+0x0000000041b65630:   0000000000000002 0000000049617270
+0x0000000041b65640:   0000000049617270 0000000041b65b40
+0x0000000041b65650:   000000004a1b9ba0 0000000041b65b40
+0x0000000041b65660:   0000000041b65c00 00002aaab0a5708c
+0x0000000041b65670:   00000000495c3e40 0000000000000000
+0x0000000041b65680:   00000000495c3e60 00000000495c3e60
+0x0000000041b65690:   0000000041b65b40 00002aaab0a5d67b
+0x0000000041b656a0:   0000000041b65740 0000000041b65740
+0x0000000041b656b0:   0000000000000000 0000000049f6a040
+0x0000000041b656c0:   0000000049e2f940 00002aaa0000006c
+0x0000000041b656d0:   0000000000000005 0000000049545760
+0x0000000041b656e0:   00002aaab1509a60 00002aaab0bf304d
+0x0000000041b656f0:   00000000494a4280 0000000000000003
+0x0000000041b65700:   000000004a1b9ba0 0000000000000004
+0x0000000041b65710:   00000000494a6380 0000000049e9dc50 
+
+Instructions: (pc=0x00002aaaaff4fef0)
+0x00002aaaaff4fee0:   00 00 00 48 89 7c 24 10 48 8b 00 48 89 4c 24 18
+0x00002aaaaff4fef0:   48 8b 80 c0 00 00 00 48 8b 00 48 8b 50 18 48 8b 
+
+Stack: [0x0000000041a68000,0x0000000041b69000),  sp=0x0000000041b65520,  free space=1013k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjaspergui.so+0x38cef0]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  COM.tfi.shell.Qt.execApp([Ljava/lang/String;)I+0
+j  COM.tfi.shell.Qt.access$100(LCOM/tfi/shell/Qt;[Ljava/lang/String;)I+2
+j  COM.tfi.shell.Qt$2.run()V+8
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000049cd44a0 JavaThread "EvalManager" daemon [_thread_blocked, id=10774]
+=>0x000000004a1b87f0 JavaThread "qtgui-main" [_thread_in_native, id=10772]
+  0x00000000492bb680 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=10767]
+  0x00000000492b9a50 JavaThread "CompilerThread1" daemon [_thread_blocked, id=10766]
+  0x00000000492b84a0 JavaThread "CompilerThread0" daemon [_thread_blocked, id=10765]
+  0x00000000492b6d40 JavaThread "AdapterThread" daemon [_thread_blocked, id=10764]
+  0x00000000492b5990 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10763]
+  0x00000000492a2330 JavaThread "Finalizer" daemon [_thread_blocked, id=10762]
+  0x00000000492a1b00 JavaThread "Reference Handler" daemon [_thread_blocked, id=10761]
+  0x0000000049206440 JavaThread "main" [_thread_blocked, id=10759]
+
+Other Threads:
+  0x000000004929d5f0 VMThread [id=10760]
+  0x00000000492bd2d0 WatcherThread [id=10768]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 2368K, used 287K [0x00002b6b1ee00000, 0x00002b6b1f090000, 0x00002b6b298a0000)
+  eden space 2112K,  12% used [0x00002b6b1ee00000, 0x00002b6b1ee40530, 0x00002b6b1f010000)
+  from space 256K,  11% used [0x00002b6b1f050000, 0x00002b6b1f057798, 0x00002b6b1f090000)
+  to   space 256K,   0% used [0x00002b6b1f010000, 0x00002b6b1f010000, 0x00002b6b1f050000)
+ tenured generation   total 4896K, used 3179K [0x00002b6b298a0000, 0x00002b6b29d68000, 0x00002b6b3ee00000)
+   the space 4896K,  64% used [0x00002b6b298a0000, 0x00002b6b29bbac30, 0x00002b6b29bbae00, 0x00002b6b29d68000)
+ compacting perm gen  total 21248K, used 10491K [0x00002b6b3ee00000, 0x00002b6b402c0000, 0x00002b6b44200000)
+   the space 21248K,  49% used [0x00002b6b3ee00000, 0x00002b6b3f83ece8, 0x00002b6b3f83ee00, 0x00002b6b402c0000)
+No shared spaces configured.
+
+Dynamic libraries:
+40000000-4000e000 r-xp 00000000 00:23 1238875                            /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/bin/java
+4010d000-40110000 rwxp 0000d000 00:23 1238875                            /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/bin/java
+401d5000-401d6000 ---p 401d5000 00:00 0 
+401d6000-403d6000 rwxp 401d6000 00:00 0 
+40f0c000-40f0d000 ---p 40f0c000 00:00 0 
+40f0d000-4110d000 rwxp 40f0d000 00:00 0 
+41222000-41223000 ---p 41222000 00:00 0 
+41223000-41323000 rwxp 41223000 00:00 0 
+41323000-41326000 ---p 41323000 00:00 0 
+41326000-41424000 rwxp 41326000 00:00 0 
+41424000-41427000 ---p 41424000 00:00 0 
+41427000-41525000 rwxp 41427000 00:00 0 
+41525000-41526000 ---p 41525000 00:00 0 
+41526000-41726000 rwxp 41526000 00:00 0 
+41941000-41944000 rwxp 41941000 00:00 0 
+41944000-41a42000 rwxp 41944000 00:00 0 
+41a68000-41a6b000 ---p 41a68000 00:00 0 
+41a6b000-41b69000 rwxp 41a6b000 00:00 0 
+41d41000-41d44000 ---p 41d41000 00:00 0 
+41d44000-41e42000 rwxp 41d44000 00:00 0 
+41e42000-41e45000 ---p 41e42000 00:00 0 
+41e45000-41f43000 rwxp 41e45000 00:00 0 
+41f43000-41f46000 ---p 41f43000 00:00 0 
+41f46000-42044000 rwxp 41f46000 00:00 0 
+42044000-42047000 ---p 42044000 00:00 0 
+42047000-42145000 rwxp 42047000 00:00 0 
+42145000-42148000 ---p 42145000 00:00 0 
+42148000-42246000 rwxp 42148000 00:00 0 
+42246000-42247000 ---p 42246000 00:00 0 
+42247000-42347000 rwxp 42247000 00:00 0 
+42347000-42348000 ---p 42347000 00:00 0 
+42348000-42548000 rwxp 42348000 00:00 0 
+42548000-4254b000 rwxp 42548000 00:00 0 
+4254b000-42649000 rwxp 4254b000 00:00 0 
+42649000-4264c000 ---p 42649000 00:00 0 
+4264c000-4274a000 rwxp 4264c000 00:00 0 
+4274a000-4274d000 rwxp 4274a000 00:00 0 
+4274d000-4374b000 rwxp 4274d000 00:00 0 
+49200000-4b46b000 rwxp 49200000 00:00 0                                  [heap]
+379ae00000-379ae1c000 r-xp 00000000 fd:00 1179943                        /lib64/ld-2.5.so
+379b01c000-379b01d000 r-xp 0001c000 fd:00 1179943                        /lib64/ld-2.5.so
+379b01d000-379b01e000 rwxp 0001d000 fd:00 1179943                        /lib64/ld-2.5.so
+379b200000-379b34f000 r-xp 00000000 fd:00 1179957                        /lib64/libc-2.5.so
+379b34f000-379b54e000 ---p 0014f000 fd:00 1179957                        /lib64/libc-2.5.so
+379b54e000-379b552000 r-xp 0014e000 fd:00 1179957                        /lib64/libc-2.5.so
+379b552000-379b553000 rwxp 00152000 fd:00 1179957                        /lib64/libc-2.5.so
+379b553000-379b558000 rwxp 379b553000 00:00 0 
+379b600000-379b682000 r-xp 00000000 fd:00 1179959                        /lib64/libm-2.5.so
+379b682000-379b881000 ---p 00082000 fd:00 1179959                        /lib64/libm-2.5.so
+379b881000-379b882000 r-xp 00081000 fd:00 1179959                        /lib64/libm-2.5.so
+379b882000-379b883000 rwxp 00082000 fd:00 1179959                        /lib64/libm-2.5.so
+379ba00000-379ba02000 r-xp 00000000 fd:00 1179962                        /lib64/libdl-2.5.so
+379ba02000-379bc02000 ---p 00002000 fd:00 1179962                        /lib64/libdl-2.5.so
+379bc02000-379bc03000 r-xp 00002000 fd:00 1179962                        /lib64/libdl-2.5.so
+379bc03000-379bc04000 rwxp 00003000 fd:00 1179962                        /lib64/libdl-2.5.so
+379be00000-379be14000 r-xp 00000000 fd:00 1179958                        /lib64/libz.so.1.2.3
+379be14000-379c013000 ---p 00014000 fd:00 1179958                        /lib64/libz.so.1.2.3
+379c013000-379c014000 rwxp 00013000 fd:00 1179958                        /lib64/libz.so.1.2.3
+379c200000-379c216000 r-xp 00000000 fd:00 1179969                        /lib64/libpthread-2.5.so
+379c216000-379c415000 ---p 00016000 fd:00 1179969                        /lib64/libpthread-2.5.so
+379c415000-379c416000 r-xp 00015000 fd:00 1179969                        /lib64/libpthread-2.5.so
+379c416000-379c417000 rwxp 00016000 fd:00 1179969                        /lib64/libpthread-2.5.so
+379c417000-379c41b000 rwxp 379c417000 00:00 0 
+379c600000-379c605000 r-xp 00000000 fd:00 1877828                        /usr/lib64/libXdmcp.so.6.0.0
+379c605000-379c804000 ---p 00005000 fd:00 1877828                        /usr/lib64/libXdmcp.so.6.0.0
+379c804000-379c805000 rwxp 00004000 fd:00 1877828                        /usr/lib64/libXdmcp.so.6.0.0
+379ca00000-379cb05000 r-xp 00000000 fd:00 1878523                        /usr/lib64/libX11.so.6.2.0
+379cb05000-379cd05000 ---p 00105000 fd:00 1878523                        /usr/lib64/libX11.so.6.2.0
+379cd05000-379cd0c000 rwxp 00105000 fd:00 1878523                        /usr/lib64/libX11.so.6.2.0
+379ce00000-379ce02000 r-xp 00000000 fd:00 1877802                        /usr/lib64/libXau.so.6.0.0
+379ce02000-379d001000 ---p 00002000 fd:00 1877802                        /usr/lib64/libXau.so.6.0.0
+379d001000-379d002000 rwxp 00001000 fd:00 1877802                        /usr/lib64/libXau.so.6.0.0
+379d200000-379d210000 r-xp 00000000 fd:00 1878529                        /usr/lib64/libXext.so.6.4.0
+379d210000-379d410000 ---p 00010000 fd:00 1878529                        /usr/lib64/libXext.so.6.4.0
+379d410000-379d411000 rwxp 00010000 fd:00 1878529                        /usr/lib64/libXext.so.6.4.0
+379d600000-379d67f000 r-xp 00000000 fd:00 1878566                        /usr/lib64/libfreetype.so.6.3.10
+379d67f000-379d87f000 ---p 0007f000 fd:00 1878566                        /usr/lib64/libfreetype.so.6.3.10
+379d87f000-379d884000 rwxp 0007f000 fd:00 1878566                        /usr/lib64/libfreetype.so.6.3.10
+379da00000-379da23000 r-xp 00000000 fd:00 1870014                        /usr/lib64/libpng12.so.0.10.0
+379da23000-379dc23000 ---p 00023000 fd:00 1870014                        /usr/lib64/libpng12.so.0.10.0
+379dc23000-379dc24000 rwxp 00023000 fd:00 1870014                        /usr/lib64/libpng12.so.0.10.0
+379de00000-379de09000 r-xp 00000000 fd:00 1878526                        /usr/lib64/libXrender.so.1.3.0
+379de09000-379e008000 ---p 00009000 fd:00 1878526                        /usr/lib64/libXrender.so.1.3.0
+379e008000-379e009000 rwxp 00008000 fd:00 1878526                        /usr/lib64/libXrender.so.1.3.0
+379e200000-379e229000 r-xp 00000000 fd:00 1878569                        /usr/lib64/libfontconfig.so.1.1.0
+379e229000-379e429000 ---p 00029000 fd:00 1878569                        /usr/lib64/libfontconfig.so.1.1.0
+379e429000-379e433000 rwxp 00029000 fd:00 1878569                        /usr/lib64/libfontconfig.so.1.1.0
+379e433000-379e434000 rwxp 379e433000 00:00 0 
+379e600000-379e620000 r-xp 00000000 fd:00 1179963                        /lib64/libexpat.so.0.5.0
+379e620000-379e81f000 ---p 00020000 fd:00 1179963                        /lib64/libexpat.so.0.5.0
+379e81f000-379e822000 rwxp 0001f000 fd:00 1179963                        /lib64/libexpat.so.0.5.0
+379ea00000-379ea09000 r-xp 00000000 fd:00 1878577                        /usr/lib64/libSM.so.6.0.0
+379ea09000-379ec09000 ---p 00009000 fd:00 1878577                        /usr/lib64/libSM.so.6.0.0
+379ec09000-379ec0a000 rwxp 00009000 fd:00 1878577                        /usr/lib64/libSM.so.6.0.0
+379ee00000-379ee17000 r-xp 00000000 fd:00 1878574                        /usr/lib64/libICE.so.6.3.0
+379ee17000-379f016000 ---p 00017000 fd:00 1878574                        /usr/lib64/libICE.so.6.3.0
+379f016000-379f018000 rwxp 00016000 fd:00 1878574                        /usr/lib64/libICE.so.6.3.0
+379f018000-379f01b000 rwxp 379f018000 00:00 0 
+379f600000-379f605000 r-xp 00000000 fd:00 1878557                        /usr/lib64/libXfixes.so.3.1.0
+379f605000-379f804000 ---p 00005000 fd:00 1878557                        /usr/lib64/libXfixes.so.3.1.0
+379f804000-379f805000 rwxp 00004000 fd:00 1878557                        /usr/lib64/libXfixes.so.3.1.0
+379fe00000-379fe02000 r-xp 00000000 fd:00 1878559                        /usr/lib64/libXinerama.so.1.0.0
+379fe02000-37a0001000 ---p 00002000 fd:00 1878559                        /usr/lib64/libXinerama.so.1.0.0
+37a0001000-37a0002000 rwxp 00001000 fd:00 1878559                        /usr/lib64/libXinerama.so.1.0.0
+37a0600000-37a0609000 r-xp 00000000 fd:00 1878558                        /usr/lib64/libXcursor.so.1.0.2
+37a0609000-37a0809000 ---p 00009000 fd:00 1878558                        /usr/lib64/libXcursor.so.1.0.2
+37a0809000-37a080a000 rwxp 00009000 fd:00 1878558                        /usr/lib64/libXcursor.so.1.0.2
+37a0e00000-37a0e07000 r-xp 00000000 fd:00 1179973                        /lib64/librt-2.5.so
+37a0e07000-37a1007000 ---p 00007000 fd:00 1179973                        /lib64/librt-2.5.so
+37a1007000-37a1008000 r-xp 00007000 fd:00 1179973                        /lib64/librt-2.5.so
+37a1008000-37a1009000 rwxp 00008000 fd:00 1179973                        /lib64/librt-2.5.so
+37a2200000-37a229d000 r-xp 00000000 fd:00 1179974                        /lib64/libglib-2.0.so.0.1200.3
+37a229d000-37a249c000 ---p 0009d000 fd:00 1179974                        /lib64/libglib-2.0.so.0.1200.3
+37a249c000-37a249e000 rwxp 0009c000 fd:00 1179974                        /lib64/libglib-2.0.so.0.1200.3
+37a2a00000-37a2a15000 r-xp 00000000 fd:00 1179980                        /lib64/libnsl-2.5.so
+37a2a15000-37a2c14000 ---p 00015000 fd:00 1179980                        /lib64/libnsl-2.5.so
+37a2c14000-37a2c15000 r-xp 00014000 fd:00 1179980                        /lib64/libnsl-2.5.so
+37a2c15000-37a2c16000 rwxp 00015000 fd:00 1179980                        /lib64/libnsl-2.5.so
+37a2c16000-37a2c18000 rwxp 37a2c16000 00:00 0 
+37a4600000-37a4604000 r-xp 00000000 fd:00 1179977                        /lib64/libgthread-2.0.so.0.1200.3
+37a4604000-37a4803000 ---p 00004000 fd:00 1179977                        /lib64/libgthread-2.0.so.0.1200.3
+37a4803000-37a4804000 rwxp 00003000 fd:00 1179977                        /lib64/libgthread-2.0.so.0.1200.3
+37a5200000-37a5211000 r-xp 00000000 fd:00 1179982                        /lib64/libresolv-2.5.so
+37a5211000-37a5411000 ---p 00011000 fd:00 1179982                        /lib64/libresolv-2.5.so
+37a5411000-37a5412000 r-xp 00011000 fd:00 1179982                        /lib64/libresolv-2.5.so
+37a5412000-37a5413000 rwxp 00012000 fd:00 1179982                        /lib64/libresolv-2.5.so
+37a5413000-37a5415000 rwxp 37a5413000 00:00 0 
+2aaaaaaab000-2aaaaace0000 r-xs 00000000 00:23 18603244                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/Linux64/jar/quest.jar
+2aaaaace0000-2aaaaada5000 r-xs 00000000 00:23 31335205                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/ext/localedata.jar
+2aaaaada5000-2aaaaada7000 r-xs 00000000 00:23 31335206                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/ext/dnsns.jar
+2aaaaada7000-2aaaaadce000 r-xs 00000000 00:23 31335207                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/ext/sunjce_provider.jar
+2aaaaadce000-2aaaaaea2000 r-xs 00000000 00:23 18603245                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/Linux64/jar/jacl.jar
+2aaaaaea2000-2aaaaaedd000 r-xs 00000000 00:23 18603243                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/Linux64/jar/tcljava.jar
+2aaaaaedd000-2aaaaaf4b000 r-xp 00000000 00:23 43014465                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper0.so
+2aaaaaf4b000-2aaaab14a000 ---p 0006e000 00:23 43014465                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper0.so
+2aaaab14a000-2aaaab14c000 rwxp 0006d000 00:23 43014465                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper0.so
+2aaaab14c000-2aaaab3c8000 r-xp 00000000 00:23 43014464                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtCore.so.4
+2aaaab3c8000-2aaaab5c8000 ---p 0027c000 00:23 43014464                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtCore.so.4
+2aaaab5c8000-2aaaab5d7000 rwxp 0027c000 00:23 43014464                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtCore.so.4
+2aaaab5d7000-2aaaab61b000 r-xp 00000000 00:23 43014463                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtXml.so.4
+2aaaab61b000-2aaaab81b000 ---p 00044000 00:23 43014463                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtXml.so.4
+2aaaab81b000-2aaaab81e000 rwxp 00044000 00:23 43014463                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtXml.so.4
+2aaaab81e000-2aaaab90b000 r-xp 00000000 00:23 60922714                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libstdc++.so.6
+2aaaab90b000-2aaaabb0b000 ---p 000ed000 00:23 60922714                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libstdc++.so.6
+2aaaabb0b000-2aaaabb12000 r-xp 000ed000 00:23 60922714                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libstdc++.so.6
+2aaaabb12000-2aaaabb14000 rwxp 000f4000 00:23 60922714                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libstdc++.so.6
+2aaaabb14000-2aaaabb29000 rwxp 2aaaabb14000 00:00 0 
+2aaaabb29000-2aaaabb3e000 r-xp 00000000 00:23 60922720                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libgcc_s.so.1
+2aaaabb3e000-2aaaabd3e000 ---p 00015000 00:23 60922720                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libgcc_s.so.1
+2aaaabd3e000-2aaaabd3f000 rwxp 00015000 00:23 60922720                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libgcc_s.so.1
+2aaaabd3f000-2aaaabd56000 r-xp 00000000 00:23 33940631                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperJNI.so
+2aaaabd56000-2aaaabf56000 ---p 00017000 00:23 33940631                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperJNI.so
+2aaaabf56000-2aaaabf57000 rwxp 00017000 00:23 33940631                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperJNI.so
+2aaaabf57000-2aaaabf68000 r-xp 00000000 00:23 30713961                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperUtil.so
+2aaaabf68000-2aaaac168000 ---p 00011000 00:23 30713961                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperUtil.so
+2aaaac168000-2aaaac169000 rwxp 00011000 00:23 30713961                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperUtil.so
+2aaaac169000-2aaaac17c000 r-xp 00000000 00:23 9647289                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libnet.so
+2aaaac17c000-2aaaac27d000 ---p 00013000 00:23 9647289                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libnet.so
+2aaaac27d000-2aaaac280000 rwxp 00014000 00:23 9647289                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libnet.so
+2aaaac280000-2aaaac2b1000 rwxp 2aaaac280000 00:00 0 
+2aaaac2b1000-2aaaac2b8000 r-xs 00000000 fd:00 1876309                    /usr/lib64/gconv/gconv-modules.cache
+2aaaac2b8000-2aaaac2c4000 r-xp 00000000 fd:00 2197316                    /usr/share/fonts/bitstream-vera/VeraMoBd.ttf
+2aaaac2c4000-2aaaac2cf000 rwxp 2aaaac2c4000 00:00 0 
+2aaaac2cf000-2aaaac2d9000 r-xp 00000000 fd:00 1179910                    /lib64/libnss_files-2.5.so
+2aaaac2d9000-2aaaac4d8000 ---p 0000a000 fd:00 1179910                    /lib64/libnss_files-2.5.so
+2aaaac4d8000-2aaaac4d9000 r-xp 00009000 fd:00 1179910                    /lib64/libnss_files-2.5.so
+2aaaac4d9000-2aaaac4da000 rwxp 0000a000 fd:00 1179910                    /lib64/libnss_files-2.5.so
+2aaaac4da000-2aaaac5bb000 r-xp 00000000 00:23 30713958                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper1.so
+2aaaac5bb000-2aaaac7bb000 ---p 000e1000 00:23 30713958                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper1.so
+2aaaac7bb000-2aaaac7c8000 rwxp 000e1000 00:23 30713958                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper1.so
+2aaaac7c8000-2aaaac7e7000 rwxp 2aaaac7c8000 00:00 0 
+2aaaac7e7000-2aaaac7eb000 r-xp 00000000 fd:00 1179693                    /lib64/libnss_dns-2.5.so
+2aaaac7eb000-2aaaac9ea000 ---p 00004000 fd:00 1179693                    /lib64/libnss_dns-2.5.so
+2aaaac9ea000-2aaaac9eb000 r-xp 00003000 fd:00 1179693                    /lib64/libnss_dns-2.5.so
+2aaaac9eb000-2aaaac9ec000 rwxp 00004000 fd:00 1179693                    /lib64/libnss_dns-2.5.so
+2aaaac9ec000-2aaaac9f6000 r-xp 00000000 fd:00 1179705                    /lib64/libnss_nis-2.5.so
+2aaaac9f6000-2aaaacbf5000 ---p 0000a000 fd:00 1179705                    /lib64/libnss_nis-2.5.so
+2aaaacbf5000-2aaaacbf6000 r-xp 00009000 fd:00 1179705                    /lib64/libnss_nis-2.5.so
+2aaaacbf6000-2aaaacbf7000 rwxp 0000a000 fd:00 1179705                    /lib64/libnss_nis-2.5.so
+2aaaacbf7000-2aaaad6ae000 r-xp 00000000 00:23 30713963                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/librtlc.so
+2aaaad6ae000-2aaaad8ad000 ---p 00ab7000 00:23 30713963                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/librtlc.so
+2aaaad8ad000-2aaaad94f000 rwxp 00ab6000 00:23 30713963                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/librtlc.so
+2aaaad94f000-2aaaada5a000 rwxp 2aaaad94f000 00:00 0 
+2aaaada5a000-2aaaadb13000 r-xp 00000000 00:23 43014461                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper4.so
+2aaaadb13000-2aaaadd12000 ---p 000b9000 00:23 43014461                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper4.so
+2aaaadd12000-2aaaadd18000 rwxp 000b8000 00:23 43014461                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper4.so
+2aaaadd18000-2aaaadd3d000 r-xp 00000000 00:23 60922717                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libVCDStateMapManager.so
+2aaaadd3d000-2aaaadf3c000 ---p 00025000 00:23 60922717                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libVCDStateMapManager.so
+2aaaadf3c000-2aaaadf3d000 rwxp 00024000 00:23 60922717                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libVCDStateMapManager.so
+2aaaadf3d000-2aaaadf48000 r-xp 00000000 00:23 30713960                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjaspertrace.so
+2aaaadf48000-2aaaae148000 ---p 0000b000 00:23 30713960                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjaspertrace.so
+2aaaae148000-2aaaae149000 rwxp 0000b000 00:23 30713960                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjaspertrace.so
+2aaaae149000-2aaaae196000 r-xp 00000000 00:23 60922712                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjetmining.so
+2aaaae196000-2aaaae395000 ---p 0004d000 00:23 60922712                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjetmining.so
+2aaaae395000-2aaaae397000 rwxp 0004c000 00:23 60922712                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjetmining.so
+2aaaae397000-2aaaae449000 r-xp 00000000 00:23 60922718                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper7.so
+2aaaae449000-2aaaae648000 ---p 000b2000 00:23 60922718                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper7.so
+2aaaae648000-2aaaae64d000 rwxp 000b1000 00:23 60922718                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasper7.so
+2aaaae64d000-2aaaaea47000 r-xp 00000000 00:23 60922719                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libflatten.so
+2aaaaea47000-2aaaaec46000 ---p 003fa000 00:23 60922719                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libflatten.so
+2aaaaec46000-2aaaaec5c000 rwxp 003f9000 00:23 60922719                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libflatten.so
+2aaaaec5c000-2aaaaec5d000 rwxp 2aaaaec5c000 00:00 0 
+2aaaaec5d000-2aaaaec62000 r-xp 00000000 00:23 60922716                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperXml.so
+2aaaaec62000-2aaaaee61000 ---p 00005000 00:23 60922716                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperXml.so
+2aaaaee61000-2aaaaee62000 rwxp 00004000 00:23 60922716                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperXml.so
+2aaaaee62000-2aaaaee6d000 r-xp 00000000 00:23 33940635                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libutilradix.so
+2aaaaee6d000-2aaaaf06d000 ---p 0000b000 00:23 33940635                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libutilradix.so
+2aaaaf06d000-2aaaaf06e000 rwxp 0000b000 00:23 33940635                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libutilradix.so
+2aaaaf06e000-2aaaaf42b000 r-xp 00000000 00:23 60922711                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperAg.so
+2aaaaf42b000-2aaaaf62b000 ---p 003bd000 00:23 60922711                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperAg.so
+2aaaaf62b000-2aaaaf63d000 rwxp 003bd000 00:23 60922711                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperAg.so
+2aaaaf63d000-2aaaaf640000 rwxp 2aaaaf63d000 00:00 0 
+2aaaaf640000-2aaaaf7b2000 r-xp 00000000 00:23 60922713                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperInformal.so
+2aaaaf7b2000-2aaaaf9b1000 ---p 00172000 00:23 60922713                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperInformal.so
+2aaaaf9b1000-2aaaaf9b8000 rwxp 00171000 00:23 60922713                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperInformal.so
+2aaaaf9b8000-2aaaaf9c2000 r-xp 00000000 00:23 43014462                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libabstract.so
+2aaaaf9c2000-2aaaafbc2000 ---p 0000a000 00:23 43014462                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libabstract.so
+2aaaafbc2000-2aaaafbc3000 rwxp 0000a000 00:23 43014462                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libabstract.so
+2aaaafbc3000-2aaab0337000 r-xp 00000000 00:23 33940629                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjaspergui.so
+2aaab0337000-2aaab0536000 ---p 00774000 00:23 33940629                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjaspergui.so
+2aaab0536000-2aaab0595000 rwxp 00773000 00:23 33940629                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libjaspergui.so
+2aaab0595000-2aaab05ad000 rwxp 2aaab0595000 00:00 0 
+2aaab05ad000-2aaab0670000 r-xp 00000000 00:23 43014459                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libqwt.so.5
+2aaab0670000-2aaab086f000 ---p 000c3000 00:23 43014459                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libqwt.so.5
+2aaab086f000-2aaab0878000 rwxp 000c2000 00:23 43014459                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libqwt.so.5
+2aaab0878000-2aaab12bd000 r-xp 00000000 00:23 30713962                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtGui.so.4
+2aaab12bd000-2aaab14bc000 ---p 00a45000 00:23 30713962                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtGui.so.4
+2aaab14bc000-2aaab150a000 rwxp 00a44000 00:23 30713962                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtGui.so.4
+2aaab150a000-2aaab150d000 rwxp 2aaab150a000 00:00 0 
+2aaab150d000-2aaab15ef000 r-xp 00000000 00:23 43014458                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtNetwork.so.4
+2aaab15ef000-2aaab17ee000 ---p 000e2000 00:23 43014458                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtNetwork.so.4
+2aaab17ee000-2aaab17f5000 rwxp 000e1000 00:23 43014458                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtNetwork.so.4
+2aaab17f5000-2aaab183b000 r-xp 00000000 00:23 43014460                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtSql.so.4
+2aaab183b000-2aaab1a3b000 ---p 00046000 00:23 43014460                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtSql.so.4
+2aaab1a3b000-2aaab1a3e000 rwxp 00046000 00:23 43014460                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtSql.so.4
+2aaab1a3e000-2aaab1a96000 r-xp 00000000 00:23 60922710                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtSvg.so.4
+2aaab1a96000-2aaab1c96000 ---p 00058000 00:23 60922710                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtSvg.so.4
+2aaab1c96000-2aaab1c99000 rwxp 00058000 00:23 60922710                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQtSvg.so.4
+2aaab1c99000-2aaab1f8c000 r-xp 00000000 00:23 30713959                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQt3Support.so.4
+2aaab1f8c000-2aaab218c000 ---p 002f3000 00:23 30713959                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQt3Support.so.4
+2aaab218c000-2aaab21aa000 rwxp 002f3000 00:23 30713959                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libQt3Support.so.4
+2aaab21aa000-2aaab2227000 r-xp 00000000 00:23 33940634                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libsqlite3.so.0
+2aaab2227000-2aaab2427000 ---p 0007d000 00:23 33940634                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libsqlite3.so.0
+2aaab2427000-2aaab242a000 rwxp 0007d000 00:23 33940634                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libsqlite3.so.0
+2aaab242a000-2aaab2478000 r-xp 00000000 00:23 43014466                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperApDb.so
+2aaab2478000-2aaab2678000 ---p 0004e000 00:23 43014466                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperApDb.so
+2aaab2678000-2aaab267a000 rwxp 0004e000 00:23 43014466                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib/libJasperApDb.so
+2aaab267a000-2aaab267c000 r-xp 00000000 fd:00 1869947                    /usr/lib64/gconv/UTF-16.so
+2aaab267c000-2aaab287b000 ---p 00002000 fd:00 1869947                    /usr/lib64/gconv/UTF-16.so
+2aaab287b000-2aaab287d000 rwxp 00001000 fd:00 1869947                    /usr/lib64/gconv/UTF-16.so
+2aaab287d000-2aaab2884000 r-xs 00000000 00:1c 31587112                   /home/vsananda/.fontconfig/beeeeb3dfe132a8a0633a017c99ce0c0-x86-64.cache-2
+2aaab2884000-2aaab2889000 r-xs 00000000 fd:02 950278                     /var/cache/fontconfig/b64a443fb29fd68918eee3276c922bf0-x86-64.cache-2
+2aaab2889000-2aaab2894000 r-xs 00000000 fd:02 950284                     /var/cache/fontconfig/e19de935dec46bbf3ed114ee4965548a-x86-64.cache-2
+2aaab2894000-2aaab2897000 r-xs 00000000 fd:02 950279                     /var/cache/fontconfig/e3ead4b767b8819993a6fa3ae306afa9-x86-64.cache-2
+2aaab2897000-2aaab289e000 r-xs 00000000 fd:02 950286                     /var/cache/fontconfig/76339d7a19b7d8e4649c5ddbf17c0441-x86-64.cache-2
+2aaab289e000-2aaab289f000 r-xs 00000000 fd:02 950288                     /var/cache/fontconfig/c1e0ebede0a5820dfb31314ce531f395-x86-64.cache-2
+2aaab289f000-2aaab28a3000 r-xs 00000000 fd:02 950292                     /var/cache/fontconfig/b67b32625a2bb51b023d3814a918f351-x86-64.cache-2
+2aaab28a3000-2aaab28a4000 r-xs 00000000 fd:02 950290                     /var/cache/fontconfig/31b8f98acd9832a15daf4d1a0b40239b-x86-64.cache-2
+2aaab28a4000-2aaab28a9000 r-xs 00000000 00:1c 31587117                   /home/vsananda/.fontconfig/a3ef620b97f3ad86e0ccce6d4afaa4cc-x86-64.cache-2
+2aaab28a9000-2aaab28aa000 r-xs 00000000 00:1c 31587118                   /home/vsananda/.fontconfig/49aab29dc58e529ef78a6d0aaa3ba41d-x86-64.cache-2
+2aaab28aa000-2aaab28b2000 r-xs 00000000 00:1c 31587119                   /home/vsananda/.fontconfig/b79f3aaa7d385a141ab53ec885cc22a8-x86-64.cache-2
+2aaab28b2000-2aaab28b4000 r-xs 00000000 fd:02 950282                     /var/cache/fontconfig/87f5e051180a7a75f16eb6fe7dbd3749-x86-64.cache-2
+2aaab28b4000-2aaab28b8000 r-xs 00000000 fd:02 950291                     /var/cache/fontconfig/177aa5f8e4784b879645141d1d73ae7a-x86-64.cache-2
+2aaab28b8000-2aaab28c9000 r-xp 00000000 fd:00 2197311                    /usr/share/fonts/bitstream-vera/Vera.ttf
+2aaab28c9000-2aaab28d6000 r-xp 00000000 fd:00 2197318                    /usr/share/fonts/bitstream-vera/VeraMono.ttf
+2aaab28d6000-2aaab28e5000 r-xp 00000000 fd:00 2197313                    /usr/share/fonts/bitstream-vera/VeraBd.ttf
+2aaab28e5000-2aaab28fe000 rwxp 2aaab28e5000 00:00 0 
+2aaab4000000-2aaab5c81000 rwxp 2aaab4000000 00:00 0 
+2aaab5c81000-2aaab8000000 ---p 2aaab5c81000 00:00 0 
+2b6b17fae000-2b6b17faf000 rwxp 2b6b17fae000 00:00 0 
+2b6b17fcd000-2b6b17fd0000 rwxp 2b6b17fcd000 00:00 0 
+2b6b17fd0000-2b6b186a4000 r-xp 00000000 00:23 3489885                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/server/libjvm.so
+2b6b186a4000-2b6b187a4000 ---p 006d4000 00:23 3489885                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/server/libjvm.so
+2b6b187a4000-2b6b1891f000 rwxp 006d4000 00:23 3489885                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/server/libjvm.so
+2b6b1891f000-2b6b1894e000 rwxp 2b6b1891f000 00:00 0 
+2b6b1894e000-2b6b1894f000 r-xp 2b6b1894e000 00:00 0 
+2b6b1894f000-2b6b18950000 rwxp 2b6b1894f000 00:00 0 
+2b6b18950000-2b6b18959000 r-xp 00000000 00:23 19174686                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/native_threads/libhpi.so
+2b6b18959000-2b6b18a58000 ---p 00009000 00:23 19174686                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/native_threads/libhpi.so
+2b6b18a58000-2b6b18a5c000 rwxp 00008000 00:23 19174686                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/native_threads/libhpi.so
+2b6b18a5c000-2b6b18a64000 rwxs 00000000 fd:01 12341474                   /tmp/hsperfdata_vsananda/10759
+2b6b18a64000-2b6b18a71000 r-xp 00000000 00:23 9647294                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libverify.so
+2b6b18a71000-2b6b18b70000 ---p 0000d000 00:23 9647294                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libverify.so
+2b6b18b70000-2b6b18b73000 rwxp 0000c000 00:23 9647294                    /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libverify.so
+2b6b18b73000-2b6b18b98000 r-xp 00000000 00:23 33610019                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libjava.so
+2b6b18b98000-2b6b18c97000 ---p 00025000 00:23 33610019                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libjava.so
+2b6b18c97000-2b6b18c9d000 rwxp 00024000 00:23 33610019                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libjava.so
+2b6b18c9d000-2b6b18cac000 r-xp 00000000 00:23 40774636                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libzip.so
+2b6b18cac000-2b6b18dad000 ---p 0000f000 00:23 40774636                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libzip.so
+2b6b18dad000-2b6b18db1000 rwxp 00010000 00:23 40774636                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/libzip.so
+2b6b18db1000-2b6b1b3c0000 r-xs 00000000 00:23 32342200                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/rt.jar
+2b6b1b3c0000-2b6b1b429000 rwxp 2b6b1b3c0000 00:00 0 
+2b6b1b429000-2b6b1b4ae000 r-xs 00000000 00:23 55298912                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/jsse.jar
+2b6b1b4ae000-2b6b1b4c3000 r-xs 00000000 00:23 32342188                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/jce.jar
+2b6b1b4c3000-2b6b1bd32000 r-xs 00000000 00:23 55298911                   /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/charsets.jar
+2b6b1bd32000-2b6b1bfa2000 rwxp 2b6b1bd32000 00:00 0 
+2b6b1bfa2000-2b6b1ed32000 rwxp 2b6b1bfa2000 00:00 0 
+2b6b1ed32000-2b6b1ed3c000 rwxp 2b6b1ed32000 00:00 0 
+2b6b1ed3c000-2b6b1edf2000 rwxp 2b6b1ed3c000 00:00 0 
+2b6b1ee00000-2b6b1f090000 rwxp 2b6b1ee00000 00:00 0 
+2b6b1f090000-2b6b298a0000 rwxp 2b6b1f090000 00:00 0 
+2b6b298a0000-2b6b29d68000 rwxp 2b6b298a0000 00:00 0 
+2b6b29d68000-2b6b3ee00000 rwxp 2b6b29d68000 00:00 0 
+2b6b3ee00000-2b6b402c0000 rwxp 2b6b3ee00000 00:00 0 
+2b6b402c0000-2b6b44200000 rwxp 2b6b402c0000 00:00 0 
+2b6b44200000-2b6b44202000 rwxp 2b6b44200000 00:00 0 
+2b6b44202000-2b6b44255000 rwxp 2b6b44202000 00:00 0 
+2b6b44255000-2b6b44258000 rwxp 2b6b44255000 00:00 0 
+2b6b44258000-2b6b44300000 rwxp 2b6b44258000 00:00 0 
+2b6b44300000-2b6b4430b000 rwxp 2b6b44300000 00:00 0 
+2b6b4430b000-2b6b4432a000 rwxp 2b6b4430b000 00:00 0 
+2b6b4432a000-2b6b4432e000 rwxp 2b6b4432a000 00:00 0 
+2b6b4432e000-2b6b443d6000 rwxp 2b6b4432e000 00:00 0 
+2b6b443d6000-2b6b443e1000 rwxp 2b6b443d6000 00:00 0 
+2b6b443e1000-2b6b44401000 rwxp 2b6b443e1000 00:00 0 
+2b6b44401000-2b6b44429000 rwxp 2b6b44401000 00:00 0 
+7fff0e0c8000-7fff0e0cb000 ---p 7fff0e0c8000 00:00 0 
+7fff0e0cb000-7fff0e2c8000 rwxp 7fffffe02000 00:00 0                      [stack]
+ffffffffff600000-ffffffffffe00000 ---p 00000000 00:00 0                  [vdso]
+
+VM Arguments:
+jvm_args: -Xmx512m -Xbatch -Dtfi.hostname=hagon -Dtfi.install=/tool/cbar/apps_lipc24_64/jaspergold/8.0ea008 -Dpid=10476 -Dtfi.user=vsananda -Djava.util.prefs.PreferencesFactory=COM.tfi.util.PreferencesFactory
+java_command: /tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/lib/Linux64/jar/quest.jar -attempt 1
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/bin:/tool/cbar/apps/jaspergold/8.0ea008/bin:/home/vsananda/user/opt/powerpc-405-linux/bin:/proj/cad/scripts:/tool/amd/rex/bin:/tool/lsf/bin:/tool/lsf/etc:/tool/pandora64/bin:/tool/pandora64/sbin:/tool/pandora/bin:/tool/pandora/sbin:/usr/bin/X11:/usr/bin:/usr/sbin:/bin:/sbin:/home/vsananda/bin:.
+LD_LIBRARY_PATH=/tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64/server:/tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/lib/amd64:/tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/jre/../lib/amd64:/tool/cbar/apps_lipc24_64/jaspergold/8.0ea008/Linux64/lib::./objs:~/lib
+SHELL=/tool/pandora/bin/tcsh
+DISPLAY=:7.0
+HOSTTYPE=i386-linux
+OSTYPE=linux
+MACHTYPE=i386
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x65f8d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGBUS: [libjvm.so+0x65f8d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGFPE: [libjvm.so+0x566f30], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGPIPE: [libjvm.so+0x566f30], sa_mask[0]=0x00000000, sa_flags=0x04000000
+SIGILL: [libjvm.so+0x566f30], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x568de0], sa_mask[0]=0x00000000, sa_flags=0x14000004
+SIGHUP: [libjvm.so+0x5688b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGINT: [libjvm.so+0x5688b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGQUIT: [libjvm.so+0x5688b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGTERM: [libjvm.so+0x5688b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Red Hat Enterprise Linux Client release 5.8 (Tikanga)
+
+uname:Linux 2.6.18-194.8.1.el5 #1 SMP Wed Jun 23 10:52:51 EDT 2010 x86_64
+libc:glibc 2.5 NPTL 2.5 
+rlimit: STACK infinity, CORE 0k, NPROC 7168, NOFILE 4096, AS infinity
+load average:0.00 0.00 0.02
+
+CPU:total 1 amd64 3dnow
+
+Memory: 4k page, physical 3607288k(212100k free), swap 7241720k(7139784k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (1.5.0_11-b03) for linux-amd64, built on Dec 15 2006 00:37:33 by java_re with gcc 3.2.2 (SuSE Linux)
+

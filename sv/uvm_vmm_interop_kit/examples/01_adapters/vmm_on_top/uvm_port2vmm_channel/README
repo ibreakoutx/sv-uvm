@@ -1,0 +1,26 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting UVM ports to VMM channels 
+ 
+		Objective: 	This example shows how to use the IK to connect UVM ports to VMM transactors.
+
+		Description:UVM publisher -> VMM consumer - The UVM publisher broadcasts an UVM transaction to the adapter, which is serving as an UVM subscriber.  The adapter converts the transaction to its VMM counterpart and sneaks it into the VMM consumer’s input channel.  In this case the adapter is serving as the VMM publisher. 
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

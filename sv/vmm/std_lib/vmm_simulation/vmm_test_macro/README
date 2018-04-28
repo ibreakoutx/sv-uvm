@@ -1,0 +1,31 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_test vmm_unit
+
+Technical content:
+ 
+		Title: 		VMM_TEST , `vmm_test_begin, `vmm_test_end, test concatenation
+ 
+		Objective:     Usage of `vmm_test_begin, `vmm_test_end macros and test concatenation.
+
+		Description:   This test shows how to use macros for tests(please refer tests.sv).
+		               +vmm_test=<> run-time option is used to select a specific test while running. 
+																	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+								run1            -- Run test1 (uses +vmm_test=test1)
+								run2            -- Run test2 (uses +vmm_test=test2)
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_simulation/vmm_test_macro
+		DIAGRAMS: 		None
+

@@ -1,0 +1,33 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM coverage 
+ 
+Technical content:
+ 
+		Title:    	Developing VMM-compliant data models and generator 
+ 
+		Objective: 	 To explain how to develop VMM-compliant data models and generators. 
+		Description: 	The data model is a UNI ATM cell.
+					The classes defined in the "atm.vr" file implement a set of reusable ATM-related verification components. As such, they do not include DUT-specific functionality or information.
+					The programs defined in the "atm.sv" is test to verify the individual ATM verification components.
+			  		Verifying data models and generators stand-alone is an excellent way to debug an input coverage model and ensure good quality of results from the generators.	
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/tech_domains/telecom/atm_simple
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

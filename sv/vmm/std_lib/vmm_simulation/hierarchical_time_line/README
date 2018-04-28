@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	vmm1.2 SV VMM vmm_timeline vmm_phasing 
+
+Technical content:
+ 
+		Title: 		Test for phases coordination in hierarchical timelines
+ 
+		Objective:    Demonstrates phasing coordination between timelines running under parent/child relationship
+
+		Description:   This test shows the  phase coordination between timelines running under parent/child relationship. 
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_simulation/hierarchical_time_line
+		DIAGRAMS: 		None

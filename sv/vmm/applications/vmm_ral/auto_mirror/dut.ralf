@@ -1,0 +1,41 @@
+register rg1 {
+  bytes 1;
+  field fld {
+    bits  8;
+    access rw;
+  }
+}
+register rg2 {
+  bytes 1;
+  automirror off;
+  field fld {
+    bits  8;
+    access rw;
+  }
+}
+
+register rg3 {
+  bytes 1;
+  field cnt1(cnt1) {
+    bits 4;
+    access rw;
+  }
+  field cnt2(cnt2) {
+    bits 4;
+    access dc;
+    automirror off;
+  }
+}
+
+block DUT_BLK {
+  bytes 1;
+  register rg1=reg1(reg1) @'00 ;
+  register rg2=reg2(reg2) @'01 ;
+  register rg3=reg3       @'02 ;
+    
+}
+
+system DUT {
+  bytes 1;
+  block DUT_BLK=DUT_BLK (dut);
+}

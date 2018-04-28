@@ -1,0 +1,240 @@
+head	1.5;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.5
+date	2012.11.13.08.45.02;	author vsananda;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2012.11.10.02.22.12;	author vsananda;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2012.11.09.20.41.26;	author vsananda;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2012.11.09.20.33.18;	author vsananda;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2012.11.09.19.53.34;	author vsananda;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@added state to reset on pwrup
+@
+text
+@//Power management unit
+//Turns power off to execution unit if
+//1. Exec unit is in Idle state AND 
+//2. Input fifo has been empty for IDLE_LIMIT or more cycles
+//   IDLE_LIMIT < 16
+//
+//Turns power back on, once entry shows up in input fifo
+//
+
+module pmu #(parameter int IDLE_LIMIT=10 )
+  ( input clk ,
+    input rst ,
+    input ififo_rdy,
+    input exec_idle,
+    output logic pwr_down,
+    output logic iso_enable,
+    output logic pwron_reset
+    );
+
+   localparam init=0,start_cntdown=1,begin_pwrdown=2,pwroff=3,pwron=4;
+   
+   logic iso_enable_wc, iso_enable_rc;
+   reg pwr_down_wc, pwr_down_rc;
+   logic [2:0] state, next_state;
+   logic [4:0] timer_cnt_wc, timer_cnt_rc ;
+
+   assign  iso_enable = iso_enable_rc;
+   assign  pwr_down = pwr_down_wc ;
+   
+   always @@*
+     begin
+	//Power control is sticky !
+	iso_enable_wc = iso_enable_rc ;
+	pwr_down_wc = pwr_down_rc ;
+	pwron_reset = 0;
+	
+	next_state = state ;
+	timer_cnt_wc = timer_cnt_rc ;
+	
+	case( state )
+	  init:
+	  begin
+	     iso_enable_wc = 0;
+	     pwr_down_wc =0;
+	     timer_cnt_wc =0;
+	     if ( exec_idle )
+	       next_state = start_cntdown ;
+	  end
+
+	  start_cntdown: begin
+	     if ( ififo_rdy )
+	       next_state = init ;
+	     else
+	       begin
+		  if ( ~ififo_rdy && timer_cnt_rc < IDLE_LIMIT )
+		    timer_cnt_wc = timer_cnt_rc + 1 ;
+
+		  if (timer_cnt_rc == IDLE_LIMIT)
+		    next_state = begin_pwrdown ;
+	       end
+	  end
+
+	  begin_pwrdown: //isolate then poweroff
+	    begin
+	       iso_enable_wc = 1;
+	       if ( ~ififo_rdy )
+		 next_state = pwroff ;
+	       else
+		 next_state = init;
+	    end
+	  
+	  pwroff:
+	    begin
+	       pwr_down_wc = 1;
+	       pwron_reset = 1;
+	       if ( ififo_rdy )
+		 //Begin pwrup sequence
+		 next_state = pwron ;
+	    end
+
+	  pwron:
+	    begin
+	       pwr_down_wc = 0;
+	       pwron_reset = 1;
+	       next_state = init;
+	    end
+	  
+	endcase // case( state )
+
+     end // UNMATCHED !!
+
+   always @@(posedge clk)
+     if (rst)
+       begin
+	  iso_enable_rc <= 0;
+	  pwr_down_rc <= 0;
+	  timer_cnt_rc <= 0;
+	  state <= init;
+       end
+     else
+       begin
+	  iso_enable_rc <= iso_enable_wc;
+	  pwr_down_rc <= pwr_down_wc;
+	  timer_cnt_rc <= timer_cnt_wc ;
+	  state <= next_state ;
+       end
+   
+endmodule // pmu
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d15 3
+a17 2
+    output pwr_down,
+    output logic iso_enable
+d20 1
+a20 1
+   localparam init=0,start_cntdown=1,begin_pwrdown=2,pwroff=3;
+d23 1
+a23 1
+   reg pwr_down_wc, pwr_down;
+d28 1
+d34 2
+a35 1
+	pwr_down_wc = pwr_down ;
+d51 10
+a60 5
+	     if ( ~ififo_rdy && timer_cnt_rc < IDLE_LIMIT )
+	       timer_cnt_wc = timer_cnt_rc + 1 ;
+
+	     if (timer_cnt_rc == IDLE_LIMIT)
+	       next_state = begin_pwrdown ;
+d75 1
+d77 2
+a78 1
+		 next_state = init ;
+d81 7
+d96 1
+a96 1
+	  pwr_down <= 0;
+d103 1
+a103 1
+	  pwr_down <= pwr_down_wc;
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d15 1
+a15 1
+    output logic pwr_down,
+d22 1
+a22 1
+   logic pwr_down_wc, pwr_down_rc;
+a25 1
+   assign  pwr_down = pwr_down_rc;
+d32 1
+a32 1
+	pwr_down_wc = pwr_down_rc ;
+d42 1
+d79 1
+a79 1
+	  pwr_down_rc <= 0;
+d86 1
+a86 1
+	  pwr_down_rc <= pwr_down_wc;
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d36 1
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d37 1
+a37 1
+	case( state ):
+d47 1
+a47 1
+	     if ( ~ififo_rdy && timer_cnt < IDLE_LIMIT )
+@

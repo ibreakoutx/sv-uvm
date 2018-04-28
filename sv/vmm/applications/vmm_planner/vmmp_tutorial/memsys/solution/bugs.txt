@@ -1,0 +1,7 @@
+HVP metric = bugs
+testbench = 1
+cntlr = 4
+sram0 = 1
+sram1 = 1
+sram2 = 1
+sram3 = 1

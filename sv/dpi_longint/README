@@ -1,0 +1,33 @@
+Keywords:
+  Search keywords: sv dpi data types
+
+ 
+Technical content:
+
+  Title:   LONG INT DATATYPE DPI EXAMPLE
+  
+  Objective: This example shows longint type argument as inout argument.
+  
+  Description:  This small DPI example illustrates importing a C display function in C++ as longint type inout argument. C++ multiplies the longint *2 and return the value to SV side.  The matching datatype in C side is long long * in C++.  
+  
+  Additional setup: None	
+
+
+To run the example:
+      Using Makefile:
+  clean           -- To clean up the log files and executable of previous run
+  comp            -- To compile the design
+  run             -- To run the design
+  all             -- It does all the above steps.
+     Using shell scripts:
+  clean.csh       -- To clean up the log files and executable of previous run
+  comp.csh        -- To compile the design
+  run.csh         -- To run the design  
+ 
+
+                
+Location Information:
+  PATH:                   $VCS_HOME/doc/examples/testbench/sv/dpi_longint 
+  DIAGRAMS:               None
+  Cross Reference:        $VCS_HOME/doc/UserGuide/vcs_ug.pdf
+

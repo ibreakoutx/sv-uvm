@@ -1,0 +1,21 @@
+Keywords:
+ Search keywords      : testbench sv vmm scenarios
+
+
+Technical content:
+ Title                : Scenario Generator.
+ Objective            : To illustrate the use of `vmm_scenario_gen macro.
+ Description          : A scenario generator of ATM cell is created in the different tests generating different kinds of scenarios.
+ 
+ Additional setup     : None
+
+
+To run the example:
+
+ Please look into the README files in the individual test directories.
+
+	
+Location information:
+ PATH                 : $VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_scenario_gen/scenarios
+ DIAGRAMS             : None
+ Cross Reference      : $VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

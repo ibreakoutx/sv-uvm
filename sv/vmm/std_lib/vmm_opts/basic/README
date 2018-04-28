@@ -1,0 +1,46 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_opts run-time options
+ 
+Technical content:
+ 
+		Title:    Usage of vmm_opts for passing runtime options to the verification environment	
+ 
+		Objective: 	Demonstrate how to leverage the vmm_opts class which provides an interface to define and access runtime options. Runtime options can be specified using a combination of command-line arguments and option files specified using a plus-separated list of filenames. 
+		Description: 	
+		VMM provides capability to specify runtime options which help in preventing recompilations and enable control of sequencing through the command line using the vmm_opts class. Options of type integer, string and bit can be specified from the command line. Depending on the requirement, user can specify any or all of these different types.
+
+		A sample usage is:
+
+		        simv +vmm_opts+NUM_TRANS=10 +vmm_opts+MODE=RECORD +vmm_opts_file+<file_name>
+				where the content fo the file can be:
+			 %cat file_name
+			             +MODE=RECORD
+						 +SCB_MODE
+
+				These options, NUM_TRANS and MODE, can be captured in the testbench through the methods available in vmm_opts class. The vmm_opts class provides a set of static methods that support bit, int and string type runtime arguments. A  built-in help method prints out the details of the available options. Available vmm_opts methods are: 
+				        vmm_opts::get_string("Option Name", "Default","Help for the option"); 
+						vmm_opts::get_bit("Option Name", "Help for the option"); 
+						vmm_opts::get_int("Option Name" , -1 , "Help for the option");
+
+				
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_opts/basic
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

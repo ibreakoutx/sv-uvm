@@ -1,0 +1,41 @@
+Keywords:
+		Search keywords: 	SV VMM Performance Analyzer 
+ 
+Technical content:
+ 
+		Title:    	Collecting  performance statistics of the design using the VMM Performance Analyzer
+		Objective: 	To demonstrate how to hook up  VMM Performance Analyzer Components to a VMM-compliant testbench
+		Description: 	
+		VMM Performance Analyzer (PAN) is an application package that can be used to measure the performance of a shared resource utilization. The shared resource may be a bus, a memory, a DMA channel, or any other design element that is used by more than one initiator over a period of time.
+		PAN is a generic VMM package, and is neither based on nor requires any specific shared resources, transactions, or hardware structures. It can be used to collect statistical coverage metrics relating to the utilization of a specific shared resource.
+		The following steps show how to intgertae PAN in a verification environment and how to perform the post simulation statistical analysis.
+		1. Defining data collection  : Data is collected for each resource in a separate instance of the "vmm_perf_analyzer" class. It is a good idea to locate these instances in the extension of the vmm_env class implementing your verification environment. (see the instances of PAN base classes , bus_perf and arb_perf in tb_env.sv)
+		2. Defining Tenure:  Operations that consume resource must be mapped into individual tenures. There must be one instane of the "vmm_perf_tenure" class for each operation that is performed on the sharing resource. Tenures are associated with the instance of the "vmm_perf_analyzer" class that corresponds to the resource operated. The start and end of a tenure is identifying by calling the "vmm_perf_analyzer::start_tenure()" and vmm_perf_analyzer::end_tenure()". How and where tenure gets created and updated depends on the capabilities of the verification environment and of the transactors the environment instantiates. To define a tenure, these are the steps required to be undertaken: Create a new instance of a tenure descriptor, then define the start and end of the tenure. (see class bus_tr_tenure callback where the start and end tenures of the 'bus_perf' analyzer is defined)
+		3. Completing Data Collection : On the completion of simulation any buffered data must be written to the database using the "vmm_perf_analyzer::save_db()" method or the basic performance statistics can be displayed using the "vmm_perf_analyzer_report()" method. 
+		4. Linking SQL with VCS : Done through the compilation scripts
+		Once this is done and simulations are run, text reports are genarated or statistcs written into the SQL DB which can then be queries to obtain design related perf statistics like latency, bus utilization etc
+
+
+
+
+
+		Additional setup: To run the sqlite mode, one needs to download the SQLITE3 libraries from www.sql.org and set the SQLITE3_HOME	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	sqltxt            -- To compile the design for processing results in ascii mode
+       	sqlite            -- To compile the design  for processing results in sql mode
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+       	comp_sqltxt.csh -- To compile the design for processing results in ascii mode
+       	comp_sqlite.csh -- To compile the design  for processing results in sql mode
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_perf/perf_tlbus
+		DIAGRAMS: 		None
+		

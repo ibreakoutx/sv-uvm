@@ -1,0 +1,37 @@
+
+
+Keywords:
+		Search keywords: Bounded Queues	
+
+Technical content:
+ 
+		Title: 	BoundedQueues	 
+ 
+		Objective:  Learning  about BoundedQueues
+
+		Description:
+		Queue limited to fixed number of items
+                e.g  int bq[$:31]; // bounded queue of size 32
+                bq1 = bq2 (items in bq2 copied to bq1 until bq1 is full or entire bq2)
+                Adding new item at front, delete the last item from queue if queue is full
+                Adding new item at last has no effect, if queue is full
+  
+		
+		Additional setup: None 	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/BoundedQueues
+		DIAGRAMS: 		None
+	

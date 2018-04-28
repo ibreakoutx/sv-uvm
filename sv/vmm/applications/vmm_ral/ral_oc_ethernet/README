@@ -1,0 +1,36 @@
+Keywords:
+        Search keywords:    SV VMM RAL Ethernet
+		 
+		 Technical content:
+		  
+		          Title:      Developing VMM-compliant reusable and flexible components for the networking domain
+				   
+				  Objective:   The example is used to illustrate how to use the VMM Register Abstraction Layer application package is used for register validation of complex designs
+				  Description:
+		The OpenCore Ethernet Media Access Controller (MAC) has the Wishbone interfacei and the RAL abstarction Model uses the Wishbone Master BFM to access and update the resgiters in the actual designs.
+		The oc_ethernet.ral has the description of the registers and memories in the design as specified in the RALF format. 'ralgen' takes in this file and generates the ral_oc_ethernet.sv file which has the RAL model of the DUT registers and memories. The wb_ral_master in the tb_env.sv file instantiates the Wishbon master BFM and transalates the generic RAL transactions into Wisbone transactions. 
+	    Once the ral_model and the RAL RW xator is instantiated and registerd in the Verification environment,users can directly use the pre0defined tests that ships with VCS like the bit_bash and hw_reset tests to do automated verification of the regsiters and memories. Users can write their own tests to test specifif register/memory functionality they are interested in.
+
+   Additional Setup: None
+
+   To run the example:
+         Using Makefile:
+		         clean           -- To clean up the log files and executable of previous run
+				 hw_reset        -- To compile and run the hw_reset test
+				 bit_bash        -- To compile  and run the bit_bash test
+				 reg_access      -- To compile and run the reg_access test
+				 mem_walk        -- To compile and run the mem_walk test
+				 all             -- To compile and run all the tests
+				 
+		Using shell scripts:
+		        clean.csh                -- To clean up the log files and executable of previous run
+				comp_hw_reset.csh        -- To compile the hw_reset test
+				comp_bit_bash.csh        -- To compile  the bit_bash test
+				comp_reg_access.csh      -- To compile the reg_access test
+				comp_mem_walk.csh        -- To compile the mem_walk test
+				run.csh                  -- run the tests
+
+
+Location Information:
+PATH:           $VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/ral_oc_ethernet
+DIAGRAMS:       None

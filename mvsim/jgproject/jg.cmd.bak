@@ -1,0 +1,80 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 8.0
+# platform  : Linux 2.6.18-194.8.1.el5
+# version   : 8.0ea008 64 bits
+# build date: 2011.07.31 22:03:52 PDT
+#----------------------------------------
+# started Thu Nov 08 10:09:46 CST 2012
+# hostname  : hagon
+# pid       : 10476
+# arguments : 
+source run.tcl
+source run.tcl
+source run.tcl
+source run.tcl
+source run.tcl
+source run.tcl
+prove 1
+source run.tcl
+prove 1
+source run.tcl
+prove 1
+help -message eas008
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::xorexec.sva_inst.cp_push"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::xorexec.sva_inst.cp_push"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::xorexec.sva_inst.cp_push"
+source run.tcl
+prove -bg -all
+
+source run.tcl
+prove -bg -all
+prove -bg -all
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::xorexec.sva_inst.cp_push"
+source run.tcl
+source run.tcl
+source run.tcl
+source run.tcl
+source run.tcl
+source run.tcl
+source run.tcl
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"
+source run.tcl
+prove -bg -all
+trace -property "<embedded>::top_xorexec.sva_inst.cp_rdy"

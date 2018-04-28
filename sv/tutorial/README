@@ -1,0 +1,27 @@
+
+
+Keywords:
+		Search keywords: 	SV  testbench tutorial 
+Technical content:
+ 
+		Title:	SV TESBENCH TUTORIAL
+ 
+		Objective: 	To explain SystemVerilog for TestBench technology in VCS.
+					 
+		Description: This tutorial is intended to give you a very solid hands-on exposure to the New SystemVerilog for TestBench technology in VCS.  
+You need -sverilog compile-time option to compile SystemVerilog program. 
+The design being used consists of a memory system that is accessed by two CPUs. There is a common system bus that allows the CPUs access to the memory through a controller, and an arbiter decides which CPU gets control of the system bus.
+There are 4 directories at this level: sram, arb, cntrlr and memsys. Each of these, except sram (sram only contains the directory "rtl"), in turn, contains the following 3 directories: 
+1. Directory "rtl", containing its relevant Verilog code.
+2. Directory "solution", containing the solution testbench, interface, top-level verilog, compile-script and run-script files. 
+3. Directory "test", where you need write your own testbench, interface, top-level verilog and other files such as scripts. 
+To run the examples :
+Note: Please go through individual README's  presented in each design. 
+We hope you'll enjoy going through this hands-on tutorial.
+
+		Additional setup: None	
+
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/tutorial
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf and $VCS_HOME/doc/UserGuide/pdf/vcs_sv_lrm.pdf 

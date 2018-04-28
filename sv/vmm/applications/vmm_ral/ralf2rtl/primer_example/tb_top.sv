@@ -1,0 +1,32 @@
+/*********************************************************************
+ * SYNOPSYS CONFIDENTIAL                                             *
+ *                                                                   *
+ * This is an unpublished, proprietary work of Synopsys, Inc., and   *
+ * is fully protected under copyright and trade secret laws. You may *
+ * not view, use, disclose, copy, or distribute this file or any     *
+ * information contained herein except pursuant to a valid written   *
+ * license from Synopsys.                                            *
+ *********************************************************************/
+
+
+
+`include "apb.sv"
+`include "dut.sv"
+
+module tb_top;
+   bit clk = 0;
+   bit rstn = 1;
+
+   apb_if apb0(clk);
+
+   slave dut(.paddr   (apb0.paddr[15:2] ),
+             .psel    (apb0.psel        ),
+             .penable (apb0.penable     ),
+             .pwrite  (apb0.pwrite      ),
+             .prdata  (apb0.prdata[31:0]),
+             .pwdata  (apb0.pwdata[31:0]),
+             .clk     (clk),
+             .rstn     (rstn));
+
+   always #10 clk = ~clk;
+endmodule: tb_top

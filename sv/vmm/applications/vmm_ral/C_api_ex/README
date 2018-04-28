@@ -1,0 +1,33 @@
+
+
+Keywords:
+		Search keywords:  RAL     
+ 
+Technical content:
+		Title: 	        Accessing register in a Block   	     	
+		Objective: 	how to access register in a block (in RAL model) using RAL-C API's from C code	
+		Description:   	These are files which are used by the testcase
+		
+test.ralf       :   RALF file describing the RAL model
+test.c          :   C code using RAL-C API to access RAL model defined in RALF file
+dpi_tasks_sv.h  :   SV functions used in RAL-C API's definition
+test.sv         :   SV code
+	
+		Additional setup: 
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_ral/C_api_ex
+		DIAGRAMS: 		None
+	

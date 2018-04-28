@@ -1,0 +1,40 @@
+Keywords:
+                Search keywords:        sv vmm vmm_scheduler election scenarion generation custom notifiers
+
+				Technical content:
+				Title:                  Customizing VMM Schedulare Election example 
+			    Objective:              vmm_schduler does round robin by default. This example shows how to override defualt election constrsiant and enable user defined scheduling 
+			    Description: 
+vmm_schduler does round robin by default. This has a set of examples to:  override vmm_scheduler_election constraints, overrride scheduler task in vmm_scheduler, extending vmm_scheduler to execute a random number of transactions from a source before switching to a new source (my_scheduler1.sv), and other such user defined extensions.  Example also  shows use of scenario generator, custom generator and custom notifiers.  User can create own generator (not use atomic or scenario generator)  by extending vmm_xactor.
+See my_scheduler_election.sv to review how to override vmm_scheduler_election constraints.
+See 
+Review apb_gen.sv to see custom generator that also creates custom notifiers.  Note test_04.sv has a wait_for on a apb_gen notifier.
+Review my_apb_scenario.v.  Scenario class will do 3 reads followed by 3 write for the first 6 transactions of n transactions.  Base scenario class is created using 'vmm_scenario_gen in apb/apb_trans.sv Review  env/dut_scen_env.sv
+
+
+
+Additional setup:       None
+
+ To run the example:
+       Using Makefile:
+
+ clean           -- To clean up the log files and executable of previous run
+ make def        -- To see default behavior 
+ make elect      -- To override vmm_scheduler_election constraints.  
+
+ make point1     -- to execute a random number of transactions from a source before switching to a new source.
+ make point2     -- to exceute all generated transactions from a source before randomly switching to a new source.
+ make point3     -- To execute all generated transactions from a source and then slect the next source in increasing numerical values.
+ make point4     -- demonstrate the use of scenario generator, custom generator and custom notifiers.  User can create own generator (not use atomic or scenario generator)  by extending vmm_xactor.
+
+      Using the shell file:
+	  comp_def.csh -- compile default
+	  comp_ele.csh -- To override vmm_schedule election constraints
+ 	  comp1.csh -- to execute a random number of transactions from a source before switching to a new source.
+ 	  comp2.csh     -- to exceute all generated transactions from a source before randomly switching to a new source.
+ 	  comp3.csh     -- To execute all generated transactions from a source and then slect the next source in increasing numerical values.
+ 	  comp4.csh -- demonstrate the use of scenario generator, custom generator and custom notifiers.  User can create own generator (not use atomic or scenario generator)  by extending vmm_xactor.
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_scheduler
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf 

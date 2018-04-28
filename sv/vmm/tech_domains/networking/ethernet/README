@@ -1,0 +1,77 @@
+Keywords:
+        Search keywords:    SV VMM VIP Transactors 
+		 
+		 Technical content:
+		  
+		          Title:      Developing VMM-compliant reusable and flexible components for the networking domain
+				   
+				  Objective:   To demonstrate  how to develop VMM-compliant data models and transactor components and show how requirements in creating verification environments in networking domains is handled in VMM. 
+				  Description: 	
+
+			 Ethernet/MII VIP Example
+
+
+The MII example test has the following structure:
+
+ 3 Frames -> MII MAC ->    MII    -> MII PHY ->
+          <-  Side   <- Interface <-  Side   <- 3 Frames
+
+
+
+The MAC example test has the following structure:
+
+                                       MAC
+                                     Monitor
+                                       ^ ^
+                                       | |
+                                       MII
+                                     Monitor
+                                       ^ ^
+                                       | |
+ 3 Frames -> Ethernet -> MII MAC ->    MII    -> MII PHY -> Ethernet ->
+          <-   MAC    <-  Side   <- Interface <-  Side   <-   MAC    <- 3 Frames
+
+
+
+Files:
+
+   eth_frame.sv			Ethernet Frame Descriptor
+   eth_frame_gen.sv		Atomic Frame Generator
+   eth_frame_scenario_gen.sv	Scenario Frame Generator
+   ethernet.sv			Top-level File for Ethernet VIP
+   mac.sv			MAC-layer Transactor
+   mii.sv			Top-level File for MII VIP
+   mii_env.sv			Environment for MII-only Test
+   mii_if.sv			MII Interface Declaration
+   mii_mac.sv			MAC-side MII Transactor
+   mii_mac_bfm.sv		Module Encapsulated MAC-side MII Transactor
+   mii_mon.sv			MII Monitor
+   mii_phy.sv			PHY-side MII Transactor
+   mii_sva_checker.sv		MII Checker
+   mii_sva_types.sv
+   pls.sv			MAC Layer Notification Interface
+   test_mac.sv			MAC-layer VIP-only Testcase
+   test_mii.sv			MII-Layer VIP-only Testcase
+   top.sv			MII Interface Instance
+   utils.sv			CRC and Packign Utility Routines
+
+   Additional Setup: None
+
+   To run the example:
+         Using Makefile:
+		         clean           -- To clean up the log files and executable of previous run
+				 test_mii        -- To compile the VIP only test 
+				 test_mac        -- To compile the mac layer
+				 run             -- To run the env
+				 all             -- It does all the above steps.
+				 
+		Using shell scripts:
+		        clean.csh       -- To clean up the log files and executable of previous run
+				comp_mii        -- To compile the VIP only test 
+				comp_mac        -- To compile the mac layer
+				run.csh         -- To run the design
+
+
+Location Information:
+PATH:           $VCS_HOME/doc/examples/testbench/sv/vmm/tech_domains/networking/ethernet
+DIAGRAMS:       None

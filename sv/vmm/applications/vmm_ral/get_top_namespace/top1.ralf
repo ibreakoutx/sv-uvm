@@ -1,0 +1,28 @@
+system sys2a  {
+
+bytes 2;
+
+block block1[2] @100 {
+
+   bytes 2;
+
+   register r1 @1 {
+      field val   { bits 16; access rw; }
+   }
+
+   register r2[2] @3 {
+      field val   { bits 16; access rw; }
+   }
+
+   register r3  {
+      field val { bits 16; access rw; }
+   }
+
+   register r4[4] @6 {
+      field val { bits 16; access rw; }
+   }
+
+}
+
+}
+

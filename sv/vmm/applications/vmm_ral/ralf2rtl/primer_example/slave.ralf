@@ -1,0 +1,94 @@
+## 
+## -------------------------------------------------------------
+##    Copyright 2004-2008 Synopsys, Inc.
+##    All Rights Reserved Worldwide
+## 
+##    Licensed under the Apache License, Version 2.0 (the
+##    "License"); you may not use this file except in
+##    compliance with the License.  You may obtain a copy of
+##    the License at
+## 
+##        http://www.apache.org/licenses/LICENSE-2.0
+## 
+##    Unless required by applicable law or agreed to in
+##    writing, software distributed under the License is
+##    distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+##    CONDITIONS OF ANY KIND, either express or implied.  See
+##    the License for the specific language governing
+##    permissions and limitations under the License.
+## -------------------------------------------------------------
+## 
+
+
+block slave {
+   bytes 4;
+   register CHIP_ID (ral.CHIP_ID) @'h0000 {
+      field REVISION_ID (REVISION_ID.fld_out) {
+         bits 8;
+         access ro;
+         reset 'h03;
+      }
+      field CHIP_ID (CHIP_ID.fld_out) {
+         bits 8;
+         access ro;
+         reset 'h5A;
+      }
+      field PRODUCT_ID (PRODUCT_ID_9_8.fld_out, PRODUCT_ID_7_0.fld_out) {
+         bits 10;
+         access ro;
+         reset 'h176;
+      }
+   }
+   register STATUS (ral.STATUS) @'h0004 {
+      field BUSY (BUSY.fld_out) {
+         bits 1;
+         access ro;
+         reset 'h0;
+      }
+      field TXEN (TXEN.fld_out) {
+         bits 1;
+         access rw;
+         reset 'h0;
+         constraint valid {}
+      }
+      field MODE (MODE.fld_out) {
+         bits 3;
+         access rw;
+         reset 3'h0;
+         constraint valid {
+           value < 3'h6; 
+         }
+      }
+      field READY (READY.fld_out) @16 {
+         bits 1;
+         access w1c;
+         reset 'h0;
+         constraint valid {}
+      }
+     constraint status_reg_valid {
+       (MODE.value == 3'h5) -> TXEN.value != 1'b1;
+     }
+   }
+   register MASK (ral.MASK) @'h0005 {
+      field READY (READY.fld_out) @16 {
+         bits 1;
+         access rw;
+         reset 'h0;
+         constraint valid {}
+      }
+   }
+
+   register COUNTERS[2] @'h0400 {
+      field value {
+         bits 32;
+         access rw;
+         reset 'h0;
+      }
+   }
+   memory DMA_RAM @'h0800 {
+      size 1k;
+      bits 32;
+      access rw;
+   }
+}
+

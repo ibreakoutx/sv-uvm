@@ -1,0 +1,66 @@
+Keywords:
+		Search keywords: 	SV VMM HAL 
+ 
+Technical content:
+ 
+		Title:    	Developing VMM-compliant Hardware assisted Testbenches
+		Objective: 	To explain how to develop maintain a VMM-compliant that is completely portable between pure-simulation and hardware-assisted environments.
+		Description: 	
+		bfm.v : Hardware portable BFM which has the instantiates the clcok controller
+		dut_sb.sv : Scoreborad for memory design
+		dut.sv : Sync WR, Async RD 128x16-bot FIFO
+		fifo_master.sv: 
+		This is a vmm_xactor class for a FIFO Master
+		//
+		//   This BFM receives FIFO transactions from a channel, and drives
+		//   the pins via the SystemVerilog virtual interface.
+		//
+		//           |      |            
+		//           | FIFO |  VMM channel 
+		//           | trans|   
+		//           |  VV  |
+		//           |      |
+		//    +--------------------+
+		//    |     FIFO-Master    |
+		//    +--------------------+
+		//           |||||||
+		//           |||||||
+		//           FIFO Bus
+
+		fifo_monitor.sv : FIFO Monitor Transactor Class
+		fifo_trans.sv : FIFO transactio class
+		hw_reset.v : Determines that HW reset must be applied and is issued, and completed by passing "messagees" through the msg ports
+		sb_callbacks: Description : Scoreboard Integration/Callbacks
+		//      
+		//               This class is DUT specific, and connects the scoreboard
+		//               to the Testbench.
+
+		tb_env.sv :  Description : FIFO Testbench vmm_environment class
+		//      
+		// This class instantiates all the permanent testbench top-level components
+		//   * FIFO Atomic Generator
+		//   * FIFO Master
+		//   * FIFO Monitor
+		//   * Scoreboard
+		//
+		tb_top.v : Top level wrapper module instantiating the DUT and the TB
+		test.v : The test program
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_hal/hal_fifo
+		DIAGRAMS: 		None
+	    CROSS REFERENCE :  $VCS_HOME/doc/UserGuide/pdf/hal_user_guide.pdf	

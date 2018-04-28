@@ -1,0 +1,53 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_log filetring disabling
+ 
+Technical content:
+ 
+		Title:    Disabling message from vmm components
+ 
+		Objective: 	Demonstrate how to use the  disable_types functionality of vmm_log to suppress messages coming out of specific instances of  VMM components dynamically
+		Description: 	
+Syntax:
+-------
+virtual function void 
+disable_types(int typs, string name = "", string inst = "", bit recursive = 0); 
+
+The sample syntax specifies the message types to be displayed or disabled by 
+the specified message service interfaces.  Message service interfaces are specified by value or regular expression for both the name and instance name. If no name and no instance are explicitly specified, this message service interface is implicitly specified.
+In this example, all the messages from the channel instance of the EC BFM is disabledA Its is done through the following methdo call:
+
+ch_in.log.disable_types(vmm_log::NOTE_TYP + vmm_log::DEBUG_TYP +         vmm_log::TIMING_TYP + vmm_log::XHANDLING_TYP + vmm_log::REPORT_TYP + vmm        _log::PROTOCOL_TYP + vmm_log::TRANSACTION_TYP + vmm_log::COMMAND_TYP + v        mm_log::CYCLE_TYP + vmm_log::INTERNAL_TYP ,"/ec_bfm/","/./", 1);
+For all 'INTERNAL' type messages, the command would be:
+ch_in.log.disable_types(vmm_log::INTERNAL_TYP,"/./","/./", 1);
+Note: The second and third arguments are "/./", which means to match for any 
+      name or instance.
+
+Similarly other regexp patters can be used to disable messages of a special type, coming from specific instances and so on
+	  
+
+
+
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	compile_normal            -- To compile the design without diabling any messages
+       	compile_disable            -- To compile the design without diabling any messages
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+       	comp_normal.csh            -- To compile the design without diabling any messages
+       	comp_disable.csh            -- To compile the design without diabling any messages
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_log/Disable_specific_log_msgs
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

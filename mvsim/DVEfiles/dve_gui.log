@@ -1,0 +1,14 @@
+Warning: [DVIN022] 
+Power intent is detected in the design. DVE will use design debug library (instead of VPD) to show the design hierarchy in post process.
+The design has assertions or cover properties.
+The assertion browser can be used to view them. Click on the assertion toolbar button or use the menu 'Window->Panes->Assertion' to open it.
+The file 'vcdplus.vpd' was opened successfully.
+Warning: [DVIN022] 
+Power intent is detected in the design. DVE will use design debug library (instead of VPD) to show the design hierarchy in post process.
+The file '/proj/bobcata_ver_user/vjs/user/mvsim/vcdplus.vpd' was opened successfully.
+Warning: [DVIN022] 
+Power intent is detected in the design. DVE will use design debug library (instead of VPD) to show the design hierarchy in post process.
+The file '/proj/bobcata_ver_user/vjs/user/mvsim/vcdplus.vpd' was opened successfully.
+Warning: [DVIN022] 
+Power intent is detected in the design. DVE will use design debug library (instead of VPD) to show the design hierarchy in post process.
+The file '/proj/bobcata_ver_user/vjs/user/mvsim/vcdplus.vpd' was opened successfully.

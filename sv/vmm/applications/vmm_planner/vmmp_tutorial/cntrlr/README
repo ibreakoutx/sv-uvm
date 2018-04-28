@@ -1,0 +1,14 @@
+Please follow the steps below to do this section of the lab
+step1:  cd test/
+step2:  create cntrlr_test.v which will do the following tasks. 
+        1) resetSequence() and resetCheck(): asserting and checking reset
+        2) readOP() and writeOP(): to drive read and write operations on the system bus according to the timing diagram given for the controller.
+        3) define virtual port for SRAM device and bind the port to device0..device3 by using the appropriate interface signals
+        4) checkSramWrite() and checkSramRead(): To verify sram write/read on a particular device meets the timing
+        5) checkSimpleReadWrite() and checlAllAddresses():  To perform read, write and check sequeuences using the above built funcions.
+           
+step3:  compile and run the simulation
+
+
+To see the solution implemented using SystemVerilog for TestBench go to 
+./solution and see README to run the solution.

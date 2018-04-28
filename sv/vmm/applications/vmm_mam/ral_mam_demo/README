@@ -1,0 +1,26 @@
+Keywords:
+		Search keywords: 	SV VMM MAM RAL 
+ 
+Technical content:
+ 
+		Title:   Example to show memory modeled in RAL leveraging the MAM capabilities 	
+		Objective: 	To show how memory management is achived through RAL and MAM components in the verification environmnet
+		Description: Intercation of the MAM component in the sunenv with the physical memory accessed though RAL memory components. This example introduces a vmm_subenv for encapsualting the RAL model and the memory configuration in the RAL primer example ( $VCS_HOME/doc/examples/testbench/sv/vmm/applications/ral_apb_primer) . This then goes on to demonstrate how the configuration passed on from the top level environment can be used to initialize and mange the memory component in the RAL generated model through the MAM property of the abstarcted memory class
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	user_test       -- To compile the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/applications/vmm_mam/ral_mam_demo
+		DIAGRAMS: 		None
+		CROSS REFERENCE :  $VCS_HOME/doc/UserGuide/pdf/ral.pdf
+		

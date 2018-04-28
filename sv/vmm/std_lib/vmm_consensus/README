@@ -1,0 +1,45 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM consensus  
+ 
+Technical content:
+ 
+		Title:   Determining test termination  with vmm_consensus
+ 
+		Objective: 	Demonstrate the usage of vmm_consensus to help determine when all of the elements of a testcase, a verification environment or a sub-environment agree that the test may be terminated.	
+		Description: 
+		VMM Standard library provides vmm_consensus class that is aimed at termitating a test. This class comes with methods that allow to dynamically register "voters" and to block until all voters agree to terminate the test.
+
+
+     	After having been registered, voters don't consent for end of test.  For example a transactor opposes the end-of-test if it is currently indicating the vmm_xactor::IS_BUSY notification. It consents for end of test only when vmm_xactor::IS_IDLE notification is emitted. Similarly, a channel opposes until it contains at least one transaction and consents for the end of test when it becomes empty.
+				Regarding notification object, it consents when it becomes indicated.  vmm_consensus::wait_for_consensus() method usually sits in vmm_test::wait_for_end() method. This method waits until all voters explicitly consent.
+
+
+				Following are the steps required to use vmm_consensus to terminate the test, 
+				1). Add vmm_consensus::wait_for _consensus() to vmm_env::wait_for_end() method 
+				2). Add the voters in the vmm_env::build() using register_* method as  follows: 
+				end_vote.register_channel(my_channel); 
+				end_vote.register_notification(my_notify, vmm_xactor::XACTOR_IDLE); 
+				end_vote.register_xactor(my_xactor); 
+			   Where end_vote is a vmm_consensus instance.
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_consensus
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

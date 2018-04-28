@@ -1,0 +1,31 @@
+
+
+Keywords:
+		Search keywords: 	bit select of class array create_by_new create_by_copy  vmm1.2
+
+Technical content:
+ 
+		Title: 		 bit select of class array 
+ 
+		Objective:     usgae of muti vmm_xactor derived class and multi  factory class and replacing with single instance with factory object 
+
+		Description:   This test shows the usage of  multi vmm_xactor derived class  and replacing blueprint using bit of factory object array using create_by_copy create_by_new
+ 
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_class_factory/multi_gen_array
+		DIAGRAMS: 		None

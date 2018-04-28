@@ -1,0 +1,29 @@
+
+
+Keywords:
+		Search keywords: 	sv vmm business layer
+ 
+Technical content:
+		Title: 			SV VMM BUSINESS LAYER
+		Objective: 		To demonstrate a business-specific layer on top of the VMM base classes
+		Description: 	 	This is an example of a business-specific layer on top of the VMM base classes. All data and transactor models written by that business unit are then written by extending these classes, instead of extending the VMM base classes directly.
+Although initially "empty", this class layer provides an opportunity for a business unit to introduce domain-specific standard functionality and best practices that can then be immediately shared by all users within that unit.
+To create your own business-unit layer, simply copy the source files found in this example directory, and replace the "bu_" prefix with one that is representative of (and unique to) your organization.
+
+		Additional setup: 	None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 		Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_data/bu_layer
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vcs.pdf

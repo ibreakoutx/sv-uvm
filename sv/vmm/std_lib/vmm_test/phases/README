@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	vmm1.2 SV VMM vmm_phase vmm_test vmm_timeline
+
+Technical content:
+ 
+		Title: 		Test for phasing of multiple vmm_test  
+ 
+		Objective:    Demonstrates phasing execution for multiple vmm_test timelines
+
+		Description:  This tests shows the usage of multiple vmm_test  in VMM environment.  Runtime option +vmm_test can be used to run all(ALL_TESTS) test or selective tests (<test_name>).
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/examples/testbench/sv/vmm/std_lib/vmm_test/phases
+		DIAGRAMS: 		None

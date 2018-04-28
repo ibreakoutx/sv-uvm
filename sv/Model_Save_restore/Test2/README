@@ -1,0 +1,31 @@
+
+
+Keywords:
+		Search keywords: Save, restore	
+
+Technical content:
+ 
+		Title: 	Model Save and Model  restore	 
+ 
+		Objective: To learn how the  Model Save and Model  restore works
+
+		Description: Model Save and Model restore provides a solution to save the simulation time spent in the reset sequence. Model Save saves the current state of the design at a specified simulation time into a save image file. The specified simulation time is called the reset point. Model restore restores the design to the simulation state saved in the save image file.
+		
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/Model_Save_restore/Test2
+		DIAGRAMS: 		None
+	

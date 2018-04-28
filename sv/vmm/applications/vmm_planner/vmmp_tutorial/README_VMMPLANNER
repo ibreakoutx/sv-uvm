@@ -1,0 +1,25 @@
+The plans are under the dir ./memsys/plans
+
+Right now we are supporting ms-excel and ms-word flow
+
+To understand the dir structure and dut please read the below files 
+./memsys/plans/memsys_wordplan.xml (these are wordplans in the future)
+./memsys/plans/sram_wordplan.xml
+Please open the above files using ms-word or openoffice2.0
+
+The plans(./memsys/plans) dir has a block level plan sram_plan.xml 
+and a master plan memsys_plan.xml 
+These files can be opened using ms-excel or openoffice2.0.
+
+There is a Makefile under ./memsys/solution
+so cd to ./memsys/solution to run this example.
+"gmake" will run the default test(memsys0.v) and creates the annotated plan in the plans dir
+To understand what commands are executed, just do "gmake -n". 
+If you want to run the other test(memsys1.v) do "gmake test01"
+
+There are annotated version plan files in ./memsys/plans/annotated/.
+You may take a look at those files to get idea how they look like without running VMM Planner examples.
+
+
+
+

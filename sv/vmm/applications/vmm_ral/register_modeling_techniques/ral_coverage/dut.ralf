@@ -1,0 +1,62 @@
+register STATUS_REG {
+  bytes 1;
+  field WR_ERROR {
+    bits  8;
+   enum {AA=120, BB, CC=140 }
+     coverpoint {
+	bins AAA =    { 0 }
+	bins BBB[] = {AA,BB,CC}
+	bins CCC [3] = { 4,5, [ 6 : 10 ] }
+	bins DDD = default
+}
+    reset  2'b0;
+}
+  }
+
+
+register TEMP_REG {
+  cover +b-f
+  bytes 1;
+  field TMP1( tmp1) {
+    bits  4;
+    access rw;
+    reset  4'b0000;
+  }
+  field TMP2( tmp2) {
+    bits  4;
+    access rw;
+    reset  4'b1001;
+  }
+  
+  cross TMP1 TMP2 {  label xyz };
+  cross xyz TMP2 { label abc } ;
+  cross abc xyz  { label efg };
+
+}
+
+register DUMMY_REG {
+  cover +f
+  bytes 1;
+  field DMY {
+    bits  8;
+    access rw;
+    reset  8'h00;
+  }
+ 
+
+}
+
+
+block DUT_BLK {
+  cover +a-b-f
+  bytes 1;
+  register STATUS_REG @8'h10;
+  register TEMP_REG @8'h11;
+  register DUMMY_REG @8'h12;
+}
+
+system DUT {
+  bytes 1;
+  block DUT_BLK=DUT_BLK1 (dut.b1)@9'h000;
+  block DUT_BLK=DUT_BLK2 (dut.b2)@9'h100;
+}

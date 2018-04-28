@@ -1,0 +1,41 @@
+
+Keywords:
+		Search keywords: 	testbench sv threads  parellel  fork join_any  
+ 
+
+Technical content:
+		Title: 		THREADS
+		
+		Objective: 	To demonstrate launching multiple threads 
+		Description:  	This is an example of using threads. It shows the use of fork-join, join_any and  join_none
+		Additional setup: None	
+
+To run the design:
+
+Using Makefile :
+	comp_join_none       -- It compiles the design to run for join_none
+	run_joine_none       -- It runs the design to run for join_none
+	comp_join  	     -- It compiles the design to run for join	
+	run_join	     -- It runs the design to run for join
+	comp_join_any        -- It compiles the design to run for join_any
+	run_join_any         -- It runs the design to run for join_any 	
+	clean 	     	     -- Cleans up the log files and previous run executables.
+	join		     -- It executes comp_join and run_join targets	
+	join_any	     -- It executes comp_any and run_any targets
+	join_none	     -- It executes comp_none and run_none targets
+	all 	             -- It does all the above steps.		
+
+Using shell scripts:
+	comp_join_none.csh   -- It compiles the design to run for join_none
+	run_joine_none.csh   -- It runs the design to run for join_none
+	comp_join.csh  	     -- It compiles the design to run for join	
+	run_join.csh	     -- It runs the design to run for join
+	comp_join_any.csh    -- It compiles the design to run for join_any
+	run_join_any.csh     -- It runs the design to run for join_any 	
+	clean.csh 	     -- Clean up the log files and previous run executables.
+
+
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/threads_example  
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vcs.pdf  , $VCS_HOME/doc/UserGuide/sv_lrm.pdf and $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf

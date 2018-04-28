@@ -1,0 +1,41 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM restart hard  
+ 
+Technical content:
+ 
+		Title: 			HOW A VERIFICATION ENVIRONMENT CAN BE RESTARTED TO PERFORM TWO "TESTS" IN SEQUENCE, RESETTING AND RECONFIGURING THE DUT BETWEEN TESTS
+ 
+		Objective: 	
+					This example shows how a verification environment can be restarted to perform two "tests" in sequence, resetting and reconfiguring the DUT between tests.
+		Description: 	
+				This simple approach would be used if it is necessary to minimize the time spent creating a simulatable image and starting the simulator. Because random stability is not considered in this example (see the "hard_stable" example), this approach would be suitable for tests that are likely to produce the same bug reguardless of the seed used initially or that will not require stand-alone simulation to debug them.
+				This directory contains example on how to use the vmm_env::restart() method and how to structure tests to allow easy sequencing in the same simulation.
+				Note that this is not the default recommended approach in a random-based coverage driven approach. Tests should be short enough to be able to be run in sequence as individual simulations. However, certain DUT require a significant simulation time to be configured before the active portion of the test can be executed. It may be desirable, in regression tests, be able to sequence a series of compatible tests to minimize the overhead associated with DUT configuration.
+				The first example (hard), shows the simplest approach and handles arbitrary tests but requires that the DUT be reset and reconfigured between tests (which is exactly what you may be trying to avoid by sequencing tests in a single simulation).
+
+		Additional setup: None	
+
+
+To run the example:
+
+	Using Makefile :
+	Options: clean  -- Cleans up the logs and previous run's executables
+		test_00 test_01 test_00_01 test_01_00  -- To run for different combinations.
+		test_00: comp_00 run_00 -- It compiles and runs for test-00 
+		test_01: comp_01 run_01 -- It compiles and runs for test-01 
+		test_00_01: comp_00_01 run_00_01 -- It compiles and runs for test-00_01 
+		test_01_00: comp_01_00 run_01_00 -- It compiles and runs for test-01_00 
+		all    -- It does all the above tests.
+
+	Using the shell scripts:
+		clean.csh --  Cleans up the logs and previous run's executables
+		comp_00_01.csh  comp_00.csh  comp_01_00.csh  comp_01.csh -- To Compile for different tests
+	        run_00_01.csh  run_00.csh  run_01_00.csh  run_01.csh	 -- To Run for different tests.
+
+
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_env/restart_hard
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

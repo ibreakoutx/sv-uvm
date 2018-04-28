@@ -1,0 +1,32 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2012.11.09.17.42.19;	author vsananda;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@analyze -clear
+analyze -sva top_xorexec.v hfifo.v xorexec.v
+analyze -sva top_xorexec_sva.sv
+
+elaborate -top top_xorexec
+
+clock clk
+reset rst
+
+@

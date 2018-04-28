@@ -1,0 +1,29 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting VMM xactors to UVM analsyis subscriber 
+ 
+		Objective: 	This example shows how to use the <avt_notify2analysis> adapter to connect a VMM xactor that passes transactions via event notifications to an UVM analysis subscriber.
+
+
+		Description: 
+ When constructing the adapter, we pass it the VMM xactor's notify object and the notification descriptor, on which the adapter registers a callback. When the VMM xactor indicates the event with status, the callback is called,  which forwards the received transaction to the adapter. The adapter then  converts the transaction to UVM and publishes it to any connected UVM subscribers via its analysis port. An alternate implementation could have defined the callback to hold a handle the analysis port and write to the port without involving the adapter.
+
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

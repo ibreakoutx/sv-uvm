@@ -1,0 +1,38 @@
+Keywords:
+ Search keywords      : testbench sv interface modport clocking 
+
+
+Technical content:
+ Title                : Modports and clocking blocks in nested interfaces.
+ Objective            : To illustrate the usage of clocking and modports of low level interfaces in a nested interface.
+ Description          : A simple bus interface with a clocking block and modport is nested in a top level interface and an instance of this top level interface uses the clocking blocks and modports of the low level interface.
+ 
+ Additional setup     : None	
+
+Run scripts:
+    Using Makefile
+ clean                - To clean up the log files and executable of previous run
+ comp                 - To compile the design
+ run                  - To run the design
+ all                  - It does all the above steps.
+
+    Using shell scripts
+ clean.csh            - To clean up the log files and executable of previous run
+ comp.csh             - To compile the design
+ run.csh              - To run the design
+
+
+Additional notes:
+The example consists of the following files.
+
+interface.sv : This file has a Top level interface instantiating a lower level interface(Bus_intf). Modports and clocking blocks have been defined for the lower level interface.
+
+test.sv : Consists of a program block and a driver class. The driver has a virtual interface object of the Bus_intf and it drives random values of address and data to this virtual interface using the drive task. The program block constructs a driver and calls the drive task to drive random values of address and data.
+
+top.v : Creates an instance of the test, the interface and connects a clock to them.
+
+
+Location information:
+ PATH                 : $VCS_HOME/doc/testbench/sv/interfaces/nested_if_modports
+ DIAGRAMS             : None
+ Cross Reference      : $VCS_HOME/doc/UserGuide/sv_lrm.pdf, $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf

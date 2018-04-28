@@ -1,0 +1,32 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM scenarios scenario generator procedural scenarios 
+ 
+Technical content:
+ 
+		Title:    Procedural scenarios using VMM scenario generator	
+ 
+		Objective: 	 demonstrate how to implemnet procedural and hierarchical scenarios using VMM scenarios and scenario generator	
+
+		Decription: 
+		The "apply" method in the VMM scenario generator gives thr procedural interface to the user of creating procedural and hierarchical scenarios. In the example, the simple_seq_lib has a small set of basic scenarios. All that the user needs to do  to create a hierarchical scenarios using these base level scenario is to override the virtual task apply of the top scenario class and call the apply lastk of the base scenarios within thta without the need to invoke any macros or other complicated procedure. Here the "apply' task of "simple_seq_sub_seqs" is extended to call the "apply" methods of the lower level scenarios
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_scenario_gen/vmm_scenarios
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

@@ -1,0 +1,28 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting VMM producer to a UVM  sequence_item driver
+ 
+		Objective:  This example uses the <avt_channel2uvm_tlm> adapter to connect an VMM producer to an UVM sequence item driver. 
+
+		Description: While this example does not illustrate use of a  separate channel for returning responses back to the requester, the adapter is  capable of handling such a configuration.   During construction, the adapter may be given an existing channel handle to  use. If such a handle were not provided, the adapter creates a default channel  instance for itself. A pre-allocated response channel, if used, must be  provided by end-of-elaboration; the adapter will not create one by default.   During operation, the UVM driver requests a new transaction from what it sees  as an UVM sequencer via its seq_item_port. The adapter, serving as the  sequencer, will attempt to get a new transaction from the request channel.  When available, the transaction is gotten, converted, and returned to the  UVM driver.   If the UVM driver returns explicit responses, it can do so via the ~put~  method on the same seq_item_port. The adapter than converts and sneaks this  into the response channel. 
+ If the UVM driver uses the original request to put response information, the  adapter can be configured to do a reverse conversion to reflect the response  back to the VMM producer via the originating request handle. 
+
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

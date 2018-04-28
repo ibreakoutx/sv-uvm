@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	vmm1.2 SV VMM get_int for object specified anywhere under a specific hierarchy 
+		 
+Technical content:
+ 
+		Title: 		 VMM_OPTS test for get_int for object specified anywhere under a specific hierarchy
+ 
+		Objective:     Usage for get_int to set the int option value of object specified anywhere under a specific hierarchy from command line
+ 
+		Description:   This test shows how one can set int option value for all "b1" objects anywhere under specific "d2" hierarchy only.
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_opts/hierarchical_options/option_int_val_specific_hier
+		DIAGRAMS: 		None

@@ -1,0 +1,130 @@
+7        
+0 lp_msg_table.svh
+0 /tool/cbar/apps/vcs/2012.09/packages/lpa/lp_msg_table.svh
+0 lpa_defines.svhp
+0 lpa_internal_macros.svhp
+0 lpa_global_defines.svhp
+0 lpa_mv_msg_table.svhp
+0 lpa_msg_table.svhp
+20
+-Mamsrun=
+-Masflags=--32
+-Mcc=gcc
+-Mcfl= -pipe -m32 -O -I/tool/cbar/apps/vcs/2012.09/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mldflags= -melf_i386 -m32
+-Mobjects= /tool/cbar/apps/vcs/2012.09/linux/lib/libvirsim.so /tool/cbar/apps/vcs/2012.09/linux/lib/librterrorinf.so /tool/cbar/apps/vcs/2012.09/linux/lib/libsnpsmalloc.so
+-Mout=simv
+-Msaverestoreobj=/tool/cbar/apps/vcs/2012.09/linux/lib/vcs_save_restore_new.o
+-Msyslibs=/tool/cbar/apps/vcs/2012.09/linux/lib/ctype-stubs_32.a -ldl
+-Mvcsaceobjs=
+-gen_obj
+-sverilog
+-upf
+/tool/cbar/apps/vcs/2012.09/linux/bin/vcs1
+hello.upf
+top.v
+76
+use_proxy=on
+sysc_uni_pwd=/home/vsananda/user/mvsim/hello
+http_proxy=http://ausproxy.amd.com:74/
+ftp_proxy=http://ausproxy.amd.com:74/
+_MODULESBEGINENV_=/home/vsananda/.modulesbeginenv
+_LMFILES_=/tool/cbar/etc/modules/vcs/2012.09:/tool/cbar/etc/modules/mvtools/2012.09
+VNCDESKTOP=hagon:6 (vsananda)
+VMR_MODE_FLAG=32
+VENDOR=intel
+VCS_PATH=/tool/cbar/apps/vcs/2012.09/bin
+VCS_LIC_EXPIRE_WARNING=0
+VCS_HOME=/tool/cbar/apps/vcs/2012.09
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux
+VCS_AMD_PURE32=1
+USER_PRINCIPAL_NAME=vsananda@AMD.COM
+UNAME=/bin/uname
+TOOL_HOME=/tool/cbar/apps/vcs/2012.09/linux
+TERMINFO=/tool/pandora/.package/xterm-196/etc/xterm-196/terminfo
+TARGET=powerpc-405-linux
+SSH_TTY=/dev/pts/0
+SSH_CONNECTION=10.236.68.28 51191 10.236.74.86 22
+SSH_CLIENT=10.236.68.28 51191 22
+SSH_AUTH_SOCK=/tmp/ssh-SaIRq24699/agent.24699
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SSH_AGENT_PID=24729
+SNPSLMD_LICENSE_FILE=27037@licsrvqa.amd.com:27037@licsrv03.amd.com,27037@licsrv03-f.amd.com:27037@licsrv02.amd.com,27037@licsrv02-f.amd.com:27037@licsrv01.amd.com,27037@licsrv01-f.amd.com:27037@fifa04:27037@licsrv04.amd.com,27037@licsrv04-f.amd.com:/tool/cbar/apps/vcs/2012.09/flexlm//license.dat
+SESSION_MANAGER=local/hagon:/tmp/.ICE-unix/23412
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+REMOTEHOST=l7-5cb2152gpf.amd.com
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+PREFIX=/home/vsananda/user/opt/powerpc-405-linux
+OVA_UUM=0
+OSTYPE=linux
+MODULE_VERSION_STACK=3.1.6-b
+MODULE_VERSION=3.1.6-b
+MODULESHOME=/tool/pandora/.package/modules-3.1.6-b
+MODULEPATH=/tool/cbar/etc/modules
+LSF_VERSION=7.0
+LSF_TOP=/tool/lsf
+LSF_SERVERDIR=/tool/lsf/etc
+LSF_RES_PORT=3878
+LSF_MANPATH=/tool/lsf/7.0/man
+LSF_LIM_PORT=3879
+LSF_LIBDIR=/tool/lsf/lib
+LSF_ENVDIR=/tool/lsf/conf
+LSF_BINDIR=/tool/lsf/bin
+LOADEDMODULES=vcs/2012.09:mvtools/2012.09
+LC_ALL=C
+KDE_IS_PRELINKED=1
+KDEDIR=/usr
+INPUTRC=/etc/inputrc
+HOSTTYPE=i386-linux
+HOSTNAME=hagon
+HOST=hagon
+G_BROKEN_FILENAMES=1
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/vsananda/.gtkrc-1.2-gnome2
+GROUP=design
+GNOME_KEYRING_SOCKET=/tmp/keyring-Kbxz3m/socket
+GNOME_DESKTOP_SESSION_ID=Default
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-AUHuUfA3dk,guid=c895c9792bc9a4991f761d005035044a
+CVS_RSH=ssh
+CVSREAD=true
+CDS_LIC_FILE=27001@dunant,27001@dunant-f:27001@k64a.amd.com,27001@k64b.amd.com
+CDC_PREW2KHOST=hagon
+CDC_LOCALHOST=hagon.amd.com
+CDC_JOINED_ZONE=CN=design,OU=zones,OU=EngUnix,DC=amd,DC=com
+CDC_JOINED_SITE=Austin
+CDC_JOINED_DOMAIN=amd.com
+CDC_JOINED_DC=sausdcp03.amd.com
+ARCHPRO_ROOT=/tool/cbar/apps/mvtools/2012.09
+ARCHPRO_LIC_WAIT=1
+0
+16
+1345792090 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_bind.tcl
+1352519306 hello.upf
+1345799860 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_msg_table.svhp
+1345799858 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_mv_msg_table.svhp
+1345799870 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_global_defines.svhp
+1345799862 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_internal_macros.svhp
+1345799857 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_defines.svhp
+1345799830 /tool/cbar/apps/vcs/2012.09/etc/upf/lp_msg_table.svh
+1352519396 top.v
+1345799849 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_checkers.svlp
+1345799860 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_mv_checkers.svlp
+1345799860 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_config_parse.svlp
+1345799864 /tool/cbar/apps/vcs/2012.09/packages/lpa/lpa_controller_pkg.svlp
+1345792063 /tool/cbar/apps/vcs/2012.09/etc/upf/upf_components.svlp
+1345792063 /tool/cbar/apps/vcs/2012.09/etc/upf/upf_msg.svlp
+1345792063 /tool/cbar/apps/vcs/2012.09/etc/upf/upf_package.svlp
+4
+0 
+1345792714 /tool/cbar/apps/vcs/2012.09/linux/lib/libvirsim.so
+1345792230 /tool/cbar/apps/vcs/2012.09/linux/lib/librterrorinf.so
+1345792158 /tool/cbar/apps/vcs/2012.09/linux/lib/libsnpsmalloc.so
+1352519405 simv.daidir

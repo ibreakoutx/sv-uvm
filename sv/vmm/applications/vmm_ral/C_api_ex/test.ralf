@@ -1,0 +1,19 @@
+block myblk {
+   bytes 4;
+
+   register R1 {
+      bytes 4;
+      field a1 { bits 1; access rw; }
+      field X  { bits 7; access rw; }
+      field a2 { bits 4; access rw; }
+      field a3 { bits 3; access rw; }
+      field a4 { bits 2; access rw; }
+      field a5 { bits 15; access rw; }
+   }
+}
+
+system mysys {
+   bytes 4;
+   block myblk[2] @0x00040 +0x04000;
+}
+

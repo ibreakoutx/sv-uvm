@@ -1,0 +1,26 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting VMM xactors to UVM componenst with ports and exports
+ 
+		Objective: 	This example shows how to use the IK to connect VMM xactors to UVM components with transport ports and exports.
+
+		Description: VMM publisher -> UVM consumer - The VMM publisher puts a VMM transaction to the adapter, which is serving as a VMM subscriber.  The adapter having a handle to the same channel, converts the transaction to its UVM counterpart and broadcasts it to consumer’s blocking get port.  In this case, the adapter is serving as the UVM publisher.
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

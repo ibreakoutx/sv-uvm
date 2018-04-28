@@ -1,0 +1,52 @@
+
+Keywords:
+		Search keywords: 	RAL sub-register access
+
+Technical content:
+ 
+		Title: 		 RAL sub-register access
+ 
+		Objective:    Demonstrate the 'individual field access' feature when the physical protocol 
+		              doesnot support byte enabling.
+
+		Description:  128-bit wide register in the DUT with block size as 2-bytes									
+		              8 fields occupy the bits as shown below:
+
+                H	        G     	  F	      E		             D	      C		            B	    A
+                127-104	  103-88	  87-64	  63-32	  31-24	  23-16	  15-12	  11-8	  7-4	  3-0
+
+																Bits 31-24 and 11-8 are reserved/unused.
+                Assuming the registers is mapped at the address offset starting 0x00, below table
+																shows if the field is individually accessible and the number of access cycles
+																required to access the field:									
+                ---------------------------------------------------------------------------------									
+                | Field 	      |   A	  |  B	  |  C   | 	D	  |  E   |  F   |  G   | 	H	
+                ---------------------------------------------------------------------------------									
+                | Individually |       |      |      |      |      |      |      |
+																| accessible	  |   No	 |  No	 |  No 	|  Yes	|  Yes	|  No 	|  No 	|  No 	
+                ---------------------------------------------------------------------------------									
+                | No. of cycles|   8	  |  8	  |  8	  |  1	  |  2	  |  8	  |  8	  |  8	
+                ---------------------------------------------------------------------------------									
+                | Starting     |       |      |      |      |      |      |      |
+																| offset	      |   0x0 |	 0x0	|  0x0	|  0x1	|  0x2	|  0x0	|  0x0	|  0x0	
+                ---------------------------------------------------------------------------------									
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/application/vmm_ral/ind_fld_access/no_support_byte_enable
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/ral_user_guide.pdf

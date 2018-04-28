@@ -1,0 +1,30 @@
+memory ram1 {
+ size 1024; bits 16; access rw; initial 0; 
+}
+
+virtual register vreg_rw {
+       bytes 2;
+       field f1 { bits 16; access rw; };
+}
+virtual register vreg_ro {
+       bytes 2;
+       field f1 { bits 8; access rw; };
+       field f2 { bits 8; access ro; };
+}
+virtual register vreg_w1c {
+       bytes 2;
+       field f1 { bits 8; access rw; };
+       field f2 { bits 8; access w1c; };
+}
+
+block dut {
+   bytes 2;
+   memory ram1 (vreg) @0x0000
+   virtual register vreg_rw=vreg_rw[20] ram1 @0x0;
+   virtual register vreg_ro=vreg_ro[3] ram1 @0x100;
+   virtual register vreg_w1c=vreg_w1c[5] ram1 @0x200;
+}
+system top {
+   bytes 2;
+   block dut (dut);
+}

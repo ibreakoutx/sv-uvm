@@ -1,0 +1,29 @@
+
+
+Keywords:
+		Search keywords: 	testbench sv associative arrays
+ 
+Technical content:
+		Title: 			ASSOCIATIVE ARRAYS
+		
+		Objective: 		To Demonstrate use of associative arrays  
+		Description: 	
+					This example shows  the use of associative arrays and the manipulation of associative arrays using the built-in methods.
+					Run the testcase by typing "make" on the command prompt.
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/arrays_example_assoc_array
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vcs.pdf ,$VCS_HOME/doc/UserGuide/sv_lrm.pdf  and $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf

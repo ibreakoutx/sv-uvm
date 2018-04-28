@@ -1,0 +1,7 @@
+To verify the entire memory system using VCS, 
+please do the following:
+gmake
+go to the ../plans dir 
+check the annotated report
+
+Thanks.

@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM Wimax 
+ 
+Technical content:
+ 
+		Title:    	Developing VMM-compliant Wimax Frame generation
+ 
+		Objective: 	 To explain how efficiently generate Wimax frame parameters. 
+		Description: 	This example shows how complex Wimax frame/superzone/zone/burst paramters can be generated at different stages by parallel constraint solver.  A frame is represented in time domain as number of symbols (length) and in frequency domain as subchannels(depth). This frame rectangle is divided into a set of super zone rectangles. Again Super zone rectangles are divided into zones.  Each zone has non-overlapping rectangular bursts (Tx Downlink Zone). Random allocation of non-overlapping bursts is done (i.e, rectangles inside zone rectangle) is done with the help of constraints. Randomization of zone parameters, superzone parameters and frame parameters are done sequentially.  i.e., frame parameters get randomized first, followed by superzone and then zone.  User can set constraints for a selected burst indices from the test case.  Simulation log pictorially shows the allocation of bursts for every zone along with the unallocated region. There are additional test cases in tests directory for generating different kinds of bursts/zones/superzones in random and directed ways.
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/tech_domains/multimedia/WiMaxGen
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

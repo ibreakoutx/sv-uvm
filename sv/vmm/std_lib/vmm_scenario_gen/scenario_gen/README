@@ -1,0 +1,29 @@
+Keywords:
+ Search keywords      : scenario gen
+
+
+Technical content:
+ Title                : Scenario Generator.
+ Objective            : To illustrate the use of `vmm_scenario_gen macro.
+ Description          : This test creates a simple scenario generator and displays the elements constituting the scenario.
+ 
+ Additional setup     : None
+
+To run the example:
+
+    Using Makefile
+ clean               - To clean up the log files and executable of previous run
+ comp                - To compile the design
+ run                 - To run the design
+ all                 - It does all the above steps.
+
+    Using shell scripts
+ clean.csh           - To clean up the log files and executable of previous run
+ comp.csh            - To compile the design
+ run.csh             - To run the design
+
+	
+Location information:
+ PATH                 : $VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_scenario_gen/scenario_gen
+ DIAGRAMS             : None
+ Cross Reference      : $VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf 

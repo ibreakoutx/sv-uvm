@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	create_by	vmm1.2
+
+Technical content:
+ 
+		Title: 		 userdefined blueprint 
+ 
+		Objective:     replace user defined blueprint class 
+
+		Description:   This test shows the usage of  replacing the user defined class using create_by_new  and create_by_copy methods
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_class_factory/basic_user_defined_class
+		DIAGRAMS: 		None

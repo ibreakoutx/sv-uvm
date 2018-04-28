@@ -1,0 +1,84 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM coverage callbacks VIP 
+ 
+Technical content:
+ 
+		Title:    	Developing VMM-compliant VIPs 
+ 
+		Objective: 	 To explain how to develop VMM-compliant VIP components. 
+		Description: 	The VIP is an APB VIP.
+The VIP is for verifying interfaces having AMBA Peripheral Bus (APB) protocol. It is a simple single-master address-based parallel bus providing atomic individual read and write cycles. The protocol specification can be found in the AMBA Specification (Rev 2.0) available from ARM (http://arm.com).
+When writing a reusable transactor,one has to think about all possible applications it may be used in, not just the device where its been  used  for the first time. The classes defined in the "apb_trans.sv", "apb_master.sv", "apb_monitor.sv" etc implement a set of reusable APB-related verification components. As such, they do not include DUT-specific functionality or information.
+				files:
+				apb_cfg.sv :  AMBA Peripheral Bus Configuration class
+				apb_if.sv :   Generic APB Interface
+				apb_trans:    AMBA Peripheral Bus Transaction
+				apb_master.sv :  This is a vmm_xactor class for a APB Master
+				//
+				//   This BFM receives APB transactions from a channel, and drives
+				//   the pins via the SystemVerilog virtual interface.
+				//
+				//           |      |        
+				//           | APB  |  VMM channel 
+				//           | trans|   
+				//           |  VV  |
+				//           |      |
+				//    +--------------------+
+				//    |     APB-Master     |
+				//    +--------------------+
+				//           ||||||| 
+				//           ||||||| 
+				//           APB Bus 
+				//
+				apb_monitor.sv : // Description : AMBA Peripheral Bus Monitor Transactor
+				//
+				//   This BFM constantly monitors the APB bus for transactions.
+				//   When a valid transaction is seen, a callback occurs.
+				//   Note the monitor has an output channel, and is filled using sneak
+				//   so the channel-put (sneak) can't block
+				//           
+				//    +--------------------+
+				//    |     APB-Monitor    |--------> Callback
+				//    +--------------------+
+				//           ||||||| 
+				//           ||||||| 
+				//           APB Bus 
+				//
+				//------------------------------
+				cov_callbacks.sv : Coverage Callbacks: This class is DUT specific, and collects coverage
+				dut_env.sv : // Description : APB Testbench vmm_environment class
+				//
+				// This class instantiates all the permanent testbench top-level components
+				//
+				// After all the  have been completed, this will include:
+				//   * APB Atomic Generator
+				//   * APB Master
+				//   * APB Monitor
+				//   * Scoreboard
+				//
+				dut_sb.sv : Scoreboard for Memory Design
+				sb_callbacks.sv :  Scoreback Connection via APB Master Callback Class
+				test_07.sv : simple test, runs all the steps
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/vip/apb
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf (Master. monitor and Slave Xactor primers)
+

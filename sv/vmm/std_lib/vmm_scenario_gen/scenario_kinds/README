@@ -1,0 +1,29 @@
+Keywords:
+ Search keywords      : scenario kinds define apply.
+
+
+Technical content:
+ Title                : Scenario Generator.
+ Objective            : To illustrate the use of `vmm_scenario_gen macro.
+ Description          : This test shows the use of the "scenario_kind" variable by assigning id's to 2 different scenarios. Randomly a scenario kind is picked and generated.
+ 
+ Additional setup     : None
+
+
+To run the example:
+    Using Makefile
+ clean                - To clean up the log files and executable of previous run
+ comp                 - To compile the design
+ run                  - To run the design
+ all                  - It does all the above steps.
+
+    Using shell scripts
+ clean.csh            - To clean up the log files and executable of previous run
+ comp.csh             - To compile the design
+ run.csh              - To run the design
+
+
+Location information:
+ PATH                 : $VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_scenario_gen/scenario_kinds
+ DIAGRAMS             : None
+ Cross Reference      : $VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

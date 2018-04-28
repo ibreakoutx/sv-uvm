@@ -1,0 +1,101 @@
+
+
+block dropbox {
+   domain left {
+      bytes 2;
+
+      register l_rw0 @1 {
+         field value {
+            bits 8;
+         }
+      }
+      register l_wo0 {
+         field value {
+            bits 8;
+	    access wo;
+	    reset 'hA5;
+         }
+      }
+
+      register wide {
+         field wide_f1 {
+            bits 8;
+            access rw;
+            reset 'h54;
+         }
+         field wide_f2 {
+            bits 32;
+            access rw;
+            reset 'hDCBA_9876;
+         }
+         field wide_f3 {
+            bits 8;
+            access rw;
+            reset 'hFE;
+         }
+      }
+
+      register l_mbits {
+         field rcf { bits 2; reset 2'b10; access rc; }
+         field w1f { bits 2; reset 2'b10; access w1c; }
+         field rof { bits 2; reset 2'b10; access ro; }
+      }
+
+      register l_rw_file[4] @0x008 {
+         field value {
+            bits 8;
+         }
+      }
+
+      register l_ro0 {
+         field value {
+            bits 8;
+            access ro;
+            reset 'h5C;
+         }
+      }
+
+      memory l_mem0 {
+         size 256;
+         bits 16;
+      }
+   }
+
+   domain right {
+      bytes 2;
+
+      register r_rw0 @1 {
+         field value {
+            bits 8;
+         }
+      }
+      register r_wo0 {
+         field value {
+            bits 8;
+	    access wo;
+	    reset 'hA5;
+         }
+      }
+
+      memory r_mem0 @'h300 {
+         size 256;
+         bits 16;
+      }
+   }
+}
+
+system dropsys {
+   domain up {
+      bytes 2;
+
+      block dropbox.left=box0 @'h00000;
+      block dropbox.left=box1 @'h10000;
+   }
+
+   domain down {
+      bytes 2;
+
+      block dropbox.right=box0 @'h00000;
+      block dropbox.right=box1 @'h10000;
+   }
+}

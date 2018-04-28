@@ -1,0 +1,32 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM vmm_data Shorthand macros
+
+ 
+Technical content:
+ 
+		Title:    Usage of VMM DATA Shorthand macros
+ 
+		Objective: 	Demonstrate how to use  shorthand macros to easily and efficiently create the standard functions and tasks in the extensions of vmm_data 
+		Description: 	 A set of shorthand macros exist to help reduce the amount of code required to implement or use a VMM-compliant data descriptorVMM class extensions. These shorthand macros provide a default implementation of all methods for specified data members. For vmm_data extensions, the shorthand macros are specified inside the class specification, after the declaration of the data members. It starts with the vmm_data_member_begin() macro and ends with the corresponding vmm_data_member_end(). The vmm_data shorthand macro section must then be followed by a vmm_data_byte_size() macro. In between, there must be only corresponding vmm_*_member_*() shorthand data member macro calls. The order in which the shorthand data member macros are invoked will determine the order in which data members are printed, compared, copied, packed and unpacked. The data member macros are type-specific. One must use the macro that corresponds to the type of the data member named in its argument.
+
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_data/sh_macros
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/vmm_user_guide.pdf

@@ -1,0 +1,28 @@
+
+
+ 
+Technical content:
+ 
+		Title:    Connecting VMM notifier consumer and a UVM passive producer
+ 
+		Objective: 	This example shows how to use the IK to connect a UVM passive producer to VMM notifier consumer through the <avt_notify2analysis> adapter
+
+		Description:  This example uses an avt_notify2analysis and an avt_uvm_tlm2channel adapter to connect a vmm_notifier_consumer and an uvm_passive_producer. The uvm_passive_producer gets notifier through  avt_notify2analysis, then puts response on avt_uvm_tlm2channel back to consumer
+
+
+	
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+

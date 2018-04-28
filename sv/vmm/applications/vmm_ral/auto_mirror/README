@@ -1,0 +1,51 @@
+
+Keywords:
+Search keywords: 	RAL Auto-Mirror update 
+
+Technical content:
+
+Title:        RAL Auto-Mirror updated (Direct Update & Passive Update)
+
+Objective:    Demonstrate the Direct Update and Passive Update mehcanisms of RAL Auto-Mirror 
+              update feature.
+
+Description:  Dut with 3, 8-bit registers.
+              1. REG1   : 1 8-bit field, R/W access with Auto-mirror ON.(by default this capability is ON)
+              2. REG2   : 1 8-bit field, R/W access with Auto-mirror OFF.
+              3. REG3   : 2 4-bit fields, 
+                         cnt1 : R/W access with Auto-mirror ON.
+                         cnt2 : DC access with Auto-mirror OFF.
+              
+              REG2 is updated by "write()" method which directly talks to the physical interface( non-RAL).
+              And the mirror value for the same is updated by Passive Update mechanism. This is implemented
+              by overloading 'observe_single()'. 'tb_mon' provides the details of the observed transactions
+              to this 'observe_single()'.
+              
+              REG1 and REG3.cnt1 are updated by the DUT itself. The mirror value for the same is updated by 
+              Direct Update mechanism which is auto-generated and kicked off by the ralgen when used with 
+              command line options '-auto_mirror' or '-a' along with '-b'. This mechanism is implemented as
+              part of backdoor access mechanism hence '-b' is must.
+              
+              REG1 and REG3 can be updated by PASSIVE mechanism also, but REG2 will never be updated by DIRECT
+              update mechanism( as it is turned off in the RALF description).
+
+Additional setup: None	
+
+To run the example:
+Using Makefile:
+clean           -- To clean up the log files and executable of previous run
+comp            -- To compile the design
+run             -- To run the design
+all             -- It does all the above steps.
+Using shell scripts:
+clean.csh       -- To clean up the log files and executable of previous run
+comp.csh        -- To compile the design
+run.csh         -- To run the design  
+
+
+Location Information:
+PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/application/vmm_ral/auto_mirror
+DIAGRAMS: 		None
+Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/ral_user_guide.pdf
+
+

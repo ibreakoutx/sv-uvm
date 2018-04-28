@@ -1,0 +1,27 @@
+
+
+Keywords:
+		Search keywords: 	testbench  sv coverage group
+ 
+Technical content:
+		Title: 			COVERAGE
+		
+		Objective: 		To demonstrate coverage with an example
+		Description: 	 	This example demonstrates Embedded Coverage Group inside Class Coverage  Model for Input-Ouput Ports of 4x4 Cross Switch. It ensures that Packets have been sent from all Input Ports to Output Ports.
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/coverage_group  
+		DIAGRAMS: 		None
+		Cross Reference:	 $VCS_HOME/doc/UserGuide/svtb_tutorial.pdf , $VCS_HOME/doc/UserGuide/sv_lrm.pdf ,$VCS_HOME/doc/UserGuide/vcs.pdf and  $VCS_HOME/doc/UserGuide/urg_ug.pdf

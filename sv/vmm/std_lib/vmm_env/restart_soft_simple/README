@@ -1,0 +1,27 @@
+
+
+Keywords:
+		Search keywords: 	SV VMM restart hard  sequence without resetting 
+ 
+Technical content:
+		Title: 			HOW A VERIFICATION ENVIRONMENT CAN BE RESTARTED TO PERFORM TWO "TESTS" IN SEQUENCE, WITHOUT RESETTING OR RECONFIGURING THE DUT BETWEEN TESTS
+ 
+		Objective: 	
+					This example shows how a verification environment can be restarted to perform two "tests" in sequence, without resetting or reconfiguring the DUT between tests
+
+		Description: 	
+				This simple approach would be used if it is necessary to minimize the simulation time spent initializing the DUT. Because random stability is not considered in this example (see the "soft_stable" example), this approach would be suitable for tests that are likely to produce the same bug reguardless of the seed used initially or that will not require stand-alone simulation to debug them.  
+				This directory contains example on how to use the vmm_env::restart() method and how to structure tests to allow easy sequencing in the same simulation.
+				Note that this is not the default recommended approach in a random-based coverage driven approach. Tests should be short enough to be able to be run in sequence as individual simulations. However, certain DUT require a significant simulation time to be configured before the active portion of the test can be executed. It may be desirable, in regression tests, the be able to sequence a series of compatible tests to minimize the overhead associated with DUT configuration.
+				The second example (soft_simple), shows the simplest approach without resetting the DUT but does not garantee random stability. That means that running test "01" after test "00" in the same simulation will yield a different random stimulus sequence (and therefore a different test) than running test "01" on its own or first in the sequence.  
+				The examples for soft restarts (soft_*) require a sequence of tests to use the same configuration. A new DUT configuration is not generated nor uploaded nor is the DUT reset between tests. Such tests cannot call the vmm_env::gen_cfg(), vmm_env::build() and vmm_env::cfg_dut_t() methods explicitly.
+
+
+		Additional setup: None	
+
+To run the tests, use Makefile (or) comp0~3.csh and run0~3.csh to compile and run the 3 tests.
+
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_env/restart_soft_simple
+		DIAGRAMS: 		None
+		Cross Reference:	$VCS_HOME/doc/UserGuide/pdf/vmm_user_guide.pdf

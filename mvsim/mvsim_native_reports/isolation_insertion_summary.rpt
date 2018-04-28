@@ -1,0 +1,11 @@
+VCS Version: G-2012.09
+
+
+=========================POLICY INSTRUMENTATION SUMMARY================================
+PolicyName                         : Policy Type :  Number of Instrumentation Done 
+tb/dut/exec_iso_out                : Isolation Policy :          11
+=======================================================================================
+=======================================================================================
+Total Number of Instrumentations: 11
+Total Number of Implemented Locations: 0
+Total Number of UnInstrumented Locations (improper connectivity): 0

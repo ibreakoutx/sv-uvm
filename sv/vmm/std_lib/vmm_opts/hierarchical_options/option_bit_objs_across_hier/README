@@ -1,0 +1,30 @@
+
+
+Keywords:
+		Search keywords: 	vmm1.2 SV VMM get_bit for object specified anywhere across hierarchy 
+		 
+Technical content:
+ 
+		Title: 		 VMM_OPTS test for get_bit for object specified anywhere across hierarchy
+ 
+		Objective:     Usage for get_bit to set the value of object specified anywhere across hierarchy from command line
+ 
+		Description:   This test shows how one can set bit option value for all objects "b1" anywhere in the hierarchy. 
+
+		Additional setup: None	
+ 
+ To run the example:
+      Using Makefile:
+       	clean           -- To clean up the log files and executable of previous run
+       	comp            -- To compile the design
+        run             -- To run the design
+        all             -- It does all the above steps.
+     Using shell scripts:
+        clean.csh       -- To clean up the log files and executable of previous run
+        comp.csh        -- To compile the design
+        run.csh         -- To run the design  
+ 
+ 
+Location Information:
+		PATH: 			$VCS_HOME/doc/examples/testbench/sv/vmm/std_lib/vmm_opts/hierarchical_options/option_bit_objs_across_hier
+		DIAGRAMS: 		None

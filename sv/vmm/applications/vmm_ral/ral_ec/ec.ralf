@@ -1,0 +1,20 @@
+
+block timer {
+
+      bytes 128;
+
+      register T1CONTROL   @'h0 {
+         field UP {bits 64; reset 'h10; constraint c {value != 4'hf;} };
+      } 
+      register T1TIMER   @'h8 {
+         field VALUE {bits 64; reset 'h11; constraint c {value != 4'hf;} };
+      } 
+      register EPA10CON @'h10 {
+         field EMC {bits 64; reset 'h12; constraint c {value != 4'hf;} };
+      }
+}
+
+system ec {
+   bytes 256;
+   block timer @'h0000;
+}
